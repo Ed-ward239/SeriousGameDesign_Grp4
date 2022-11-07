@@ -5,14 +5,13 @@ using UnityEngine;
 public class CarMovement : MonoBehaviour
 {
     [SerializeField] public static Rigidbody2D car;
-    [SerializeField] float horizontalMovement;
-    [SerializeField] float verticalMovement;
+    [SerializeField] float horizontalMovement = 0;
+    [SerializeField] float verticalMovement = 0;
     [SerializeField] int speed = 20;
     [SerializeField] float jumpForce = 500.0f;
     [SerializeField] bool isFacingRight = true;
     [SerializeField] bool jumpPressed = false;
     [SerializeField] bool isGrounded = true;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +20,7 @@ public class CarMovement : MonoBehaviour
         }
         // speed = 15;
         // jumpForce = 750.0f;
+
     }
 
     // Update is called once per frame
@@ -30,6 +30,14 @@ public class CarMovement : MonoBehaviour
         verticalMovement = Input.GetAxis("Vertical");
         if (Input.GetButtonDown("Jump"))
 			jumpPressed = true;
+
+        if (gameObject.transform.rotation.z < -0.3) {
+            gameObject.transform.Rotate(0, 0, 2);
+        }
+
+        if (gameObject.transform.rotation.z > 0.4) {
+            gameObject.transform.Rotate(0, 0, -2);
+        }
     }
 
     void Flip() {
@@ -60,10 +68,7 @@ public class CarMovement : MonoBehaviour
         if (jumpPressed) {
             Jump();
         }
-        Debug.Log(transform);
-        // if (car.transform.Rotate.z < -75) {
-        //     transform.Rotate.z = -75;
-        // }
+      
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

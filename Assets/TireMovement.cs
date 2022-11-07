@@ -23,7 +23,7 @@ public class TireMovement : MonoBehaviour
 
     void FixedUpdate() {
         // tire.velocity = new Vector2(horizontalMovement * speed, 0);
-        Debug.Log(horizontalMovement);
+
         float rotation = 0f;
         if (horizontalMovement > 0)
             rotation = horizontalMovement * (-35);
