@@ -28,7 +28,7 @@ public class TireMovement : MonoBehaviour
         if (horizontalMovement > 0)
             rotation = horizontalMovement * (-35);
         if (horizontalMovement < 0)   
-            rotation = horizontalMovement * (15);
+            rotation = horizontalMovement * (-15);
         RotateTire(rotation);
         
     }

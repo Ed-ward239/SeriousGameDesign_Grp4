@@ -39,10 +39,10 @@ public class CarMovement : MonoBehaviour
 
 
     void Jump() {
-        car.velocity = new Vector2(car.velocity.x, 0);
-		car.AddForce(new Vector2(0, jumpForce));
-		jumpPressed = false;
-		isGrounded = false;
+        car.velocity = new Vector2(car.velocity.x * 2, car.velocity.y);
+		// car.AddForce(new Vector2(0, jumpForce));
+		// jumpPressed = false;
+		// isGrounded = false;
     }
 
     void FixedUpdate()
@@ -57,7 +57,7 @@ public class CarMovement : MonoBehaviour
         // if(horizontalMovement < 0 && isFacingRight || horizontalMovement > 0 && !isFacingRight) {
         //     Flip();
         // }
-        if (jumpPressed && isGrounded) {
+        if (jumpPressed) {
             Jump();
         }
         // balloon.position = new Vector2(100, 0);
