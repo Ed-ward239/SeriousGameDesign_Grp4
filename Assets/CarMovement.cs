@@ -60,7 +60,10 @@ public class CarMovement : MonoBehaviour
         if (jumpPressed) {
             Jump();
         }
-        // balloon.position = new Vector2(100, 0);
+        Debug.Log(transform);
+        // if (car.transform.Rotate.z < -75) {
+        //     transform.Rotate.z = -75;
+        // }
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
