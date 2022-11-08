@@ -8,7 +8,8 @@ public class CarMovement : MonoBehaviour
     [SerializeField] float horizontalMovement = 0;
     [SerializeField] float verticalMovement = 0;
     [SerializeField] int speed = 20;
-    [SerializeField] float jumpForce = 500.0f;
+    [SerializeField] int rotationFactor = 5;
+    [SerializeField] float jumpForce = 1000.0f;
     [SerializeField] bool isFacingRight = true;
     [SerializeField] bool jumpPressed = false;
     [SerializeField] bool isGrounded = true;
@@ -32,11 +33,11 @@ public class CarMovement : MonoBehaviour
 			jumpPressed = true;
 
         if (gameObject.transform.rotation.z < -0.3) {
-            gameObject.transform.Rotate(0, 0, 2);
+            gameObject.transform.Rotate(0, 0, rotationFactor);
         }
 
         if (gameObject.transform.rotation.z > 0.4) {
-            gameObject.transform.Rotate(0, 0, -2);
+            gameObject.transform.Rotate(0, 0, -1 * rotationFactor);
         }
     }
 
@@ -46,11 +47,15 @@ public class CarMovement : MonoBehaviour
     }
 
 
-    void Jump() {
+    void Jet() {
         car.velocity = new Vector2(car.velocity.x * 2, car.velocity.y);
 		// car.AddForce(new Vector2(0, jumpForce));
 		// jumpPressed = false;
 		// isGrounded = false;
+    }
+
+    void Jump() {
+        car.AddForce(new Vector2(0, jumpForce));
     }
 
     void FixedUpdate()
@@ -66,6 +71,10 @@ public class CarMovement : MonoBehaviour
         //     Flip();
         // }
         if (jumpPressed) {
+            Jet();
+        }
+
+        if (Input.GetButtonDown("Fire1")) {
             Jump();
         }
       
