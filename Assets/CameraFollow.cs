@@ -6,22 +6,23 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform target;
     // public Vector3 offset;
+    public float smoothSpeed = 0.125f;
     [Range(1, 10)]
     public float smoothFactor;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        transform.position = target.position;
     }
 
 
-    
+
     void FixedUpdate() {
         // Vector3 targetPosition = new Vector3(target.position.x, target.position.y, -10.0f);
         // for horizontal follow only add this instead.
