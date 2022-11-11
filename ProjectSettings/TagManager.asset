@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Car
   layers:
   - Default
   - TransparentFX
@@ -11,10 +12,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - FirstBackground
+  - SecondBackground
+  - ThirdBackground
+  - FourthBackground
   - 
   - 
   - 
@@ -38,6 +39,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Sky
+    uniqueID: 2929397907
+    locked: 0
+  - name: ThirdBackround
+    uniqueID: 177587497
+    locked: 0
+  - name: SecondBackround
+    uniqueID: 1095719487
+    locked: 0
+  - name: FirstBackround
+    uniqueID: 4090896895
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
