@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarMovement : MonoBehaviour
 {
     [SerializeField] public static Rigidbody2D car;
     [SerializeField] float horizontalMovement = 0;
     [SerializeField] float verticalMovement = 0;
-    [SerializeField] int speed = 20;
+    [SerializeField] int speed = 10;
+    [SerializeField] int initialSpeed = 10;
+    [SerializeField] int gear = 1;
     [SerializeField] int rotationFactor = 5;
     [SerializeField] float jumpForce = 1000.0f;
     [SerializeField] bool isFacingRight = true;
     [SerializeField] bool jumpPressed = false;
     [SerializeField] bool isGrounded = true;
+    [SerializeField] public Text gearNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +25,8 @@ public class CarMovement : MonoBehaviour
         }
         // speed = 15;
         // jumpForce = 750.0f;
-
+        rotationFactor = 5;
+       
     }
 
     // Update is called once per frame
@@ -29,8 +34,17 @@ public class CarMovement : MonoBehaviour
     {
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
-        if (Input.GetButtonDown("Jump"))
-			jumpPressed = true;
+        if (Input.GetButtonDown("Fire1")) {
+            if (gear == 4) {
+                gear = 1;
+                return;
+            }
+            gear++;
+        }
+
+        gearNumber.text = gear + "";
+			// jumpPressed = true;
+            // Jet();
 
         if (gameObject.transform.rotation.z < -0.3) {
             gameObject.transform.Rotate(0, 0, rotationFactor);
@@ -39,6 +53,7 @@ public class CarMovement : MonoBehaviour
         if (gameObject.transform.rotation.z > 0.4) {
             gameObject.transform.Rotate(0, 0, -1 * rotationFactor);
         }
+        
     }
 
     void Flip() {
@@ -61,22 +76,22 @@ public class CarMovement : MonoBehaviour
     void FixedUpdate()
     {
         if(horizontalMovement > 0) {
-            speed = 35;
+            speed = gear * initialSpeed;
         }
         if(horizontalMovement < 0) {
-            speed = 15;
+            speed = gear * initialSpeed / 2;
         }
         car.velocity = new Vector2(horizontalMovement * speed, car.velocity.y);
         // if(horizontalMovement < 0 && isFacingRight || horizontalMovement > 0 && !isFacingRight) {
         //     Flip();
         // }
-        if (jumpPressed) {
-            Jet();
-        }
+        // if (jumpPressed) {
+        //     Jet();
+        // }
 
-        if (Input.GetButtonDown("Fire1")) {
-            Jump();
-        }
+        // if (Input.GetButtonDown("Fire1")) {
+        //     Jump();
+        // }
       
     }
 
