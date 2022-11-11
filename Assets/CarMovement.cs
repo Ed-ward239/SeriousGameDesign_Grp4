@@ -21,7 +21,7 @@ public class CarMovement : MonoBehaviour
         }
         // speed = 15;
         // jumpForce = 750.0f;
-
+        rotationFactor = 5;
     }
 
     // Update is called once per frame
@@ -29,8 +29,9 @@ public class CarMovement : MonoBehaviour
     {
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Fire1"))
 			jumpPressed = true;
+            // Jet();
 
         if (gameObject.transform.rotation.z < -0.3) {
             gameObject.transform.Rotate(0, 0, rotationFactor);
@@ -74,9 +75,9 @@ public class CarMovement : MonoBehaviour
             Jet();
         }
 
-        if (Input.GetButtonDown("Fire1")) {
-            Jump();
-        }
+        // if (Input.GetButtonDown("Fire1")) {
+        //     Jump();
+        // }
       
     }
 
