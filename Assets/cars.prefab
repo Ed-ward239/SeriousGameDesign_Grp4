@@ -23,9 +23,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6838785027591504106}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.40808105, y: 1.0451275, z: -0.02597887}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4940574418788065753}
@@ -41,7 +41,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7278499335020244515, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
       propertyPath: m_Name
-      value: Mustang
+      value: Car
       objectReference: {fileID: 0}
     - target: {fileID: 7278499335020244518, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
       propertyPath: m_RootOrder
@@ -49,15 +49,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7278499335020244518, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -175.78514
+      value: -0.8524
       objectReference: {fileID: 0}
     - target: {fileID: 7278499335020244518, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0852145
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7278499335020244518, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.8269787
+      value: -5.8946
       objectReference: {fileID: 0}
     - target: {fileID: 7278499335020244518, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
       propertyPath: m_LocalRotation.w
