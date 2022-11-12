@@ -26,7 +26,7 @@ public class CarMovement : MonoBehaviour
         // speed = 15;
         // jumpForce = 750.0f;
         rotationFactor = 5;
-       
+       initialSpeed = 15;
     }
 
     // Update is called once per frame
