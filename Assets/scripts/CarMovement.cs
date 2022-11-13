@@ -9,7 +9,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField] float horizontalMovement = 0;
     [SerializeField] float verticalMovement = 0;
     [SerializeField] int speed = 10;
-    [SerializeField] int initialSpeed = 10;
+    [SerializeField] int initialSpeed = 4;
     [SerializeField] int gear = 1;
     [SerializeField] int rotationFactor = 5;
     [SerializeField] float jumpForce = 1000.0f;
@@ -26,7 +26,7 @@ public class CarMovement : MonoBehaviour
         // speed = 15;
         // jumpForce = 750.0f;
         rotationFactor = 5;
-       initialSpeed = 15;
+       initialSpeed = 4;
     }
 
     // Update is called once per frame
@@ -63,7 +63,7 @@ public class CarMovement : MonoBehaviour
 
 
     void Jet() {
-        car.velocity = new Vector2(car.velocity.x * 2, car.velocity.y);
+        // car.velocity = new Vector2(car.velocity.x * 2, car.velocity.y);
 		// car.AddForce(new Vector2(0, jumpForce));
 		// jumpPressed = false;
 		// isGrounded = false;
@@ -75,13 +75,13 @@ public class CarMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(horizontalMovement > 0) {
-            speed = gear * initialSpeed;
-        }
-        if(horizontalMovement < 0) {
-            speed = gear * initialSpeed / 2;
-        }
-        car.velocity = new Vector2(horizontalMovement * speed, car.velocity.y);
+        // if(horizontalMovement > 0) {
+        //     speed = gear * initialSpeed;
+        // }
+        // if(horizontalMovement < 0) {
+        //     speed = gear * initialSpeed / 2;
+        // }
+        // car.velocity = new Vector2(horizontalMovement * speed, car.velocity.y);
         // if(horizontalMovement < 0 && isFacingRight || horizontalMovement > 0 && !isFacingRight) {
         //     Flip();
         // }
