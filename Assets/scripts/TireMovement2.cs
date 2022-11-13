@@ -20,29 +20,12 @@ public class TireMovement2 : MonoBehaviour
     void Update()
     {
         movement = Input.GetAxis("Horizontal");
-
-        if(Input.GetButtonDown("Jump")) {
-            brake = true;
-        }
-
-        if(!Input.GetButtonDown("Jump")) {
-            brake = false;
-        }
     }
 
     void FixedUpdate() {
+       
         frontTire.AddTorque(speed * -movement * Time.fixedDeltaTime);
         backTire.AddTorque(speed * -movement * Time.fixedDeltaTime);
-
-        if(Input.GetButtonDown("Jump")) {
-            frontTire.AddTorque(0);
-        backTire.AddTorque(0);
-
-        }
     }
 
-    void Brake() {
-           frontTire.AddTorque(0);
-        backTire.AddTorque(0);
-    }
 }
