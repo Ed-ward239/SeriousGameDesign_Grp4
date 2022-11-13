@@ -24,5 +24,11 @@ public class TireMovement2 : MonoBehaviour
     void FixedUpdate() {
         frontTire.AddTorque(speed * -movement * Time.fixedDeltaTime);
         backTire.AddTorque(speed * -movement * Time.fixedDeltaTime);
+
+        while(Input.GetButtonDown("Jump")) {
+            frontTire.AddTorque(0);
+        backTire.AddTorque(0);
+
+        }
     }
 }
