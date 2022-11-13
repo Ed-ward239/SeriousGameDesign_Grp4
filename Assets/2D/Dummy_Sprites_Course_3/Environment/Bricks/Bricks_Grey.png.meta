@@ -3,7 +3,7 @@ guid: 5127018c59f9cbb43937ea21ac43a3ac
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,6 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -114,6 +115,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -3027,12 +3052,12 @@ TextureImporter:
       Bricks_Grey_34: -1521956371
       Bricks_Grey_49: 1011553662
       Bricks_Grey_35: 244650238
-      Bricks_Grey_76: -583027743
-      Bricks_Grey_37: 742756194
+      Bricks_Grey_78: -891494765
       Bricks_Grey_126: 1202529703
+      Bricks_Grey_37: 742756194
+      Bricks_Grey_76: -583027743
       Bricks_Grey_131: -1446185024
       Bricks_Grey_104: -1400238451
-      Bricks_Grey_78: -891494765
       Bricks_Grey_129: -2144766624
       Bricks_Grey_13: 2137668417
       Bricks_Grey_65: -489698891
