@@ -80,7 +80,7 @@ SpriteShapeRenderer:
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: baaaeffcd0e3a4ffb85ac1b19a111311, type: 3}
   m_Sprites:
-  - {fileID: 21300000, guid: ca5506b5a01b44748a650a635c8845c7, type: 3}
+  - {fileID: 21300000, guid: d7e6466b93e1c452abee5680518ce3cb, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
@@ -90,8 +90,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: 999.0001, y: 1.5800002, z: 0}
-    m_Extent: {x: 1001.0001, y: 0.5800002, z: 0}
+    m_Center: {x: 999.0001, y: 1.54, z: 0}
+    m_Extent: {x: 1001.0001, y: 0.54000014, z: 0}
 --- !u!114 &3458857796901701954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-  m_SpriteShape: {fileID: 11400000, guid: df1e87ca94b5c40cdba653895760bb40, type: 2}
+  m_SpriteShape: {fileID: 11400000, guid: b612aeede07704c1abe734dc9441a4b5, type: 2}
   m_FillPixelPerUnit: 100
   m_StretchTiling: 1
   m_SplineDetail: 16
