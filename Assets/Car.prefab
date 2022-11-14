@@ -43,6 +43,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6765218822814241412, guid: ad90ea4c4007a4e5aa97931efc16d5db, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9070243263461658077, guid: ad90ea4c4007a4e5aa97931efc16d5db, type: 3}
       propertyPath: m_Name
       value: Mini
@@ -91,6 +95,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9070243264358013905, guid: ad90ea4c4007a4e5aa97931efc16d5db, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad90ea4c4007a4e5aa97931efc16d5db, type: 3}
 --- !u!4 &6487134167708671588 stripped
@@ -126,4 +134,4 @@ MonoBehaviour:
   isFacingRight: 1
   jumpPressed: 0
   isGrounded: 1
-  gearNumber: {fileID: 0}
+  speedNumber: {fileID: 0}
