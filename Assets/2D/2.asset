@@ -17,7 +17,7 @@ MonoBehaviour:
     m_End: 45
     m_Order: 0
     m_Sprites:
-    - {fileID: 21300000, guid: 9d45a4361c4a249afa3520675f0d3ce0, type: 3}
+    - {fileID: 21300000, guid: 0c7086fa8adf74b4cadaa25882d0bc50, type: 3}
   m_FillTexture: {fileID: 2800000, guid: cd392e9cb487e42feb580817b8dd9a1e, type: 3}
   m_CornerSprites:
   - m_CornerType: 0
@@ -45,4 +45,4 @@ MonoBehaviour:
     m_Sprites:
     - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_FillOffset: 0
-  m_UseSpriteBorders: 1
+  m_UseSpriteBorders: 0

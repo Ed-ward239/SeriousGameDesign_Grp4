@@ -9,6 +9,7 @@ public class TireMovement2 : MonoBehaviour
     public Rigidbody2D backTire;
     [SerializeField] int speed = 100;
     [SerializeField] float movement;
+    [SerializeField] bool brake = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,9 @@ public class TireMovement2 : MonoBehaviour
     }
 
     void FixedUpdate() {
-        frontTire.AddTorque(speed * -movement * Time.fixedDeltaTime);
-        backTire.AddTorque(speed * -movement * Time.fixedDeltaTime);
+       
+        // frontTire.AddTorque(speed * -movement * Time.fixedDeltaTime);
+        // backTire.AddTorque(speed * -movement * Time.fixedDeltaTime);
     }
+
 }
