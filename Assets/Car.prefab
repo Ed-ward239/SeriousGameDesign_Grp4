@@ -39,6 +39,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5863022451611332328}
     m_Modifications:
+    - target: {fileID: 1160635592, guid: ad90ea4c4007a4e5aa97931efc16d5db, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9070243263461658077, guid: ad90ea4c4007a4e5aa97931efc16d5db, type: 3}
       propertyPath: m_Name
       value: Mini
@@ -94,3 +98,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9070243263461658078, guid: ad90ea4c4007a4e5aa97931efc16d5db, type: 3}
   m_PrefabInstance: {fileID: 2871348324790703034}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6487134168737747913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9070243264593494131, guid: ad90ea4c4007a4e5aa97931efc16d5db, type: 3}
+  m_PrefabInstance: {fileID: 2871348324790703034}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1160635593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6487134168737747913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b453db27024c84b00a5e30d94cc72cfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalMovement: 0
+  verticalMovement: 0
+  speed: 10
+  velocity: 0
+  initialSpeed: 4
+  gear: 1
+  rotationFactor: 5
+  jumpForce: 1000
+  isFacingRight: 1
+  jumpPressed: 0
+  isGrounded: 1
+  gearNumber: {fileID: 0}
