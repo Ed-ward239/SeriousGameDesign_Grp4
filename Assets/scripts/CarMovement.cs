@@ -9,6 +9,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField] float horizontalMovement = 0;
     [SerializeField] float verticalMovement = 0;
     [SerializeField] int speed = 10;
+    [SerializeField] float velocity;
     [SerializeField] int initialSpeed = 4;
     [SerializeField] int gear = 1;
     [SerializeField] int rotationFactor = 5;
@@ -34,15 +35,15 @@ public class CarMovement : MonoBehaviour
     {
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
-        if (Input.GetButtonDown("Fire1")) {
-            if (gear == 4) {
-                gear = 1;
-                return;
-            }
-            gear++;
-        }
+        // if (Input.GetButtonDown("Fire1")) {
+        //     if (gear == 4) {
+        //         gear = 1;
+        //         return;
+        //     }
+        //     gear++;
+        // }
 
-        gearNumber.text = gear + "";
+        // gearNumber.text = gear + "";
 			// jumpPressed = true;
             // Jet();
 
@@ -53,6 +54,8 @@ public class CarMovement : MonoBehaviour
         if (gameObject.transform.rotation.z > 0.4) {
             gameObject.transform.Rotate(0, 0, -1 * rotationFactor);
         }
+
+        velocity = car.velocity.magnitude;
         
     }
 

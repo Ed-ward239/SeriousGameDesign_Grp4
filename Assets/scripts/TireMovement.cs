@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TireMovement : MonoBehaviour
 {
@@ -8,7 +9,10 @@ public class TireMovement : MonoBehaviour
     [SerializeField] float horizontalMovement;
     [SerializeField] bool brake = false;
     [SerializeField] float verticalMovement;
-    [SerializeField] int speed = 20;
+    [SerializeField] int initialSpeed = 50;
+    [SerializeField] int speed = 25;
+    [SerializeField] int gear = 1;
+    [SerializeField] public Text gearNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,23 @@ public class TireMovement : MonoBehaviour
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
 
+        if (Input.GetButtonDown("Fire1")) {
+            if (gear == 4) {
+                gear = 1;
+                return;
+            }
+            gear++;
+        }
+
+        if(horizontalMovement > 0) {
+            speed = gear * initialSpeed;
+        }
+        if(horizontalMovement < 0) {
+            speed = gear * initialSpeed / 2;
+        }
+
+        gearNumber.text = gear + "";
+
          if(Input.GetButtonDown("Jump")) {
             brake = true;
         }
@@ -32,9 +53,11 @@ public class TireMovement : MonoBehaviour
     }
 
     void FixedUpdate() {
-        gameObject.transform.Rotate(0, 0, 0);
+        tire.AddTorque(speed * -horizontalMovement * Time.fixedDeltaTime);
+
         if (brake) {
-            gameObject.transform.Rotate(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            tire.AddTorque(0);
         }
         // tire.velocity = new Vector2(horizontalMovement * speed, 0);
 

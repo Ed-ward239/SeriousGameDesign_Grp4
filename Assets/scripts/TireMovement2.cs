@@ -24,8 +24,8 @@ public class TireMovement2 : MonoBehaviour
 
     void FixedUpdate() {
        
-        frontTire.AddTorque(speed * -movement * Time.fixedDeltaTime);
-        backTire.AddTorque(speed * -movement * Time.fixedDeltaTime);
+        // frontTire.AddTorque(speed * -movement * Time.fixedDeltaTime);
+        // backTire.AddTorque(speed * -movement * Time.fixedDeltaTime);
     }
 
 }
