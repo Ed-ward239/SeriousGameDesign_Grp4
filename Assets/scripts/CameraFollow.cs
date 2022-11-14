@@ -25,7 +25,7 @@ public class CameraFollow : MonoBehaviour
     void FixedUpdate() {
         // Vector3 targetPosition = new Vector3(target.position.x, target.position.y, -10.0f);
         // for horizontal follow only add this instead.
-         Vector3 targetPosition = new Vector3(target.position.x + 6, transform.position.y, -10.0f);
+         Vector3 targetPosition = new Vector3(target.position.x + 8, transform.position.y, -10.0f);
         Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, smoothFactor * Time.fixedDeltaTime);
         transform.position = smoothPosition;
     }

@@ -18,6 +18,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField] bool jumpPressed = false;
     [SerializeField] bool isGrounded = true;
     [SerializeField] public Text speedNumber;
+    [SerializeField] bool brake = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +47,10 @@ public class CarMovement : MonoBehaviour
         // gearNumber.text = gear + "";
 			// jumpPressed = true;
             // Jet();
+        if(horizontalMovement != 0) {
+            brake = false; 
+        }
+
 
         if (gameObject.transform.rotation.z < -0.3) {
             gameObject.transform.Rotate(0, 0, rotationFactor);
@@ -96,7 +101,15 @@ public class CarMovement : MonoBehaviour
         // if (Input.GetButtonDown("Fire1")) {
         //     Jump();
         // }
-      
+        
+        if(Input.GetButtonDown("Jump")) {
+            brake = true;
+        }
+
+        if (brake) {
+            car.velocity = new Vector2(car.velocity.x / 2, car.velocity.y);
+        }
+
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
