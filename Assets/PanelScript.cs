@@ -9,28 +9,23 @@ public class PanelScript : MonoBehaviour
     public GameObject Sign;
 
     
-    public void toggleCar(){
+    public void vanishCar(){
         if(Car!= null){
-            bool isActive = Car.activeSelf;
-            Car.SetActive(!isActive);
+            Car.SetActive(false);
         }
     }
-    public void togglePanel(){ //turns panel off/on
+    public void appearPanel(){ //turns panel off/on
         if(Panel!= null){
-            bool isActive = Panel.activeSelf;
-            Panel.SetActive(!isActive);
-            toggleCar();
+           // bool isActive = Panel.activeSelf;
+            Panel.SetActive(true);
+            vanishCar();
         }
-        while(Panel.activeSelf){
-        }
-        StartCoroutine(EnableBox(5.0F));
-
-        
     }    
     private void OnTriggerEnter2D(Collider2D collider){
         Sign.GetComponent<BoxCollider2D> ().enabled = false;
         Debug.Log("Trigger Panel!");
-        togglePanel();
+        appearPanel();
+        StartCoroutine(EnableBox(20.0F));
     }
  
     IEnumerator EnableBox(float waitTime) {
