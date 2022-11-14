@@ -126,4 +126,4 @@ MonoBehaviour:
   isFacingRight: 1
   jumpPressed: 0
   isGrounded: 1
-  gearNumber: {fileID: 0}
+  speedNumber: {fileID: 0}
