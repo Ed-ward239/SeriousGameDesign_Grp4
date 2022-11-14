@@ -17,7 +17,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField] bool isFacingRight = true;
     [SerializeField] bool jumpPressed = false;
     [SerializeField] bool isGrounded = true;
-    [SerializeField] public Text gearNumber;
+    [SerializeField] public Text speedNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +56,7 @@ public class CarMovement : MonoBehaviour
         }
 
         velocity = car.velocity.magnitude;
+        speedNumber.text = velocity + "";
         
     }
 
