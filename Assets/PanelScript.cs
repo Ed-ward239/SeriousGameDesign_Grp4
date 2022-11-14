@@ -21,12 +21,16 @@ public class PanelScript : MonoBehaviour
             Panel.SetActive(!isActive);
             toggleCar();
         }
+        while(Panel.activeSelf){
+        }
+        StartCoroutine(EnableBox(5.0F));
+
+        
     }    
     private void OnTriggerEnter2D(Collider2D collider){
+        Sign.GetComponent<BoxCollider2D> ().enabled = false;
         Debug.Log("Trigger Panel!");
         togglePanel();
-        Sign.GetComponent<BoxCollider2D> ().enabled = false;
-        StartCoroutine(EnableBox(5.0F));
     }
  
     IEnumerator EnableBox(float waitTime) {
