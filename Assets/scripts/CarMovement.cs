@@ -9,9 +9,9 @@ public class CarMovement : MonoBehaviour
     [SerializeField] float horizontalMovement = 0;
     [SerializeField] float verticalMovement = 0;
     [SerializeField] int speed = 10;
-    [SerializeField] float velocity;
+    [SerializeField] public float velocity;
     [SerializeField] int initialSpeed = 4;
-    [SerializeField] int gear = 1;
+    [SerializeField] int gear;
     [SerializeField] int rotationFactor = 5;
     [SerializeField] float jumpForce = 1000.0f;
     [SerializeField] bool isFacingRight = true;
@@ -19,12 +19,15 @@ public class CarMovement : MonoBehaviour
     [SerializeField] bool isGrounded = true;
     [SerializeField] public Text speedNumber;
     [SerializeField] bool brake = false;
+    [SerializeField] GameObject tire;
     // Start is called before the first frame update
     void Start()
     {
         if (car == null) {
             car = GetComponent<Rigidbody2D>();
         }
+
+        tire = GameObject.FindGameObjectWithTag("Tire");
         // speed = 15;
         // jumpForce = 750.0f;
         rotationFactor = 5;
@@ -60,9 +63,22 @@ public class CarMovement : MonoBehaviour
             gameObject.transform.Rotate(0, 0, -1 * rotationFactor);
         }
 
-        velocity = car.velocity.magnitude;
+        velocity = car.velocity.x;
         speedNumber.text = velocity + "";
         
+        gear = tire.GetComponent<TireMovement>().gear;
+
+        if (car.velocity.x > gear * 2.50f && gear < 4) {
+            car.velocity = new Vector2(car.velocity.x - 0.5f, car.velocity.y);
+        }
+
+           if (brake && car.velocity.x >= 0.1f) {
+            car.velocity = new Vector2(car.velocity.x - 0.5f, car.velocity.y);
+        }
+
+        // if (brake && car.velocity.x < 0.9f) {
+        //     car.velocity = new Vector2(0, car.velocity.y);
+        // }
     }
 
     void Flip() {
@@ -104,10 +120,6 @@ public class CarMovement : MonoBehaviour
         
         if(Input.GetButtonDown("Jump")) {
             brake = true;
-        }
-
-        if (brake) {
-            car.velocity = new Vector2(car.velocity.x / 2, car.velocity.y);
         }
 
     }

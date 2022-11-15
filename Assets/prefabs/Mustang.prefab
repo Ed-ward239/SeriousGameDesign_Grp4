@@ -241,15 +241,15 @@ PolygonCollider2D:
       - {x: -9.520887, y: -2.984769}
       - {x: -9.182108, y: -2.9964511}
       - {x: -8.8433275, y: -3.0198152}
-      - {x: -8.107357, y: -3.0198152}
-      - {x: -7.6868024, y: -2.9964511}
-      - {x: -7.266248, y: -2.984769}
-      - {x: -6.635416, y: -2.9497228}
-      - {x: -6.413457, y: -2.9380407}
-      - {x: -6.2031794, y: -2.9263587}
-      - {x: -5.794307, y: -2.9146767}
-      - {x: -5.5840297, y: -2.9029946}
-      - {x: -5.3620706, y: -2.8913126}
+      - {x: -8.795145, y: -2.5612903}
+      - {x: -8.603851, y: -1.1114062}
+      - {x: -7.903087, y: -0.48835826}
+      - {x: -7.195835, y: -0.1985755}
+      - {x: -6.3370366, y: -0.23783922}
+      - {x: -5.84655, y: -0.3280511}
+      - {x: -5.2593613, y: -0.69847393}
+      - {x: -4.6160345, y: -1.7057344}
+      - {x: -4.572389, y: -2.8658397}
       - {x: -4.941516, y: -2.8679483}
       - {x: -4.719557, y: -2.8562663}
       - {x: -4.602736, y: -2.8796306}
@@ -270,15 +270,16 @@ PolygonCollider2D:
       - {x: 4.766285, y: -3.0548615}
       - {x: 5.2452497, y: -3.0899076}
       - {x: 5.455527, y: -3.1015897}
-      - {x: 5.5256195, y: -3.0081332}
-      - {x: 6.436821, y: -3.0314975}
-      - {x: 6.8807397, y: -3.0431795}
-      - {x: 7.3363404, y: -3.0548615}
-      - {x: 8.212496, y: -3.0548615}
-      - {x: 8.224178, y: -3.0665436}
-      - {x: 8.679779, y: -3.0782256}
-      - {x: 9.5676155, y: -3.0899076}
-      - {x: 9.602662, y: -3.124954}
+      - {x: 5.3982515, y: -2.931713}
+      - {x: 5.5197716, y: -1.7832913}
+      - {x: 6.192953, y: -0.62318754}
+      - {x: 7.361813, y: -0.17634583}
+      - {x: 8.034181, y: -0.2527659}
+      - {x: 8.606282, y: -0.49371028}
+      - {x: 9.316619, y: -1.0658112}
+      - {x: 9.677526, y: -2.1832876}
+      - {x: 9.6949835, y: -3.0389607}
+      - {x: 9.73003, y: -3.0740068}
       - {x: 10.023217, y: -3.136636}
       - {x: 10.794233, y: -3.16}
       - {x: 11.9624405, y: -3.16}
@@ -377,6 +378,8 @@ MonoBehaviour:
   jumpPressed: 0
   isGrounded: 1
   speedNumber: {fileID: 0}
+  brake: 0
+  tire: {fileID: 0}
 --- !u!1 &369457064415583654
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +395,7 @@ GameObject:
   - component: {fileID: 835162492990802202}
   m_Layer: 0
   m_Name: tire front
-  m_TagString: Untagged
+  m_TagString: Tire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -405,7 +408,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369457064415583654}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.09, y: -1.8, z: 10}
+  m_LocalPosition: {x: 6.19, y: -1.95, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -452,7 +455,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9bfa7e62db6724d42aa54726ac47ca63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -473,7 +476,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 369457064415583654}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8be6341e1ce3f4cec9902bc34f72d20a, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -499,6 +502,7 @@ MonoBehaviour:
   speed: 20
   gear: 1
   gearNumber: {fileID: 0}
+  car: {fileID: 0}
 --- !u!50 &835162492990802202
 Rigidbody2D:
   serializedVersion: 4
@@ -569,7 +573,7 @@ GameObject:
   - component: {fileID: 6468393564147147795}
   m_Layer: 0
   m_Name: tire back
-  m_TagString: Untagged
+  m_TagString: Tire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -629,7 +633,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 11cabac85b6aa4529a4fcff3431032ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -650,7 +654,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 369457064665128245}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3119db3180bf9497cb903f303c275391, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -676,6 +680,7 @@ MonoBehaviour:
   speed: 20
   gear: 1
   gearNumber: {fileID: 0}
+  car: {fileID: 0}
 --- !u!50 &6468393564147147795
 Rigidbody2D:
   serializedVersion: 4

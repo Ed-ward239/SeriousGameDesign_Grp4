@@ -30,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4073212940842434170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.872, y: -0.8635, z: 9.934436}
-  m_LocalScale: {x: 0.3241701, y: 0.3241701, z: 0.6483402}
+  m_LocalPosition: {x: -1.702, y: -0.741, z: 9.934436}
+  m_LocalScale: {x: 0.38511407, y: 0.38511407, z: 0.6483402}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9070243263461658078}
@@ -273,8 +273,8 @@ WheelJoint2D:
   m_Anchor: {x: 1.835001, y: -1.3800001}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
-    m_DampingRatio: 0.7
-    m_Frequency: 2
+    m_DampingRatio: 0.9
+    m_Frequency: 200
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -297,8 +297,8 @@ WheelJoint2D:
   m_Anchor: {x: -1.930399, y: -1.3800001}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
-    m_DampingRatio: 0.7
-    m_Frequency: 2
+    m_DampingRatio: 0.9
+    m_Frequency: 200
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -328,6 +328,8 @@ MonoBehaviour:
   jumpPressed: 0
   isGrounded: 1
   speedNumber: {fileID: 0}
+  brake: 0
+  tire: {fileID: 4279067961541623709}
 --- !u!1 &4279067961541623709
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +345,7 @@ GameObject:
   - component: {fileID: 354415355}
   m_Layer: 0
   m_Name: wheel-front
-  m_TagString: Untagged
+  m_TagString: Tire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -356,8 +358,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4279067961541623709}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2772, y: -1.3108, z: 9.934436}
-  m_LocalScale: {x: 0.3241701, y: 0.3241701, z: 0.6483402}
+  m_LocalPosition: {x: -0.9954, y: -1.2724, z: 9.934436}
+  m_LocalScale: {x: 0.38511407, y: 0.38511407, z: 0.6483402}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9070243263461658078}
@@ -471,6 +473,7 @@ MonoBehaviour:
   speed: 25
   gear: 1
   gearNumber: {fileID: 0}
+  car: {fileID: 0}
 --- !u!1 &9070243263461658077
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +523,7 @@ GameObject:
   - component: {fileID: 2003845149}
   m_Layer: 0
   m_Name: wheel-back
-  m_TagString: Untagged
+  m_TagString: Tire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -533,8 +536,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9070243264358013909}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.4977, y: -1.3108, z: 9.934436}
-  m_LocalScale: {x: 0.3241701, y: 0.3241701, z: 0.6483402}
+  m_LocalPosition: {x: -2.4453, y: -1.2724, z: 9.934436}
+  m_LocalScale: {x: 0.38511407, y: 0.38511407, z: 0.6483402}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9070243263461658078}
@@ -648,3 +651,4 @@ MonoBehaviour:
   speed: 25
   gear: 1
   gearNumber: {fileID: 0}
+  car: {fileID: 0}

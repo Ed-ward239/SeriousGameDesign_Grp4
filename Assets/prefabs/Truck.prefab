@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 9162101738417877365}
   m_Layer: 0
   m_Name: car-wheel-front
-  m_TagString: Untagged
+  m_TagString: Tire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6b4bbea1d02a942edb0abc58f9dacbb4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -177,6 +177,7 @@ MonoBehaviour:
   speed: 25
   gear: 1
   gearNumber: {fileID: 0}
+  car: {fileID: 0}
 --- !u!1 &5254586594059510775
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +193,7 @@ GameObject:
   - component: {fileID: 8447150019304545965}
   m_Layer: 0
   m_Name: car-wheel-back
-  m_TagString: Untagged
+  m_TagString: Tire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,7 +253,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6b4bbea1d02a942edb0abc58f9dacbb4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -320,6 +321,7 @@ MonoBehaviour:
   speed: 25
   gear: 1
   gearNumber: {fileID: 0}
+  car: {fileID: 0}
 --- !u!1 &7111186764722593903
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +339,7 @@ GameObject:
   - component: {fileID: 425876151880757152}
   m_Layer: 0
   m_Name: car-body
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -588,3 +590,5 @@ MonoBehaviour:
   jumpPressed: 0
   isGrounded: 1
   speedNumber: {fileID: 0}
+  brake: 0
+  tire: {fileID: 0}
