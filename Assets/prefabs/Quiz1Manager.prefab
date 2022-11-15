@@ -1,0 +1,357 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6481967043750343938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6481967043750344189}
+  - component: {fileID: 6481967043750344188}
+  m_Layer: 0
+  m_Name: QuizManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6481967043750344189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6481967043750343938}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6481967043750344188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6481967043750343938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f7d4c6b7cb49f19526984793b3ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QnA:
+  - Question: What does a flashing yellow light mean?
+    Answers:
+    - Merging traffic
+    - Proceed with caution
+    - Pedestrian crossing
+    - Come to a full stop
+    CorrectAnswer: 2
+  - Question: 'You are making a left turn away from a two-way street into a one-way
+      street.  When you have completed the turn your car should be:'
+    Answers:
+    - 'In the right lane of the street '
+    - 'In the center of the street '
+    - 'In the left lane of the street '
+    - 'In the lane with the least traffic  '
+    CorrectAnswer: 3
+  - Question: 'Seat belts can be most effective as injury preventive devices when
+      they are worn by: '
+    Answers:
+    - 'The person driving the car '
+    - 'Passengers when they are on a long drive '
+    - 'All occupants of a car being driven on an expressway '
+    - 'Passengers and the driver whenever they are in the car  '
+    CorrectAnswer: 4
+  - Question: 'You must yield the right-of-way to an approaching vehicle when you
+      are: '
+    Answers:
+    - 'Already in a traffic circle '
+    - 'Already in an intersection '
+    - 'Going straight ahead '
+    - 'Turning left  '
+    CorrectAnswer: 4
+  - Question: 'A bicyclist differs from a motorist in that he isn''t required to: '
+    Answers:
+    - 'Obey the same traffic laws '
+    - 'Signal all turns '
+    - 'Report accidents resulting in serious injury '
+    - 'Insure the bicycle  '
+    CorrectAnswer: 4
+  - Question: 'Night driving is dangerous because: '
+    Answers:
+    - 'Some traffic signs are less visible at night '
+    - 'More vehicles are on the road at night '
+    - 'The distance we can see ahead is reduced '
+    - 'Street lights tend to blur our vision  '
+    CorrectAnswer: 3
+  - Question: 'Drinking alcohol and driving is: '
+    Answers:
+    - 'A minor traffic safety problem '
+    - 'A serious traffic safety problem '
+    - 'Safe if you only have a few drinks '
+    - 'Only dangerous to the driver who drinks  '
+    CorrectAnswer: 2
+  - Question: 'What are the colors of a sign which tells you the distance to the
+      next exit of a highway? '
+    Answers:
+    - 'Yellow with black letters '
+    - 'Black with white letters '
+    - 'Red with white letters '
+    - 'Green with white letters  '
+    CorrectAnswer: 4
+  - Question: 'You have just left an expressway and are starting to drive on an ordinary
+      highway.  You should: '
+    Answers:
+    - 'Check your tires for correct pressure '
+    - 'Check your speedometer to keep at the lower speed limit '
+    - 'Stay twice as far behind other cars '
+    - 'Change gradually to the lower speed limit  '
+    CorrectAnswer: 2
+  - Question: 'Before you leave a parking space which is parallel to the curb, you
+      should: '
+    Answers:
+    - 'Sound your horn '
+    - 'Turn on your four-way flasher '
+    - 'Look for traffic by turning your head '
+    - 'Look for traffic by using your inside rear-view mirror  '
+    CorrectAnswer: 3
+  - Question: 'On a New York State highway where there is no posted speed limit,
+      the fastest you may legally drive is: '
+    Answers:
+    - '50 mph '
+    - '55 mph '
+    - '60 mph '
+    - '65 mph '
+    CorrectAnswer: 2
+  - Question: 'If traffic prevents you from crossing all the way across a set of
+      railroad tracks, you may proceed only when: '
+    Answers:
+    - 'An approaching train is not moving fast enough to be a danger '
+    - 'There is room for your vehicle on the other side '
+    - 'At least one half of your vehicle can cross the tracks '
+    - 'No trains are in sight  '
+    CorrectAnswer: 2
+  - Question: 'You must pull over and stop for: '
+    Answers:
+    - 'Vehicles that display blue, green or amber lights '
+    - 'Authorized emergency vehicles responding to emergencies '
+    - 'A hazard vehicle that is parked, stopped or standing on any part of the highway '
+    - 'Stopped or standing school buses  '
+    CorrectAnswer: 2
+  - Question: 'Which of the following may describe a work zone sign? '
+    Answers:
+    - 'A white rectangle with black letters '
+    - 'An orange diamond with black letters '
+    - 'A green rectangle with white letters '
+    - 'A yellow circle with black letters  '
+    CorrectAnswer: 2
+  - Question: 'What should you do when you are going to enter a roadway from a private
+      road? '
+    Answers:
+    - 'Blow your horn to warn cars you are entering the roadway '
+    - 'Stop with part of the car on the roadway to warn other drivers '
+    - 'Drive out fast to merge smoothly with the traffic '
+    - 'Yield the right-of-way to pedestrians and roadway traffic  '
+    CorrectAnswer: 4
+  - Question: 'An intersection has a stop sign and a crosswalk, but no stop line. 
+      You must stop: '
+    Answers:
+    - 'Before the crosswalk '
+    - '50 feet before the intersection '
+    - 'Where you think the stop line would be '
+    - 'With your front wheels in the crosswalk  '
+    CorrectAnswer: 1
+  - Question: 'Signs that warn "lane closed ahead" may indicate a work zone ahead.
+      You should: '
+    Answers:
+    - 'Merge your vehicle into the correct lane when it is safe '
+    - 'Drive to the end of the closed lane before attempting to merge '
+    - 'Understand that this sign is merely a suggestion and continue in the lane '
+    - 'Speed up to merge as quickly as possible  '
+    CorrectAnswer: 1
+  - Question: 'In general, you should pass vehicles going in the same direction you
+      are going: '
+    Answers:
+    - 'On the right '
+    - On the left
+    - 'Only if the other driver signals it is safe '
+    - 'Whenever you have the opportunity to do so  '
+    CorrectAnswer: 2
+  - Question: 'As you near an intersection, the traffic light changes from green
+      to yellow.  Your best action would be to: '
+    Answers:
+    - 'Speed up to beat the red light '
+    - 'Apply the brakes sharply to stop '
+    - 'Be prepared to stop in the center of the intersection '
+    - 'Be prepared to stop before the intersection  '
+    CorrectAnswer: 4
+  - Question: 'You may drive around or under a gate that is being lowered or raised
+      at a railroad crossing: '
+    Answers:
+    - 'As long as an approaching train is not too close '
+    - 'If your vehicle can do so without damaging the gate '
+    - 'If you first look carefully in both directions '
+    - 'Under no circumstances  '
+    CorrectAnswer: 4
+  - Question: 'When attempting to stop on a slippery road, the best action to take
+      is: '
+    Answers:
+    - 'Apply the brakes quickly and firmly '
+    - 'Apply the brakes in slow, steady strokes '
+    - 'Shift to a lower gear, do not use the brakes '
+    - 'Shift into neutral, do not use the brakes  '
+    CorrectAnswer: 2
+  - Question: 'Minimum speed signs are designed to: '
+    Answers:
+    - 'Keep traffic flowing smoothly '
+    - 'Show current local road conditions '
+    - 'Test future traffic signal needs '
+    - 'Assure pedestrian safety  '
+    CorrectAnswer: 1
+  - Question: 'What effect does drinking alcohol and taking a prescription drug or
+      over the counter medicine have? '
+    Answers:
+    - 'The medicine reduces the effect of the alcohol '
+    - 'The alcohol will help the medicine cure the cold '
+    - 'The combination could multiply the effects of the alcohol '
+    - 'No effect, they are difference substances  '
+    CorrectAnswer: 3
+  - Question: 'On a road which has no sidewalks a pedestrian should walk on the: '
+    Answers:
+    - 'Side of the road which has the lightest traffic '
+    - 'Same side of the road in which traffic is moving '
+    - 'Side of the road facing oncoming traffic '
+    - 'Side of the road which has the heaviest traffic  '
+    CorrectAnswer: 3
+  - Question: 'A motorist approaching a bicyclist should: '
+    Answers:
+    - 'Speed up to pass him '
+    - 'Proceed as usual '
+    - 'Swerve into the opposite lane '
+    - 'Exercise extreme caution  '
+    CorrectAnswer: 4
+  - Question: 'Your car starts to skid on a slippery road.  You should: '
+    Answers:
+    - 'Brake quickly and keep the wheel straight '
+    - 'Lock your brakes until you have come to a complete stop '
+    - 'Steer in the direction you want the front wheels to go '
+    - 'Steer toward the side of the road to get off the wet pavement  '
+    CorrectAnswer: 3
+  - Question: 'Expressways have "expressway entrance lanes" (acceleration lanes)
+      so that drivers can: '
+    Answers:
+    - 'Test their brakes before driving at expressway speeds '
+    - 'Stop at the end to wait for a traffic opening '
+    - 'Reach the proper speed before blending with traffic '
+    - 'Test the pickup of their cars  '
+    CorrectAnswer: 3
+  - Question: 'If you are parked parallel to the curb, you may get out of the car
+      on the traffic side: '
+    Answers:
+    - 'During the daytime when other drivers can see you '
+    - 'When the traffic light at the closest intersection turns red '
+    - 'When you won''t interfere with oncoming vehicles '
+    - 'If you use your four-way flasher first  '
+    CorrectAnswer: 3
+  - Question: 'You may never park: '
+    Answers:
+    - 'On a one-way street '
+    - 'At the entrance of a building '
+    - 'In a crosswalk '
+    - 'Within 50 feet of a fire hydrant  '
+    CorrectAnswer: 2
+  - Question: 'You may pass another vehicle on the right if it is waiting to: '
+    Answers:
+    - 'Turn right '
+    - Turn left
+    - 'Park at the curb '
+    - 'Turn into a driveway on the right  '
+    CorrectAnswer: 2
+  - Question: 'Drinking coffee after drinking alcohol: '
+    Answers:
+    - 'Decreases blood alcohol content '
+    - 'Cancels the effect of the alcohol '
+    - 'Has no effect on blood alcohol content '
+    - 'Increases blood alcohol content  '
+    CorrectAnswer: 3
+  - Question: 'The driver''s left hand and arm are extended upward.  This hand signal
+      means that the driver plans to: '
+    Answers:
+    - 'Turn left '
+    - 'Turn right '
+    - 'Come to a stop '
+    - 'Go straight ahead  '
+    CorrectAnswer: 2
+  - Question: 'A "no stopping" sign means that, unless directed to do so by a policeman,
+      you may stop only: '
+    Answers:
+    - 'Long enough to unload packages '
+    - 'To avoid conflict with other traffic '
+    - 'To discharge passengers '
+    - 'For less than 5 minutes  '
+    CorrectAnswer: 2
+  - Question: 'Which of the following statements applies to all driving emergency
+      situations? '
+    Answers:
+    - 'Always slow down gradually '
+    - 'Your first reaction is the best reaction '
+    - 'Think before you act '
+    - 'Apply your brakes immediately  '
+    CorrectAnswer: 3
+  - Question: 'A solid white line on the right edge of the highway slants in toward
+      your left.  This shows that: '
+    Answers:
+    - 'There is an intersection just ahead '
+    - 'You are approaching a construction area '
+    - 'You will be required to turn left just ahead '
+    - 'The road will get narrower  '
+    CorrectAnswer: 4
+  - Question: 'Which of the following influence the effects of alcohol? '
+    Answers:
+    - 'The amount of food in the stomach '
+    - 'The body weight of an individual '
+    - 'How much time passes between drinks '
+    - 'All three choices  '
+    CorrectAnswer: 4
+  - Question: 'In this state, what BAC (blood alcohol content) is evidence of intoxication? '
+    Answers:
+    - '0.05% '
+    - '0.03% '
+    - '0.10% '
+    - '0.08% '
+    CorrectAnswer: 4
+  - Question: 'If you drink alcohol socially, what helps ensure safe driving? '
+    Answers:
+    - 'Drink coffee before driving '
+    - 'Ride home with a friend who has not been drinking '
+    - 'Take a cold shower before driving '
+    - 'Stop drinking one half hour before driving  '
+    CorrectAnswer: 2
+  - Question: 'A motorist should know that a bicyclist operating on a roadway must: '
+    Answers:
+    - 'Ride on the right side of the road '
+    - 'Ride on the side of the road facing traffic '
+    - 'Ride on either side of the road '
+    - 'Ride on the side of the road with the least traffic  '
+    CorrectAnswer: 1
+  - Question: 'When you drive in heavy fog during daylight hours you should drive
+      with your: '
+    Answers:
+    - 'Headlights off '
+    - 'Parking lights on '
+    - 'Headlights on low beam '
+    - 'Headlights on high beam '
+    CorrectAnswer: 3
+  options:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currentQuestion: 0
+  QuestionTxt: {fileID: 0}
