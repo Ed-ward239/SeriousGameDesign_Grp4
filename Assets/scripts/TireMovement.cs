@@ -11,12 +11,16 @@ public class TireMovement : MonoBehaviour
     [SerializeField] float verticalMovement;
     [SerializeField] int initialSpeed = 50;
     [SerializeField] int speed = 25;
-    [SerializeField] int gear = 1;
+    [SerializeField] public int gear = 1;
     [SerializeField] public Text gearNumber;
+    [SerializeField] public GameObject car;
     // Start is called before the first frame update
     void Start()
     {
         tire = GetComponent<Rigidbody2D>();
+          if (car == null) {
+            car = GameObject.FindGameObjectWithTag("Car");
+        }
     }
 
     // Update is called once per frame
@@ -33,18 +37,11 @@ public class TireMovement : MonoBehaviour
             gear++;
         }
 
-        if(horizontalMovement > 0) {
-            speed = gear * initialSpeed;
-        }
-        if(horizontalMovement < 0) {
-            speed = gear * initialSpeed / 2;
-        }
+
 
         gearNumber.text = gear + "";
 
-         if(Input.GetButtonDown("Jump")) {
-            brake = true;
-        }
+
 
          if(horizontalMovement != 0) {
             brake = false; 
@@ -67,7 +64,21 @@ public class TireMovement : MonoBehaviour
         // if (horizontalMovement < 0)   
         //     rotation = horizontalMovement * (-15);
         // RotateTire(rotation);
+    //  if (car.velocity > 10.0f) {
+    //         car.velocity = new Vector2(car.velocity.x - 1, car.velocity.y);
+    //     }
 
+        if(Input.GetButtonDown("Jump")) {
+            brake = true;
+        }
+
+        if(horizontalMovement > 0) {
+            speed = gear * initialSpeed;
+        }
+
+        if(horizontalMovement < 0) {
+            speed = gear * initialSpeed / 2;
+        }
         
         
     }
@@ -79,5 +90,9 @@ public class TireMovement : MonoBehaviour
 
     void Brake() {
         gameObject.transform.Rotate(0, 0, 0);
+    }
+
+    public int GetGear() {
+        return gear;
     }
 }
