@@ -87,8 +87,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mustang
       objectReference: {fileID: 0}
+    - target: {fileID: 7780404638627755764, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
+      propertyPath: tire
+      value: 
+      objectReference: {fileID: 5955613355398924290}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
+--- !u!1 &5955613355398924290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 369457064415583654, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
+  m_PrefabInstance: {fileID: 6306734877871953316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5955613355451983740 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 369457064467395288, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
