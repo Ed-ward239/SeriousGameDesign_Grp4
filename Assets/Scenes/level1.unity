@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: Panel
       value: 
       objectReference: {fileID: 1599573944247827444}
+    - target: {fileID: 382888266, guid: 5d0bc4741d054fd44a0975047827d6ae, type: 3}
+      propertyPath: GearsCanvas
+      value: 
+      objectReference: {fileID: 1019688030}
     - target: {fileID: 1980516530245408212, guid: 5d0bc4741d054fd44a0975047827d6ae, type: 3}
       propertyPath: m_Name
       value: Others
@@ -212,6 +216,11 @@ Camera:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4292962867904669179, guid: 5d0bc4741d054fd44a0975047827d6ae, type: 3}
   m_PrefabInstance: {fileID: 116514827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1019688030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5168304885816003889, guid: 89a4052de7913a244931c01558adfd26, type: 3}
+  m_PrefabInstance: {fileID: 1246467262}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1048574289 stripped
 Transform:
@@ -790,14 +799,26 @@ PrefabInstance:
       propertyPath: Car
       value: 
       objectReference: {fileID: 1942581726}
+    - target: {fileID: 5078882163676850047, guid: ffc23c01faefe4bed9538537d5988020, type: 3}
+      propertyPath: GearsCanvas
+      value: 
+      objectReference: {fileID: 1019688030}
     - target: {fileID: 5078882164106739952, guid: ffc23c01faefe4bed9538537d5988020, type: 3}
       propertyPath: Car
       value: 
       objectReference: {fileID: 1942581726}
+    - target: {fileID: 5078882164106739952, guid: ffc23c01faefe4bed9538537d5988020, type: 3}
+      propertyPath: GearsCanvas
+      value: 
+      objectReference: {fileID: 1019688030}
     - target: {fileID: 5078882164250753582, guid: ffc23c01faefe4bed9538537d5988020, type: 3}
       propertyPath: Car
       value: 
       objectReference: {fileID: 1942581726}
+    - target: {fileID: 5078882164250753582, guid: ffc23c01faefe4bed9538537d5988020, type: 3}
+      propertyPath: GearsCanvas
+      value: 
+      objectReference: {fileID: 1019688030}
     - target: {fileID: 5078882164597728984, guid: ffc23c01faefe4bed9538537d5988020, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -890,5 +911,9 @@ PrefabInstance:
       propertyPath: Car
       value: 
       objectReference: {fileID: 1942581726}
+    - target: {fileID: 5078882164630817316, guid: ffc23c01faefe4bed9538537d5988020, type: 3}
+      propertyPath: GearsCanvas
+      value: 
+      objectReference: {fileID: 1019688030}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffc23c01faefe4bed9538537d5988020, type: 3}

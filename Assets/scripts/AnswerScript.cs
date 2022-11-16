@@ -9,6 +9,7 @@ public class AnswerScript : MonoBehaviour
     public QuizManager quizManager;
     public GameObject Panel;
     public GameObject Car;
+    public GameObject GearsCanvas;
 
 
 
@@ -17,6 +18,8 @@ public class AnswerScript : MonoBehaviour
             Debug.Log("Correct Answer");
             quizManager.correct();
             togglePanel();
+            toggleCar();
+            toggleGear();
         }
         else{
             Debug.Log("Wrong Answer");
@@ -25,15 +28,21 @@ public class AnswerScript : MonoBehaviour
  
     public void toggleCar(){
         if(Car!= null){
-            bool isActive = Car.activeSelf;
-            Car.SetActive(!isActive);
+            //bool isActive = Car.activeSelf;
+            Car.SetActive(true);//Car.SetActive(!isActive)
         }
     }
     public void togglePanel(){ //turns panel off/on
         if(Panel!= null){
-            bool isActive = Panel.activeSelf;
-            Panel.SetActive(!isActive);
-            toggleCar();
+            //bool isActive = Panel.activeSelf;
+            Panel.SetActive(false);
         }
+    }
+    public void toggleGear(){
+        if(GearsCanvas!= null){
+            //bool isActive = GearsCanvas.activeSelf;
+            GearsCanvas.SetActive(true);
+        }
+
     }
 }
