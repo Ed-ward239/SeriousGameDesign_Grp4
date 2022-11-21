@@ -21,7 +21,6 @@ public class QuizManager : MonoBehaviour
 
     void generateQuestion(){
         currentQuestion = Random.Range(0,QnA.Count);
-
         QuestionTxt.text = QnA[currentQuestion].Question;
         setAnswers();
 
@@ -40,6 +39,7 @@ public class QuizManager : MonoBehaviour
     }
 
     public void correct(){
+        QnA.RemoveAt(currentQuestion);
         generateQuestion();
 
     }
