@@ -5,12 +5,12 @@ using UnityEngine;
 public class Audio : MonoBehaviour
 {
     public static Audio instance;
-    private void Awake()
+    void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
