@@ -104,11 +104,11 @@ public class CarMovement : MonoBehaviour
             brake = true;
         }
 
-        //limits the rotation in z axes
-        // Vector3 euler = transform.eulerAngles;
-        // if (euler.z > 180) euler.z = euler.z - 360;
-        // euler.z = Mathf.Clamp(euler.z, -25, 25);
-        // transform.eulerAngles = euler;
+        // limits the rotation in z axes
+        Vector3 euler = transform.eulerAngles;
+        if (euler.z > 180) euler.z = euler.z - 360;
+        euler.z = Mathf.Clamp(euler.z, -25, 25);
+        transform.eulerAngles = euler;
         // if(horizontalMovement > 0) {
         //     speed = gear * initialSpeed;
         // }
