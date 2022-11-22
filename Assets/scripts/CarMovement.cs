@@ -20,6 +20,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField] public Text speedNumber;
     [SerializeField] bool brake = false;
     [SerializeField] GameObject tire;
+    [SerializeField] AudioSource engineSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,8 @@ public class CarMovement : MonoBehaviour
         // speed = 15;
         // jumpForce = 750.0f;
         rotationFactor = 5;
-       initialSpeed = 4;
+        initialSpeed = 4;
+      
     }
 
     // Update is called once per frame
@@ -74,6 +76,20 @@ public class CarMovement : MonoBehaviour
 
            if (brake && car.velocity.x >= 0.1f) {
             car.velocity = new Vector2(car.velocity.x - 0.5f, car.velocity.y);
+        }
+
+        if (gear == 1 && car.velocity.x > 0.0f && Input.GetButtonDown("Fire1")) {
+            engineSound.volume = 0.4f;
+            engineSound.Play();
+        } else if (gear == 2 && car.velocity.x > 0.0f && Input.GetButtonDown("Fire1")) {
+            engineSound.volume = 0.6f;
+            engineSound.Play();
+        } else if (gear == 3 && car.velocity.x > 0.0f && Input.GetButtonDown("Fire1")) {
+            engineSound.volume = 0.9f;
+            engineSound.Play();
+        } else if (gear == 4 && car.velocity.x > 0.0f && Input.GetButtonDown("Fire1")) {
+            engineSound.volume = 0.25f;
+            engineSound.Play();
         }
 
         // if (brake && car.velocity.x < 0.9f) {
@@ -128,5 +144,11 @@ public class CarMovement : MonoBehaviour
         if (collision.gameObject.tag == "Ground") {
             isGrounded = true;
         }
+    }
+
+    void Awake() {
+        engineSound.loop=true;
+        engineSound.volume = 0.25f;
+        engineSound.Play();
     }
 }

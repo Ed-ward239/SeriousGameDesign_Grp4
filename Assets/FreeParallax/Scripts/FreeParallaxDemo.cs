@@ -34,13 +34,10 @@ public class FreeParallaxDemo : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow) || carSpeed < 0)
             { 
                 parallax.Speed = -carSpeed;
-                print("CAR BACK, BACKGROUND FORWARD   CAR VELOCITY SHOULD BE NEGATIVE: " + carSpeed);
             }
             else if (Input.GetKey(KeyCode.RightArrow) || carSpeed > 0)
             {
                 parallax.Speed = -carSpeed;
-                print("CAR FORWARD, BACKGROUND BACKWARD   CAR VELOCITY SHOULD BE POSITIVE: " + carSpeed);
-                //print((carSpeed));
             }
             else
             {
