@@ -17,6 +17,8 @@ public class Timer : MonoBehaviour
     public int amountCorrect = 0;
     public int amountQuestions = 0;
 
+    private bool happened = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +27,12 @@ public class Timer : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   if(amountQuestions !=20){
+    {   if(amountQuestions <=20&&happened){
             currentTime = countUp ? currentTime += Time.deltaTime : currentTime -= Time.deltaTime;
             timerText.text = currentTime.ToString("0.00");
             questionsScore.text = amountCorrect.ToString() + "/" + amountQuestions.ToString();
+            if(amountQuestions==20)
+                happened = false;
         }
     }
 }

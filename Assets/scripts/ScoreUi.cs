@@ -27,7 +27,7 @@ public class ScoreUi : MonoBehaviour
             var row = Instantiate(rowUi, transform).GetComponent<RowUi>();
             row.rank.text = (i+1).ToString();
             // row.name.text = scores[i].name
-            row.score.text = scores[i].score.ToString();
+            row.score.text = scores[i].score.ToString("0.00");
 
         
         
@@ -40,7 +40,7 @@ public class ScoreUi : MonoBehaviour
         if(timer.amountQuestions==20 && addedscore == false){
             if(timer.amountCorrect>=14){
                 scoreManager.AddScore(new Score(timer.currentTime));
-                passRFail.text = "Well done you have passed the mission with a time of : "+ timer.currentTime.ToString();
+                passRFail.text = "Well done you have passed the mission with a time of : "+ timer.currentTime.ToString("0.00");
             }
             else
                 passRFail.text = "You have failed the mission, 14+ right answers is needed!!";
