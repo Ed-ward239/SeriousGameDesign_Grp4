@@ -17,3 +17,5 @@ MonoBehaviour:
     characterSprite: {fileID: 21300000, guid: e9862338f0a5e462e8aa323f95873a62, type: 3}
   - characterName: Mini
     characterSprite: {fileID: 21300000, guid: 638fd17653cf244679b4697cc3346327, type: 3}
+  - characterName: Mini Convertible
+    characterSprite: {fileID: 21300000, guid: 3d94c8cf6e27d494289ed3e70e92ffdb, type: 3}
