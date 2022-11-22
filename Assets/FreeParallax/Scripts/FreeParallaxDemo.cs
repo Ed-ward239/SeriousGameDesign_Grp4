@@ -11,6 +11,7 @@ public class FreeParallaxDemo : MonoBehaviour
 
     public FreeParallax parallax;
     public GameObject cloud;
+    public GameObject player;
 
     // Use this for initialization
     void Start()
@@ -19,20 +20,27 @@ public class FreeParallaxDemo : MonoBehaviour
         {
             cloud.GetComponent<Rigidbody2D>().velocity = new Vector2(0.1f, 0.0f);
         }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        float carSpeed = player.GetComponent<CarMovement>().velocity;
+
         if (parallax != null)
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                parallax.Speed = 15.0f;
+            
+            if (Input.GetKey(KeyCode.LeftArrow) || carSpeed < 0)
+            { 
+                parallax.Speed = -carSpeed;
+                print("CAR BACK, BACKGROUND FORWARD   CAR VELOCITY SHOULD BE NEGATIVE: " + carSpeed);
             }
-            else if (Input.GetKey(KeyCode.RightArrow))
+            else if (Input.GetKey(KeyCode.RightArrow) || carSpeed > 0)
             {
-                parallax.Speed = -15.0f;
+                parallax.Speed = -carSpeed;
+                print("CAR FORWARD, BACKGROUND BACKWARD   CAR VELOCITY SHOULD BE POSITIVE: " + carSpeed);
+                //print((carSpeed));
             }
             else
             {

@@ -55,13 +55,13 @@ public class CarMovement : MonoBehaviour
         }
 
 
-        if (gameObject.transform.rotation.z < -0.3) {
-            gameObject.transform.Rotate(0, 0, rotationFactor);
-        }
+        // if (gameObject.transform.rotation.z < -0.3) {
+        //     gameObject.transform.Rotate(0, 0, rotationFactor);
+        // }
 
-        if (gameObject.transform.rotation.z > 0.4) {
-            gameObject.transform.Rotate(0, 0, -1 * rotationFactor);
-        }
+        // if (gameObject.transform.rotation.z > 0.4) {
+        //     gameObject.transform.Rotate(0, 0, -1 * rotationFactor);
+        // }
 
         velocity = car.velocity.x;
         speedNumber.text = velocity + "";
@@ -72,7 +72,7 @@ public class CarMovement : MonoBehaviour
             car.velocity = new Vector2(car.velocity.x - 0.5f, car.velocity.y);
         }
 
-           if (brake && car.velocity.x >= 0.1f) {
+        if (brake && car.velocity.x >= 0.1f) {
             car.velocity = new Vector2(car.velocity.x - 0.5f, car.velocity.y);
         }
 
@@ -100,6 +100,15 @@ public class CarMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(Input.GetButtonDown("Jump")) {
+            brake = true;
+        }
+
+        // limits the rotation in z axes
+        Vector3 euler = transform.eulerAngles;
+        if (euler.z > 180) euler.z = euler.z - 360;
+        euler.z = Mathf.Clamp(euler.z, -25, 25);
+        transform.eulerAngles = euler;
         // if(horizontalMovement > 0) {
         //     speed = gear * initialSpeed;
         // }
@@ -118,9 +127,7 @@ public class CarMovement : MonoBehaviour
         //     Jump();
         // }
         
-        if(Input.GetButtonDown("Jump")) {
-            brake = true;
-        }
+      
 
     }
 
