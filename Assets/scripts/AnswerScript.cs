@@ -11,8 +11,8 @@ public class AnswerScript : MonoBehaviour
    public GameObject Car;
    public GameObject GearsCanvas;
    public Timer Score;
-   int numCorrect = 0;
-   int numQuestions = 20;
+   public GameObject ScoreBoard;
+
 
 
  
@@ -21,27 +21,33 @@ public class AnswerScript : MonoBehaviour
    public void Answer(){
        if(isCorrect){
            Debug.Log("Correct Answer");
-           numCorrect++;
+           Score.amountCorrect++;
        }
        else{
            Debug.Log("Wrong Answer");
 
        }
-           numQuestions--;
            quizManager.correct();
            togglePanel();
            toggleCar();
            toggleGear();
-           Score.amountCorrect = numCorrect;
-           Score.amountQuestions = 20 - numQuestions;
-           if(numQuestions==0){
-            //end game call method
+           Score.amountQuestions++;
+           if(Score.amountQuestions==20){
+            ScoreBoard.SetActive(true);
+            removeCar();
+
            }
    }
    public void toggleCar(){
        if(Car!= null){
            //bool isActive = Car.activeSelf;
            Car.SetActive(true);//Car.SetActive(!isActive)
+       }
+   }
+      public void removeCar(){
+       if(Car!= null){
+           //bool isActive = Car.activeSelf;
+           Car.SetActive(false);//Car.SetActive(!isActive)
        }
    }
    public void togglePanel(){ //turns panel off/on

@@ -14,8 +14,8 @@ public class Timer : MonoBehaviour
 
     [Header("Questions Score")]
     public TextMeshProUGUI questionsScore;
-    public int amountCorrect;
-    public int amountQuestions;
+    public int amountCorrect = 0;
+    public int amountQuestions = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -25,9 +25,10 @@ public class Timer : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        currentTime = countUp ? currentTime += Time.deltaTime : currentTime -= Time.deltaTime;
-        timerText.text = currentTime.ToString("0.00");
-        questionsScore.text = amountCorrect.ToString() + "/" + amountQuestions.ToString();
+    {   if(amountQuestions !=20){
+            currentTime = countUp ? currentTime += Time.deltaTime : currentTime -= Time.deltaTime;
+            timerText.text = currentTime.ToString("0.00");
+            questionsScore.text = amountCorrect.ToString() + "/" + amountQuestions.ToString();
+        }
     }
 }
