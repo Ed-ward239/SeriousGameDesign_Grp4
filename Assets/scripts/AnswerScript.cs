@@ -27,16 +27,18 @@ public class AnswerScript : MonoBehaviour
            Debug.Log("Wrong Answer");
 
        }
+
            quizManager.correct();
            togglePanel();
            toggleCar();
-           toggleGear();
            Score.amountQuestions++;
            if(Score.amountQuestions==20){
             ScoreBoard.SetActive(true);
             removeCar();
 
            }
+           else
+            toggleGear();
    }
    public void toggleCar(){
        if(Car!= null){
