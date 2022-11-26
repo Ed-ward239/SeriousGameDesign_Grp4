@@ -39,6 +39,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5863022451611332328}
     m_Modifications:
+    - target: {fileID: 369457064097139383, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
     - target: {fileID: 369457064467395288, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -103,3 +107,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 369457064467395288, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
   m_PrefabInstance: {fileID: 6306734877871953316}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5955613355620900627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 369457064097139383, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
+  m_PrefabInstance: {fileID: 6306734877871953316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1818360609 &1638068036
+RotationConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5955613355620900627}
+  m_Enabled: 1
+  m_Weight: 1
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_AffectRotationX: 0
+  m_AffectRotationY: 0
+  m_AffectRotationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 1
+  m_Sources: []
