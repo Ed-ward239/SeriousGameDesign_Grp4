@@ -39,9 +39,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5863022451611332328}
     m_Modifications:
+    - target: {fileID: 369457064097139376, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 369457064097139383, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
       propertyPath: m_TagString
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 369457064415583648, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 369457064467395288, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
       propertyPath: m_RootOrder
@@ -90,6 +98,26 @@ PrefabInstance:
     - target: {fileID: 369457064467395293, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
       propertyPath: m_Name
       value: Mustang
+      objectReference: {fileID: 0}
+    - target: {fileID: 369457064665128240, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3433430555005570998, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
+      propertyPath: m_Suspension.m_Frequency
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3433430555005570998, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
+      propertyPath: m_Suspension.m_DampingRatio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6810890744852589867, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
+      propertyPath: m_Suspension.m_Frequency
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6810890744852589867, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
+      propertyPath: m_Suspension.m_DampingRatio
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7780404638627755764, guid: 37f70cc3912eb47bb8cd1574afa4a8e2, type: 3}
       propertyPath: tire
