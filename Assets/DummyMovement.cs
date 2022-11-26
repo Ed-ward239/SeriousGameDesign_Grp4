@@ -6,6 +6,8 @@ public class DummyMovement : MonoBehaviour
 {
     Rigidbody2D dummy;
     [SerializeField] Animator animator;
+    [SerializeField] AudioSource audio;
+    [SerializeField] bool hasContacted = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,10 @@ public class DummyMovement : MonoBehaviour
         if (animator == null) {
             animator = GetComponent<Animator>();
         }
+
+         if (audio == null) {
+            audio = GetComponent<AudioSource>();
+        }
     }
 
     // Update is called once per frame
@@ -24,16 +30,20 @@ public class DummyMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collider) {
-        if (collider.gameObject.tag == "Car") {
+        if (collider.gameObject.tag == "Car" && !hasContacted) {
+            hasContacted = true;
             // yield WaitForSeconds (3);
-            // Invoke("BlowUp", 0.05f);
+            // Invoke("BlowUp", 0);
+            // audio.Play();
+            AudioSource.PlayClipAtPoint(audio.clip, transform.position);
             BlowUp();
         }
     } 
 
     void BlowUp() {
         animator.SetInteger("explode", 1);
-        // Invoke("Kill", 1);
+   
+        Invoke("Kill", 1.5f);
     }
 
     void Kill() {
