@@ -346,6 +346,9 @@ MonoBehaviour:
   quizManager: {fileID: 7184466414839590276}
   Panel: {fileID: 5078882164304559720}
   Car: {fileID: 0}
+  GearsCanvas: {fileID: 0}
+  Score: {fileID: 0}
+  ScoreBoard: {fileID: 0}
 --- !u!1 &5078882163699951671
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,6 +930,9 @@ MonoBehaviour:
   quizManager: {fileID: 7184466414839590276}
   Panel: {fileID: 5078882164304559720}
   Car: {fileID: 0}
+  GearsCanvas: {fileID: 0}
+  Score: {fileID: 0}
+  ScoreBoard: {fileID: 0}
 --- !u!1 &5078882164250753576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1084,9 @@ MonoBehaviour:
   quizManager: {fileID: 7184466414839590276}
   Panel: {fileID: 5078882164304559720}
   Car: {fileID: 0}
+  GearsCanvas: {fileID: 0}
+  Score: {fileID: 0}
+  ScoreBoard: {fileID: 0}
 --- !u!1 &5078882164304559720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,6 +1688,9 @@ MonoBehaviour:
   quizManager: {fileID: 7184466414839590276}
   Panel: {fileID: 5078882164304559720}
   Car: {fileID: 0}
+  GearsCanvas: {fileID: 0}
+  Score: {fileID: 0}
+  ScoreBoard: {fileID: 0}
 --- !u!1001 &6250702234837267270
 PrefabInstance:
   m_ObjectHideFlags: 0
