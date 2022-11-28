@@ -32,12 +32,14 @@ public class PanelScript : MonoBehaviour
        Sign.GetComponent<BoxCollider2D> ().enabled = false;
        Debug.Log("Trigger Panel!");
        appearPanel();
-       StartCoroutine(EnableBox(20.0F));
+    //    StartCoroutine(EnableBox(60.0F));
    }
-   IEnumerator EnableBox(float waitTime) {
-        yield return new WaitForSeconds(waitTime);
-        Sign.GetComponent<BoxCollider2D> ().enabled = true;
-   }
+//    IEnumerator EnableBox(float waitTime) {
+//         if(Panel.activeInHierarchy)
+//         yield return new WaitForSeconds(waitTime);
+//         Panel.SetActive(false);
+
+//    }
   
   
 }
