@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5475129318739379496}
   - component: {fileID: 683567251}
-  - component: {fileID: 683567252}
   - component: {fileID: 114306877768144163}
+  - component: {fileID: 683567252}
+  - component: {fileID: 7595247332114015290}
   m_Layer: 0
   m_Name: Dummies
   m_TagString: Untagged
@@ -124,6 +125,21 @@ MonoBehaviour:
   animator: {fileID: 0}
   audio: {fileID: 0}
   hasContacted: 0
+--- !u!114 &114306877768144163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008920534559787095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa85ab52abb5040a3836942d02f310f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  audio: {fileID: 0}
+  hasContacted: 0
 --- !u!95 &683567252
 Animator:
   serializedVersion: 4
@@ -144,7 +160,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114306877768144163
+--- !u!114 &7595247332114015290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4763,6 +4779,21 @@ MonoBehaviour:
   audio: {fileID: 0}
   hasContacted: 0
 --- !u!114 &2244399516666795782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5229505489728221209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa85ab52abb5040a3836942d02f310f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  audio: {fileID: 0}
+  hasContacted: 0
+--- !u!114 &5819392670047787159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

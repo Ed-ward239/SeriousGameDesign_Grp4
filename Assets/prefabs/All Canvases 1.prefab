@@ -779,7 +779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5168304885816003889, guid: 89a4052de7913a244931c01558adfd26, type: 3}
       propertyPath: m_Name
-      value: Canvas (1)
+      value: GearCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 5168304885816003901, guid: 89a4052de7913a244931c01558adfd26, type: 3}
       propertyPath: m_Pivot.x
