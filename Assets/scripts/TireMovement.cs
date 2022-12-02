@@ -29,14 +29,27 @@ public class TireMovement : MonoBehaviour
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
 
-        if (Input.GetButtonDown("Fire1")) {
-            if (gear == 4) {
-                gear = 1;
+        // if (Input.GetButtonDown("Fire1")) {
+        //     if (gear == 4) {
+        //         gear = 1;
+        //         return;
+        //     }
+        //     gear++;
+        // }
+
+        if (Input.GetKeyDown("up")) {
+            if (gear < 4) {
+                gear++;
                 return;
             }
-            gear++;
         }
 
+        if (Input.GetKeyDown("down")) {
+            if (gear > 1) {
+                gear--;
+                return;
+            }
+        }
 
 
         gearNumber.text = gear + "";
