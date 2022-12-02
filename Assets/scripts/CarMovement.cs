@@ -48,7 +48,7 @@ public class CarMovement : MonoBehaviour
         if(horizontalMovement != 0) {
             brake = false; 
         }
-
+        velocity = car.velocity.x;
         body.GetComponent<Rigidbody2D>().velocity = new Vector2(car.velocity.x, car.velocity.y);
         speedNumber.text = Mathf.RoundToInt((velocity * 10)) + "";
         if (velocity < 0) {
