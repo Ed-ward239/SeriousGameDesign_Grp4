@@ -31,6 +31,7 @@ public class CharacterManager : MonoBehaviour
             selectedOption = 0;
         }
         updateCharacter(selectedOption);
+        Debug.Log(selectedOption);
         Save();
     }
 
@@ -42,6 +43,7 @@ public class CharacterManager : MonoBehaviour
             selectedOption = characterDB.CharacterCount - 1;
         }
         updateCharacter(selectedOption);
+        Debug.Log(selectedOption);
         Save();
     }
 
@@ -49,16 +51,18 @@ public class CharacterManager : MonoBehaviour
     {
         Character character = characterDB.getCharacter(selectedOption);
         carSprite.sprite = character.characterSprite;
-        //carName.text = character.characterName;
+        // carName.text = character.ToString();
     }
 
     private void Load()
     {
-        selectedOption = PlayerPrefs.GetInt("selectedOption");
+        // selectedOption = PlayerPrefs.GetInt("selectedOption");
+        selectedOption = PersistentData.Instance.GetOption();
     }
     private void Save()
     {
-        PlayerPrefs.SetInt("selectedOption", selectedOption);
+        // PlayerPrefs.SetInt("selectedOption", selectedOption);
+        PersistentData.Instance.SetOption(selectedOption);
     }
     public void ChangeScene(int sceneID)
     {
