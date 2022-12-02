@@ -20,6 +20,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField] public Text speedNumber;
     [SerializeField] bool brake = false;
     [SerializeField] GameObject tire;
+    [SerializeField] GameObject body;
     [SerializeField] AudioSource screechAudio;
     // Start is called before the first frame update
     void Start()
@@ -48,7 +49,7 @@ public class CarMovement : MonoBehaviour
             brake = false; 
         }
 
-        velocity = car.velocity.x;
+        body.GetComponent<Rigidbody2D>().velocity = new Vector2(car.velocity.x, car.velocity.y);
         speedNumber.text = Mathf.RoundToInt((velocity * 10)) + "";
         if (velocity < 0) {
            speedNumber.text = Mathf.RoundToInt((-1 * velocity * 10)) + ""; 
