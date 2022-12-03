@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class PlayName : MonoBehaviour
 {
-    private UI_InputWindow NameInput;
+    private InputField NameInput;
      
     public void clickSave(){
         PlayerPrefs.SetString("name", NameInput.text);
-        Debug.Log("Your name is " + PlayerPrefs.GetString("name"));
+        Debug.Log("Player name:  " + PlayerPrefs.GetString("name"));
     }
 }
 

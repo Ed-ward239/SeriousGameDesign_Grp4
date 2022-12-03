@@ -1188,7 +1188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d05a84e9b7a724886bcd2aea89f509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameInput: {fileID: 0}
 --- !u!4 &343714662
 Transform:
   m_ObjectHideFlags: 0
@@ -1679,7 +1678,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d05a84e9b7a724886bcd2aea89f509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameInput: {fileID: 0}
 --- !u!1 &583458472
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,7 +2597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1306598550
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2839,7 +2837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1359584618
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3145,7 +3143,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420033}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayName, Assembly-CSharp
         m_MethodName: clickSave
         m_Mode: 1
