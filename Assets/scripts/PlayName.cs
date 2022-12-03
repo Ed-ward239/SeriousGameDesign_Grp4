@@ -5,11 +5,28 @@ using UnityEngine.UI;
 
 public class PlayName : MonoBehaviour
 {
-    private InputField NameInput;
-     
-    public void clickSave(){
-        PlayerPrefs.SetString("name", NameInput.text);
-        Debug.Log("Player name:  " + PlayerPrefs.GetString("name"));
+    [SerializeField] string playerName;
+
+    public static PlayName Instance;
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            DontDestroyOnLoad(this);
+            Instance = this;
+        }
+        else
+            Destroy(gameObject);
+    }
+    void Start()
+    {
+        playerName = "";
+    }
+
+    public void SetName(string name)
+    {
+        playerName = name;
     }
 }
 
