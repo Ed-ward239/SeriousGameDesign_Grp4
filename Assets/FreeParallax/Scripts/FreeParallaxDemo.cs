@@ -23,10 +23,14 @@ public class FreeParallaxDemo : MonoBehaviour
         
     }
 
+    public void SetPlayer(GameObject targetPlayer) {
+        player = targetPlayer;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        float carSpeed = player.GetComponent<BodyMovement>().velocity;
+        float carSpeed = player.GetComponent<CarMovement>().velocity;
 
         if (parallax != null)
         {

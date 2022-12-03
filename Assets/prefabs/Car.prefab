@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555672061682406646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.78, y: -1.81, z: 0}
+  m_LocalPosition: {x: -0.807, y: -1.8, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 3992613526484324826}
   - component: {fileID: 745249156999290381}
   m_Layer: 0
-  m_Name: truckBackWheel
+  m_Name: truckFrontWheel
   m_TagString: Tire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -582,7 +582,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9182248208459433304}
+  m_Father: {fileID: 9182248210063084028}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5689988871282646686
@@ -722,7 +722,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4687001848328057022}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.66990066, y: -1.81, z: 0}
+  m_LocalPosition: {x: 0.697, y: -1.8, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1147,7 +1147,7 @@ WheelJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 1.835001, y: -1.3800001}
+  m_Anchor: {x: 1.835001, y: -1.3}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
     m_DampingRatio: 0.9
@@ -1171,7 +1171,7 @@ WheelJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: -1.930399, y: -1.3800001}
+  m_Anchor: {x: -1.930399, y: -1.3}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
     m_DampingRatio: 0.9
@@ -1319,7 +1319,7 @@ GameObject:
   - component: {fileID: 4265313384361841533}
   - component: {fileID: 21309515058917845}
   m_Layer: 0
-  m_Name: truckFrontWheel
+  m_Name: truckBacktWheel
   m_TagString: Tire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1337,7 +1337,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9182248210063084028}
+  m_Father: {fileID: 9182248208459433304}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8846772042256637066
@@ -1477,10 +1477,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9182248209260915874}
   - {fileID: 9182248208568424118}
+  - {fileID: 9182248209260915874}
   - {fileID: 555672061682406643}
-  - {fileID: 6799598218822383685}
+  - {fileID: 8828662713613522465}
   m_Father: {fileID: 3328236831910635961}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1517,7 +1517,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9182248210063084028}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &9182248208484680092
 SpriteRenderer:
@@ -1664,7 +1664,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9182248208459433304}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &9182248208568424122
 SpriteRenderer:
@@ -1811,7 +1811,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9182248210063084028}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9182248209008167270
 SpriteRenderer:
@@ -1955,7 +1955,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9182248208459433304}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9182248209260915878
 SpriteRenderer:
@@ -2653,10 +2653,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9182248209008167266}
   - {fileID: 9182248208484680088}
+  - {fileID: 9182248209008167266}
   - {fileID: 5601101097494952162}
-  - {fileID: 8828662713613522465}
+  - {fileID: 6799598218822383685}
   m_Father: {fileID: 3328236831910635961}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -36,7 +36,15 @@ public class CarMovement : MonoBehaviour
         tire = GameObject.FindGameObjectWithTag("Tire");
  
         rotationFactor = 5;
-       initialSpeed = 4;
+        initialSpeed = 4;
+    }
+
+    public void SetTire(GameObject targetTire) {
+        tire = targetTire;
+    }
+
+    public void SetBody(Rigidbody2D targetBody) {
+        car = targetBody;
     }
 
     // Update is called once per frame

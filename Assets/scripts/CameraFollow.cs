@@ -11,7 +11,9 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // if (target == null) {
+        //     target = GameObject.FindGameObjectWithTag("Car").transform;
+        // }
     }
 
     // Update is called once per frame
@@ -21,6 +23,9 @@ public class CameraFollow : MonoBehaviour
 
     }
 
+    public void SetTarget(Transform car) {
+        target = car;
+    }
 
     
     void FixedUpdate() {

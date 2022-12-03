@@ -58,6 +58,8 @@ public class CharacterManager : MonoBehaviour
     {
         // selectedOption = PlayerPrefs.GetInt("selectedOption");
         selectedOption = PersistentData.Instance.GetOption();
+        Character character = characterDB.getCharacter(selectedOption);
+        carSprite.sprite = character.characterSprite;
     }
     private void Save()
     {

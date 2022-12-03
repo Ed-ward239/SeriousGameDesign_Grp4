@@ -8,6 +8,9 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject[] frontTires;
     [SerializeField] GameObject[] backTires;
     [SerializeField] int selectedOption;
+    [SerializeField] public GameObject carBody;
+    [SerializeField] public GameObject camera;
+    [SerializeField] public GameObject background;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +28,27 @@ public class GameController : MonoBehaviour
                 backTires[i].SetActive(false);
             }
         }
+
+        if (carBody == null) {
+            carBody = cars[selectedOption];
+        }
+        // transform.position = new Vector2(carBody.transform.position.x, carBody.transform.position.y);
+        camera.GetComponent<CameraFollow>().SetTarget(carBody.transform);
+        frontTires[selectedOption].GetComponent<TireMovement>().SetTire(frontTires[selectedOption].GetComponent<Rigidbody2D>());
+        backTires[selectedOption].GetComponent<TireMovement>().SetTire(backTires[selectedOption].GetComponent<Rigidbody2D>());
+        carBody.GetComponent<CarMovement>().SetTire(frontTires[selectedOption]);
+        carBody.GetComponent<CarMovement>().SetBody(carBody.GetComponent<Rigidbody2D>());
+        background.GetComponent<FreeParallaxDemo>().SetPlayer(carBody);
+    }
+
+    public GameObject GetCar() {
+        return carBody;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // transform.position = new Vector2(carBody.transform.position.x, carBody.transform.position.y);
+
     }
 }
