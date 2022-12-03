@@ -9,13 +9,11 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    /*
-    public void Option()
-    {}
-    */
     public void Quit()
     {
         Application.Quit();
         Debug.Log("Player has quit");
     }
 }
+
+//Edited by Edward Lee

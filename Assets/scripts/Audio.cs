@@ -18,3 +18,5 @@ public class Audio : MonoBehaviour
         }
     }
 }
+
+// Edited by Edward Lee

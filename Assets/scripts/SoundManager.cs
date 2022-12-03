@@ -64,3 +64,6 @@ public class SoundManager : MonoBehaviour
         PlayerPrefs.SetInt("muted", muted ? 1 : 0);
     }
 }
+
+
+// Edited by Edward Lee

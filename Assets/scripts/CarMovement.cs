@@ -20,6 +20,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField] public Text speedNumber;
     [SerializeField] bool brake = false;
     [SerializeField] GameObject tire;
+     [SerializeField] GameObject body;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +51,9 @@ public class CarMovement : MonoBehaviour
         // gearNumber.text = gear + "";
 			// jumpPressed = true;
             // Jet();
+
+        body.GetComponent<Rigidbody2D>().velocity = new Vector2(car.velocity.x, car.velocity.y);
+
         if(horizontalMovement != 0) {
             brake = false; 
         }
