@@ -30,14 +30,15 @@ public class FreeParallaxDemo : MonoBehaviour
 
         if (parallax != null)
         {
-            
             if (Input.GetKey(KeyCode.LeftArrow) || carSpeed < 0)
             { 
-                parallax.Speed = -carSpeed;
+                
+                parallax.Speed = -carSpeed*.25f;
             }
             else if (Input.GetKey(KeyCode.RightArrow) || carSpeed > 0)
             {
-                parallax.Speed = -carSpeed;
+                parallax.Speed = -carSpeed*.25f;
+
             }
             else
             {
