@@ -11,6 +11,10 @@ public class GameController : MonoBehaviour
     [SerializeField] public GameObject carBody;
     [SerializeField] public GameObject camera;
     [SerializeField] public GameObject background;
+    [SerializeField] GameObject astroid;
+    [SerializeField] int speedLimit;
+    Vector2 position;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,10 +43,22 @@ public class GameController : MonoBehaviour
         carBody.GetComponent<CarMovement>().SetTire(frontTires[selectedOption]);
         carBody.GetComponent<CarMovement>().SetBody(carBody.GetComponent<Rigidbody2D>());
         background.GetComponent<FreeParallaxDemo>().SetPlayer(carBody);
+
+
+        // InvokeRepeating("CreateAstroids", 5.0f, 1.0f);
+    }
+
+    public void SetSpeedLimit(int limit) {
+        speedLimit = limit;
     }
 
     public GameObject GetCar() {
         return carBody;
+    }
+    
+    void CreateAstroids() {
+        position = new Vector2(carBody.transform.position.x + 30, carBody.transform.position.y + 10);
+        Instantiate(astroid, position, Quaternion.identity);
     }
 
     // Update is called once per frame

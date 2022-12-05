@@ -13,7 +13,6 @@ public class CarMovement : MonoBehaviour
     [SerializeField] int initialSpeed = 4;
     [SerializeField] int gear;
     [SerializeField] int rotationFactor = 5;
-    [SerializeField] float jumpForce = 1000.0f;
     [SerializeField] bool isFacingRight = true;
     [SerializeField] bool jumpPressed = false;
     [SerializeField] bool isGrounded = true;
@@ -21,7 +20,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField] bool brake = false;
     [SerializeField] GameObject tire;
     [SerializeField] GameObject body;
-    [SerializeField] AudioSource screechAudio;
+    [SerializeField] AudioSource[] audio;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +28,8 @@ public class CarMovement : MonoBehaviour
             car = GetComponent<Rigidbody2D>();
         }
 
-        if (GetComponent<AudioSource>() == null) {
-            screechAudio = GetComponent<AudioSource>();
+        if (audio == null) {
+            audio = GetComponents<AudioSource>();
         }
 
         tire = GameObject.FindGameObjectWithTag("Tire");
@@ -74,14 +73,6 @@ public class CarMovement : MonoBehaviour
         }
     }
 
-
-    void Jet() {
-    }
-
-    void Jump() {
-        car.AddForce(new Vector2(0, jumpForce));
-    }
-
     void FixedUpdate()
     {
         if(Input.GetKey(KeyCode.Space)) {
@@ -96,13 +87,20 @@ public class CarMovement : MonoBehaviour
 
         if (brake && (car.velocity.x >= 0.1f || car.velocity.x <= 0.0f)) {
             car.velocity = new Vector2(car.velocity.x/1.1f, car.velocity.y);
-            AudioSource.PlayClipAtPoint(GetComponent<AudioSource>().clip, transform.position);
+            // AudioSource.PlayClipAtPoint(GetComponents<AudioSource>()[0].clip, transform.position);
+            GetComponents<AudioSource>()[0].Play();
         }
 
-        if (Input.GetButtonDown("Fire1")) {
-            car.AddForce(new Vector2(2000, 0));
+        if (Input.GetKeyDown("left ctrl")) {
+            Accelerate();
         }
 
+    }
+
+    void Accelerate() {
+        car.AddForce(new Vector2(7000, 0));
+        // AudioSource.PlayClipAtPoint(GetComponents<AudioSource>()[1].clip, transform.position);
+        GetComponents<AudioSource>()[1].Play();
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

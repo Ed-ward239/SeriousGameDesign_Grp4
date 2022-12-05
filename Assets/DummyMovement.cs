@@ -19,7 +19,7 @@ public class DummyMovement : MonoBehaviour
             animator = GetComponent<Animator>();
         }
 
-         if (audio == null) {
+        if (audio == null) {
             audio = GetComponent<AudioSource>();
         }
     }

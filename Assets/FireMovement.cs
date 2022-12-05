@@ -6,6 +6,7 @@ public class FireMovement : MonoBehaviour
 {
     [SerializeField] GameObject tire;
     [SerializeField] GameObject car;
+    [SerializeField] Rigidbody2D fire;
 
     // Start is called before the first frame update
     void Start()
@@ -13,7 +14,7 @@ public class FireMovement : MonoBehaviour
         if (tire == null) {
             tire = GameObject.FindGameObjectWithTag("Tire");
         }
-          if (car == null) {
+        if (car == null) {
             car = GameObject.FindGameObjectWithTag("Car");
         }
     }

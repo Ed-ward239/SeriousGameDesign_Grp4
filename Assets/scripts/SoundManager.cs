@@ -12,31 +12,33 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        if (!PlayerPrefs.HasKey("muted"))
-        {
-            PlayerPrefs.SetInt("muted", 0);
-            Load();
-        }
-        else
-        {
-            Load();
-        }
+        muted = false;
+        // if (!PlayerPrefs.HasKey("muted"))
+        // {
+        //     PlayerPrefs.SetInt("muted", 0);
+        //     Load();
+        // }
+        // else
+        // {
+        //     Load();
+        // }
         UpdateBtnIcon();
-        AudioListener.pause = muted;
+        // AudioListener.pause = muted;
     }
 
     public void OnButtonPress()
     {
-        if (muted == false)
-        {
-            muted = true;
-            AudioListener.pause = true;
-        }
-        else
-        {
-            muted = false;
-            AudioListener.pause = false;
-        }
+        // if (muted == false)
+        // {
+        //     muted = true;
+        //     AudioListener.pause = true;
+        // }
+        // else
+        // {
+        //     muted = false;
+        //     AudioListener.pause = false;
+        // }
+        muted = !muted;
         Save();
         UpdateBtnIcon();
     }
@@ -57,10 +59,12 @@ public class SoundManager : MonoBehaviour
 
     private void Load()
     {
-        muted = PlayerPrefs.GetInt("muted") == 1; 
+        // muted = PlayerPrefs.GetInt("muted") == 1; 
+        muted = PersistentData.Instance.GetMusicOption();
     }
     private void Save()
     {
-        PlayerPrefs.SetInt("muted", muted ? 1 : 0);
+        // PlayerPrefs.SetInt("muted", muted ? 1 : 0);
+        PersistentData.Instance.SetMusicOption(muted == true ? true : false);
     }
 }

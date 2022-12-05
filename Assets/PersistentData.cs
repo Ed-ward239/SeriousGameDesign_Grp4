@@ -8,6 +8,7 @@ public class PersistentData : MonoBehaviour
     [SerializeField] int playerScore;
     [SerializeField] int difficultyLevel;
     [SerializeField] int option;
+    [SerializeField] bool isMusicMuted;
     public static PersistentData Instance;
     void Awake() {
         if (Instance == null)
@@ -43,6 +44,7 @@ public class PersistentData : MonoBehaviour
     public int GetOption() {
         return option;
     }
+    
     public void SetScore (int score) {
         playerScore = score;
     }
@@ -54,5 +56,12 @@ public class PersistentData : MonoBehaviour
     }
     public string GetDifficulty () {
         return difficultyLevel == 1 ? "Difficult" : "Easy";
+    }
+
+    public bool GetMusicOption () {
+        return isMusicMuted;
+    }
+    public void SetMusicOption (bool option) {
+        isMusicMuted = option;
     }
 }
