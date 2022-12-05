@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour
         background.GetComponent<FreeParallaxDemo>().SetPlayer(carBody);
 
 
-        // InvokeRepeating("CreateAstroids", 5.0f, 1.0f);
+        InvokeRepeating("CreateAstroids", 10.0f, 10.0f);
     }
 
     public void SetSpeedLimit(int limit) {
@@ -57,7 +57,7 @@ public class GameController : MonoBehaviour
     }
     
     void CreateAstroids() {
-        position = new Vector2(carBody.transform.position.x + 30, carBody.transform.position.y + 10);
+        position = new Vector2(carBody.transform.position.x + 25, carBody.transform.position.y + 10);
         Instantiate(astroid, position, Quaternion.identity);
     }
 

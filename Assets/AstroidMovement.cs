@@ -10,6 +10,7 @@ public class AstroidMovement : MonoBehaviour
     [SerializeField] AudioSource audio;
     [SerializeField] bool hasContacted = false;
     [SerializeField] GameObject car;
+    [SerializeField] int astroidForce;
     // [SerializeField] GameObject ast;
     // Vector2 position;
     // Start is called before the first frame update
@@ -34,6 +35,8 @@ public class AstroidMovement : MonoBehaviour
         if (car == null) {
             car = GameObject.FindGameObjectWithTag("Car");
         }
+
+        astroidForce = Random.Range(0, 5);
 
         Shoot();
 
@@ -61,16 +64,19 @@ public class AstroidMovement : MonoBehaviour
         if (hasContacted == false && collider.gameObject.tag != "Astroid") {
         hasContacted = true;
         animator.SetInteger("explosion", 1);
+        astroid.velocity = new Vector2(astroid.velocity.x, astroid.velocity.y / 10000);
+        GetComponent<Collider2D>().isTrigger = true;
+
         // AudioSource.PlayClipAtPoint(audio.clip, transform.position);
         audio.Play();
-        Destroy(fire);
+        // Destroy(fire);
         Invoke("Kill", 1.75f);
         }
 
     }
 
     void Shoot() {
-        astroid.AddForce(new Vector2(-70000, 0));
+        astroid.AddForce(new Vector2(astroidForce * 10000, 0));
     }
 
     void Kill() {
