@@ -13,7 +13,7 @@ public class DummyMovement : MonoBehaviour
     // public float fadeSpeed;
     private BoxCollider2D dummyCollider;
     private Rigidbody2D rb;
-
+    
     private GameObject player;
     // Start is called before the first frame update
     void Start()
