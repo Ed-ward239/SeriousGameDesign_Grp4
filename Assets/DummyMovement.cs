@@ -9,8 +9,8 @@ public class DummyMovement : MonoBehaviour
     [SerializeField] AudioSource audio;
     [SerializeField] bool hasContacted = false;
 
-    private bool fadeIn,fadeOut;
-    public float fadeSpeed;
+    // private bool fadeIn,fadeOut;
+    // public float fadeSpeed;
     private BoxCollider2D dummyCollider;
     private Rigidbody2D rb;
 
@@ -62,7 +62,7 @@ public class DummyMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collider) {
         if (collider.gameObject.tag == "Car" && !hasContacted) {
             hasContacted = true;
-            fadeOut = false;
+            //fadeOut = false;
             // yield WaitForSeconds (3);
             // Invoke("BlowUp", 0);
             // audio.Play();
@@ -72,9 +72,7 @@ public class DummyMovement : MonoBehaviour
     } 
 
     void OnTriggerEnter2D(Collider2D other) {
-        print("DUMMY IS Being Triggered");
         if (other.gameObject.CompareTag("TriggerMove")) {
-            print("The car is in range");
             rb.gravityScale = .05f;
             dummyCollider.isTrigger = true;
         }   
@@ -90,12 +88,12 @@ public class DummyMovement : MonoBehaviour
         Destroy(animator.gameObject);
     }
 
-    public void FadeOutObject() {
-        fadeOut = true;
-    }
+    // public void FadeOutObject() {
+    //     fadeOut = true;
+    // }
 
-    public void FadeInObject() {
-        fadeIn = true;
-    }
+    // public void FadeInObject() {
+    //     fadeIn = true;
+    // }
 
 }
