@@ -21,3 +21,6 @@ public class Speedometer : MonoBehaviour
         pointerHolder.localEulerAngles = new Vector3(0, 0, Mathf.Lerp(minSpeedPointerAngle, maxSpeedPointerAngle, speed / maxSpeed));
     }
 }
+
+// Edited by Edward Lee
+// Did not use in the game play

@@ -5,9 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public CharacterDB characterDB;
-
     public SpriteRenderer carSprite;
-
     private int selectedOption = 0;
 
     void Start()
@@ -35,3 +33,5 @@ public class Player : MonoBehaviour
     }
 
 }
+
+// Edited by Edward Lee

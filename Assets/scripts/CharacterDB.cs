@@ -20,3 +20,5 @@ public class CharacterDB : ScriptableObject
         return character[index];
     }
 }
+
+// Edited by Edward Lee
