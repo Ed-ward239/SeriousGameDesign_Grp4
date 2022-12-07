@@ -15,6 +15,7 @@ TagManager:
   - 70speed
   - 25speed
   - Buttons
+  - signs
   layers:
   - Default
   - TransparentFX

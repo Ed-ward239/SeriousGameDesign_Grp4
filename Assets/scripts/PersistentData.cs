@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PersistentData : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PersistentData : MonoBehaviour
     [SerializeField] int difficultyLevel;
     [SerializeField] int option;
     [SerializeField] bool isMusicMuted;
+
     public static PersistentData Instance;
     void Awake() {
         if (Instance == null)

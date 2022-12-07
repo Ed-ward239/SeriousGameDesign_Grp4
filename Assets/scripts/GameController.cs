@@ -7,17 +7,20 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject[] cars;
     [SerializeField] GameObject[] frontTires;
     [SerializeField] GameObject[] backTires;
+    [SerializeField] GameObject[] signs;
     [SerializeField] int selectedOption;
     [SerializeField] public GameObject carBody;
     [SerializeField] public GameObject camera;
     [SerializeField] public GameObject background;
     [SerializeField] GameObject astroid;
+    [SerializeField] GameObject dummy;
     [SerializeField] int speedLimit;
     Vector2 position;
 
     // Start is called before the first frame update
     void Start()
     {
+        signs = GameObject.FindGameObjectsWithTag("signs");
         selectedOption = PersistentData.Instance.GetOption();
         // cars = GameObject.FindGameObjectsWithTag("Car");
         // tires = GameObject.FindGameObjectsWithTag("Tire");
@@ -66,7 +69,27 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // transform.position = new Vector2(carBody.transform.position.x, carBody.transform.position.y);
-
+        if (speedLimit == 25) {
+            for (int i = 0; i<3; i++) {
+                signs[i].SetActive(false);
+            }
+            signs[0].SetActive(true);
+        }
+        else if (speedLimit == 50) {
+            for (int i = 0; i<3; i++) {
+                signs[i].SetActive(false);
+            }
+            signs[1].SetActive(true);
+        }
+        else if (speedLimit == 70) {
+            for (int i = 0; i<3; i++) {
+                signs[i].SetActive(false);
+            }
+            signs[2].SetActive(true);
+        } else {
+        for (int i = 0; i<3; i++) {
+                signs[i].SetActive(false);
+            }
+        }
     }
 }
