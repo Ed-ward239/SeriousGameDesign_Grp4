@@ -48,7 +48,7 @@ public class TireMovement : MonoBehaviour
         }
 
 
-        // gearNumber.text = gear + "";
+        gearNumber.text = gear + "";
 
 
 
