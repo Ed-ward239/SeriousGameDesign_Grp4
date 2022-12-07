@@ -2796,7 +2796,7 @@ PrefabInstance:
       objectReference: {fileID: 2071302512}
     - target: {fileID: 6260543729207214737, guid: f06ad50abc95fba4cb69dbcfa22d98ab, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6260543729380489549, guid: f06ad50abc95fba4cb69dbcfa22d98ab, type: 3}
       propertyPath: m_fontAsset
@@ -2814,6 +2814,22 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 6193553050033948362, guid: 38a1f5b1e06bf0f41a32d177e2238240, type: 2}
+    - target: {fileID: 6260543729787311469, guid: f06ad50abc95fba4cb69dbcfa22d98ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260543729787311469, guid: f06ad50abc95fba4cb69dbcfa22d98ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6260543730241183237}
+    - target: {fileID: 6260543729787311469, guid: f06ad50abc95fba4cb69dbcfa22d98ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260543729787311469, guid: f06ad50abc95fba4cb69dbcfa22d98ab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6260543729884351364, guid: f06ad50abc95fba4cb69dbcfa22d98ab, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -2874,6 +2890,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6260543729943103222, guid: f06ad50abc95fba4cb69dbcfa22d98ab, type: 3}
+      propertyPath: playerNameInput
+      value: 
+      objectReference: {fileID: 866158471}
     - target: {fileID: 6260543729983561988, guid: f06ad50abc95fba4cb69dbcfa22d98ab, type: 3}
       propertyPath: m_fontAsset
       value: 
