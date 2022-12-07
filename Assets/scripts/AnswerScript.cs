@@ -5,20 +5,16 @@ using UnityEngine;
  
 public class AnswerScript : MonoBehaviour
 {
-   public bool isCorrect = false;
+   public bool isCorrect;
    public QuizManager quizManager;
    public GameObject Panel;
    public GameObject Car;
    public GameObject GearsCanvas;
    public Timer Score;
    public GameObject ScoreBoard;
-
-
-
- 
- 
  
    public void Answer(){
+
        if(isCorrect){
            Debug.Log("Correct Answer");
            Score.amountCorrect++;
@@ -39,6 +35,7 @@ public class AnswerScript : MonoBehaviour
            else
             toggleGear();
    }
+
    public void toggleCar(){
        if(Car!= null){
            //bool isActive = Car.activeSelf;

@@ -31,7 +31,6 @@ public class CharacterManager : MonoBehaviour
             selectedOption = 0;
         }
         updateCharacter(selectedOption);
-        Debug.Log(selectedOption);
         Save();
     }
 
@@ -43,7 +42,6 @@ public class CharacterManager : MonoBehaviour
             selectedOption = characterDB.CharacterCount - 1;
         }
         updateCharacter(selectedOption);
-        Debug.Log(selectedOption);
         Save();
     }
 

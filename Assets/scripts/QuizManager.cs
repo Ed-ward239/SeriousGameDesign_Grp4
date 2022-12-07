@@ -10,7 +10,6 @@ public class QuizManager : MonoBehaviour
     public List<QuestionsandAnswers> QnA;
     public GameObject[] options;
     public int currentQuestion;
-
     public TextMeshProUGUI QuestionTxt;
 
 
@@ -29,19 +28,18 @@ public class QuizManager : MonoBehaviour
     void setAnswers(){
 
         for( int i = 0; i < options.Length; i++){
-            options[i].GetComponent<AnswerScript>().isCorrect= false;
+            options[i].GetComponent<AnswerScript>().isCorrect = false;
             options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QnA[currentQuestion].Answers[i];
-        
             if(QnA[currentQuestion].CorrectAnswer == i+1){
+                Debug.Log(QnA[currentQuestion].CorrectAnswer);
                 options[i].GetComponent<AnswerScript>().isCorrect = true; 
             }
         }
     }
 
     public void correct(){
-        QnA.RemoveAt(currentQuestion);
+        // QnA.RemoveAt(currentQuestion);
         generateQuestion();
-
     }
      
 }

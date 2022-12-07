@@ -75,6 +75,10 @@ public class CarMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (car.velocity.x > 22.5f) {
+            car.velocity = new Vector2(22.5f, car.velocity.y);
+        }
+
         if(Input.GetKey(KeyCode.Space)) {
             brake = true;
         }
