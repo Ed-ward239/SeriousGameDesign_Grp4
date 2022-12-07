@@ -11,13 +11,14 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1f;
+        Paused = false;
+        Time.timeScale = 1.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown("p"))
         {
             if (Paused)
             {
@@ -33,13 +34,13 @@ public class PauseMenu : MonoBehaviour
     public void Play()
     {
         Pause.SetActive(false);
-            Time.timeScale = 1f;
+            Time.timeScale = 1.0f;
         Paused = false;        
     }
     void Stop()
     {
         Pause.SetActive(true);
-            Time.timeScale = 0f;
+            Time.timeScale = 0.0f;
         Paused = true;
     }
 

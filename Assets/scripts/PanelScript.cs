@@ -23,13 +23,14 @@ public class PanelScript : MonoBehaviour
    public void appearPanel(){ //turns panel off/on
        if(Panel!= null){
           // bool isActive = Panel.activeSelf;
+          Debug.Log("pannel should appear");
            Panel.SetActive(true);
            vanishCar();
            vanishGear();
        }
    }   
    private void OnTriggerEnter2D(Collider2D collider){
-       Sign.GetComponent<BoxCollider2D> ().enabled = false;
+       Sign.GetComponent<BoxCollider2D>().enabled = false;
        Debug.Log("Trigger Panel!");
        appearPanel();
     //    StartCoroutine(EnableBox(60.0F));

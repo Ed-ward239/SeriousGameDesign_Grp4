@@ -25,13 +25,7 @@ public class GameController : MonoBehaviour
         // cars[selectedOption].SetActive(true);
         // frontTires[selectedOption].SetActive(true);
         // backTires[selectedOption].SetActive(true);
-        for (int i = 0; i < 3; i++) {
-            if (i != selectedOption) {
-                cars[i].SetActive(false);
-                frontTires[i].SetActive(false);
-                backTires[i].SetActive(false);
-            }
-        }
+        MakeTargetCarAppear();
 
         if (carBody == null) {
             carBody = cars[selectedOption];
@@ -44,8 +38,17 @@ public class GameController : MonoBehaviour
         carBody.GetComponent<CarMovement>().SetBody(carBody.GetComponent<Rigidbody2D>());
         background.GetComponent<FreeParallaxDemo>().SetPlayer(carBody);
 
-
         InvokeRepeating("CreateAstroids", 10.0f, 10.0f);
+    }
+
+    public void MakeTargetCarAppear() {
+          for (int i = 0; i < 3; i++) {
+            if (i != selectedOption) {
+                cars[i].SetActive(false);
+                frontTires[i].SetActive(false);
+                backTires[i].SetActive(false);
+            }
+        }
     }
 
     public void SetSpeedLimit(int limit) {

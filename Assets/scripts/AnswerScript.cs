@@ -35,7 +35,6 @@ public class AnswerScript : MonoBehaviour
            if(Score.amountQuestions==20){
             ScoreBoard.SetActive(true);
             removeCar();
-
            }
            else
             toggleGear();

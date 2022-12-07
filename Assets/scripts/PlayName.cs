@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayName : MonoBehaviour
 {
+    [SerializeField] InputField nameInput;
     [SerializeField] string playerName;
 
     public static PlayName Instance;
@@ -27,6 +28,16 @@ public class PlayName : MonoBehaviour
     public void SetName(string name)
     {
         playerName = name;
+    }
+
+    public string GetName()
+    {
+        return playerName;
+    }
+
+    public void SaveName()
+    {
+        playerName = nameInput.text;
     }
 }
 
