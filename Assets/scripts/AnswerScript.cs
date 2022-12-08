@@ -30,7 +30,7 @@ public class AnswerScript : MonoBehaviour
  
     //    turnButtonsOff();
     //    changeButtonsColor();
-       StartCoroutine(waiter(2.0F));
+    //    StartCoroutine(waiter(2.0F));
        quizManager.correct();
        togglePanel();
        toggleCar();
