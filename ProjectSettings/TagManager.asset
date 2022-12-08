@@ -16,6 +16,7 @@ TagManager:
   - 25speed
   - Buttons
   - signs
+  - Battery
   layers:
   - Default
   - TransparentFX

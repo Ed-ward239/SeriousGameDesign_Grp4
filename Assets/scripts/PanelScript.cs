@@ -30,9 +30,12 @@ public class PanelScript : MonoBehaviour
        }
    }   
    private void OnTriggerEnter2D(Collider2D collider){
-       Sign.GetComponent<BoxCollider2D>().enabled = false;
+    if (collider.gameObject.tag == "Car") {
+        Sign.GetComponent<BoxCollider2D>().enabled = false;
        Debug.Log("Trigger Panel!");
        appearPanel();
+    }
+      
     //    StartCoroutine(EnableBox(60.0F));
    }
 //    IEnumerator EnableBox(float waitTime) {

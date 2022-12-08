@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject[] frontTires;
     [SerializeField] GameObject[] backTires;
     [SerializeField] GameObject[] signs;
+    [SerializeField] GameObject[] batteries;
     [SerializeField] int selectedOption;
     [SerializeField] public GameObject carBody;
     [SerializeField] public GameObject camera;
@@ -15,12 +17,15 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject astroid;
     [SerializeField] GameObject dummy;
     [SerializeField] int speedLimit;
+    [SerializeField] float life;
     Vector2 position;
 
     // Start is called before the first frame update
     void Start()
     {
+        life = 100.0f;
         signs = GameObject.FindGameObjectsWithTag("signs");
+        batteries = GameObject.FindGameObjectsWithTag("Battery");
         selectedOption = PersistentData.Instance.GetOption();
         // cars = GameObject.FindGameObjectsWithTag("Car");
         // tires = GameObject.FindGameObjectsWithTag("Tire");
@@ -32,6 +37,7 @@ public class GameController : MonoBehaviour
         if (carBody == null) {
             carBody = cars[selectedOption];
         }
+       
         // transform.position = new Vector2(carBody.transform.position.x, carBody.transform.position.y);
         camera.GetComponent<CameraFollow>().SetTarget(carBody.transform);
         frontTires[selectedOption].GetComponent<TireMovement>().SetTire(frontTires[selectedOption].GetComponent<Rigidbody2D>());
@@ -41,6 +47,8 @@ public class GameController : MonoBehaviour
         background.GetComponent<FreeParallaxDemo>().SetPlayer(carBody);
 
         InvokeRepeating("CreateAstroids", 10.0f, 10.0f);
+        InvokeRepeating("AddSpeedingPenalty", 1.0f, 1.0f);
+        CreateDummies();
     }
 
     public void MakeTargetCarAppear() {
@@ -50,6 +58,12 @@ public class GameController : MonoBehaviour
                 frontTires[i].SetActive(false);
                 backTires[i].SetActive(false);
             }
+        }
+    }
+
+    void AddSpeedingPenalty() {
+        if (carBody.GetComponent<Rigidbody2D>().velocity.x * 10 >= speedLimit + 5 && (speedLimit == 25 || speedLimit == 50 || speedLimit == 70)) {
+            life-=3;
         }
     }
 
@@ -64,6 +78,13 @@ public class GameController : MonoBehaviour
     void CreateAstroids() {
         position = new Vector2(carBody.transform.position.x + 25, carBody.transform.position.y + 10);
         Instantiate(astroid, position, Quaternion.identity);
+    }
+    
+    void CreateDummies() {
+        for (int i = 0; i < 20; i++) {
+            position = new Vector2(Random.Range(100, 1350), -4.33f);
+            Instantiate(dummy, position, Quaternion.identity);
+        }
     }
 
     // Update is called once per frame
@@ -91,5 +112,54 @@ public class GameController : MonoBehaviour
                 signs[i].SetActive(false);
             }
         }
+
+        if (life < 0.0f) {
+            for (int i = 0; i<5; i++) {
+                batteries[i].SetActive(false);
+            }
+            batteries[0].SetActive(true);
+        }
+        else if (life < 25.0f) {
+            for (int i = 0; i<5; i++) {
+                batteries[i].SetActive(false);
+            }
+            batteries[1].SetActive(true);
+        }
+        else if (life < 50.0f) {
+            for (int i = 0; i<5; i++) {
+                batteries[i].SetActive(false);
+            }
+            batteries[2].SetActive(true);
+        }
+        else if (life < 75.0f) {
+            for (int i = 0; i<5; i++) {
+                batteries[i].SetActive(false);
+            }
+            batteries[3].SetActive(true);
+        }
+         else {
+            for (int i = 0; i<5; i++) {
+                batteries[i].SetActive(false);
+            }
+            batteries[4].SetActive(true);
+        }
+
+        if (life <= 0) {
+            SceneManager.LoadScene("level1");
+        }
+
+        Debug.Log(life + "");
+    }
+
+    public void SetReducedLife(float reducedLife) {
+        life -= reducedLife;
+    }
+
+    public void RefillLife() {
+        life = 100.0f;
+    }
+
+    public float GetLife() {
+        return life;
     }
 }

@@ -9,11 +9,15 @@ public class DummyMovement : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] AudioSource audio;
     [SerializeField] bool hasContacted = false;
+    [SerializeField] GameObject controller;
     // Start is called before the first frame update
     void Start()
     {
         if (dummy == null) {
             dummy = GetComponent<Rigidbody2D>();
+        }
+        if (controller == null) {
+            controller = GameObject.FindGameObjectWithTag("GameController");
         }
 
         if (dummyBubble == null) {
@@ -43,6 +47,8 @@ public class DummyMovement : MonoBehaviour
             // // AudioSource.PlayClipAtPoint(audio.clip, transform.position);
             // BlowUp();
             dummy.velocity = new Vector2(0, -0.25f);
+            // controller.GetComponent<GameController>().SetReducedLife(35.0f);
+
         }
 
         //  if (collider.gameObject.tag == "Car" && !hasContacted && dummy.velocity.y < 0.0f) {
