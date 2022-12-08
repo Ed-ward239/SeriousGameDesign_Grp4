@@ -5,7 +5,6 @@ using UnityEngine;
 public class DummyMovement : MonoBehaviour
 {
     Rigidbody2D dummy;
-    [SerializeField] CircleCollider2D dummyBubble;
     [SerializeField] Animator animator;
     [SerializeField] AudioSource audio;
     [SerializeField] bool hasContacted = false;
@@ -18,10 +17,6 @@ public class DummyMovement : MonoBehaviour
         }
         if (controller == null) {
             controller = GameObject.FindGameObjectWithTag("GameController");
-        }
-
-        if (dummyBubble == null) {
-            dummyBubble = GetComponent<CircleCollider2D>();
         }
 
         if (animator == null) {
@@ -39,26 +34,16 @@ public class DummyMovement : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.gameObject.tag == "Car") {
-            // hasContacted = true;
-            // // yield WaitForSeconds (3);
-            // // Invoke("BlowUp", 0);
-            // audio.Play();
-            // // AudioSource.PlayClipAtPoint(audio.clip, transform.position);
-            // BlowUp();
-            dummy.velocity = new Vector2(0, -0.25f);
-            // controller.GetComponent<GameController>().SetReducedLife(35.0f);
 
+        if (collider.gameObject.tag == "Car" && gameObject.tag == "Dummy") {
+            controller.GetComponent<GameController>().SetReducedLife(35.0f);
         }
-
-        //  if (collider.gameObject.tag == "Car" && !hasContacted && dummy.velocity.y < 0.0f) {
-        //     hasContacted = true;
-        //     // yield WaitForSeconds (3);
-        //     // Invoke("BlowUp", 0);
-        //     audio.Play();
-        //     // AudioSource.PlayClipAtPoint(audio.clip, transform.position);
-        //     BlowUp();
-        // }
+  
+         if (collider.gameObject.tag == "Car") {
+            hasContacted = true;
+            audio.Play();
+            BlowUp();
+        }
     } 
 
     void BlowUp() {

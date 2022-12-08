@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1608086855173828466}
   - component: {fileID: 1608086855173828461}
   m_Layer: 5
-  m_Name: HighScore Canvas
+  m_Name: HighScore Canvas - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

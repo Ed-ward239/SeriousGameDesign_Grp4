@@ -17,6 +17,7 @@ TagManager:
   - Buttons
   - signs
   - Battery
+  - Dummy
   layers:
   - Default
   - TransparentFX

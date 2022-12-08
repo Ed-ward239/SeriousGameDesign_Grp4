@@ -8,9 +8,10 @@ public class Score
 {
     // public string name;
     public float score;
+    public string name;
 
-    public Score(float score){
-        // this.name = name;
+    public Score(float score, string name){
+        this.name = name;
         this.score = score;
     }
 }

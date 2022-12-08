@@ -30,8 +30,12 @@ public class Timer : MonoBehaviour
     {   if(amountQuestions <=20 && happened){
             currentTime = countUp ? currentTime += Time.deltaTime : currentTime -= Time.deltaTime;
             timerText.text = currentTime.ToString("0.00");
-            questionsScore.text = amountCorrect.ToString() + "/" + amountQuestions.ToString();
-            if(amountQuestions==20)
+            if (amountQuestions > 0) {
+                questionsScore.text = (amountCorrect * 100 / amountQuestions) + "%";
+            } else {
+                questionsScore.text = "0%";
+            }
+            if(amountQuestions==5)
                 happened = false;
         }
     }

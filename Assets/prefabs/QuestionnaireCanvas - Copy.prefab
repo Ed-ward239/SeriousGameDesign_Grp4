@@ -1448,7 +1448,7 @@ GameObject:
   - component: {fileID: 5078882164597728990}
   - component: {fileID: 5078882164597728991}
   m_Layer: 5
-  m_Name: QuestionnaireCanvas
+  m_Name: QuestionnaireCanvas - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

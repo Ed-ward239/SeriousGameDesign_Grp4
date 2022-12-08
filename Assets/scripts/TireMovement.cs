@@ -21,6 +21,10 @@ public class TireMovement : MonoBehaviour
         //   if (car == null) {
         //     car = GameObject.FindGameObjectWithTag("Car");
         // }
+        gear = 1;
+        if (gearNumber == null) {
+            gearNumber = GetComponent<Text>();
+        }
     }
 
     public void SetTire(Rigidbody2D targetTire) {
@@ -48,7 +52,7 @@ public class TireMovement : MonoBehaviour
         }
 
 
-        // gearNumber.text = gear + "";
+        gearNumber.text = gear + "";
 
 
 

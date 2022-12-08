@@ -15,7 +15,6 @@ public class QuizManager : MonoBehaviour
 
     private void Start(){
         generateQuestion();
-
     }
 
     void generateQuestion(){
@@ -38,7 +37,7 @@ public class QuizManager : MonoBehaviour
     }
 
     public void correct(){
-        // QnA.RemoveAt(currentQuestion);
+        QnA.RemoveAt(currentQuestion);
         generateQuestion();
     }
      
