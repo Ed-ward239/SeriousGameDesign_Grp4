@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Windows.Forms.Button;
+//using System.Windows.Forms.Button;
 public class AnswerScript : MonoBehaviour
 {
   public bool isCorrect = false;
@@ -12,9 +12,9 @@ public class AnswerScript : MonoBehaviour
   public Timer Score;
   public GameObject ScoreBoard;
  
-  public Button button1;
-  public Button button2;
-  public Button button3;
+  //public Button button1;
+  //public Button button2;
+  //public Button button3;
  
  
  
@@ -28,14 +28,14 @@ public class AnswerScript : MonoBehaviour
  
       }
  
-       turnButtonsOff();
-       changeButtonsColor();
-       StartCoroutine(waiter(2.0F));
+       //turnButtonsOff();
+       //changeButtonsColor();
+      // StartCoroutine(waiter(2.0F));
        quizManager.correct();
        togglePanel();
        toggleCar();
        Score.amountQuestions++;
-       turnButtonsOn();
+       //turnButtonsOn();
  
        if(Score.amountQuestions==20){
            ScoreBoard.SetActive(true);
@@ -69,14 +69,14 @@ public class AnswerScript : MonoBehaviour
           GearsCanvas.SetActive(true);
       }
   }
+      /*
   public void turnButtonsOff(){
    button1.interactable = false;
    button2.interactable = false;
    button3.interactable = false;
    GameObject.interactable = false;
- 
- 
   }
+
   public void turnButtonsOn(){
    button1.interactable = true;
    button2.interactable = true;
@@ -113,5 +113,5 @@ public class AnswerScript : MonoBehaviour
   IEnumerator waiter(float waitTime) {
        yield return new WaitForSeconds(waitTime);
  
-  }
+  }*/
 }

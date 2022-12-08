@@ -39,8 +39,8 @@ public class ScoreUi : MonoBehaviour
     {
         if(timer.amountQuestions==20 && addedscore == false){
             if(timer.amountCorrect>=14){
+                passRFail.text = "Well done you have passed the mission with a time of : " + timer.currentTime.ToString("0.00");
                 scoreManager.AddScore(new Score(timer.currentTime));
-                passRFail.text = "Well done you have passed the mission with a time of : "+ timer.currentTime.ToString("0.00");
             }
             else
                 passRFail.text = "You have failed the mission, 14+ right answers is needed!!";

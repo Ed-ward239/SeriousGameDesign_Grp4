@@ -24,6 +24,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(Score score)
     {
         sd.scores.Add(score);
+        sd.names.Add(PersistentData.Instance.GetName());
     }
     public void OnDestroy()
     {

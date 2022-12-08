@@ -8,7 +8,7 @@ using TMPro;
 public class RowUi : MonoBehaviour
 {
     public TextMeshProUGUI rank;
-    // public Text name;
+    public TextMeshProUGUI name;
     public TextMeshProUGUI score;
 
 }
