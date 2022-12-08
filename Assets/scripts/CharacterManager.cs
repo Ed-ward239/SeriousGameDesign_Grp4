@@ -65,3 +65,6 @@ public class CharacterManager : MonoBehaviour
         SceneManager.LoadScene(sceneID);
     }
 }
+
+
+// Edited by Edward Lee

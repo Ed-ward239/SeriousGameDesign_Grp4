@@ -1425,7 +1425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9059751445469879852, guid: 845d5d3b0e2ea43fbbbe781729e0ff62, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9059751445469879853, guid: 845d5d3b0e2ea43fbbbe781729e0ff62, type: 3}
       propertyPath: Car
