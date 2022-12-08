@@ -20,9 +20,12 @@ public class CarMovement : MonoBehaviour
     [SerializeField] public Text speedNumber;
     [SerializeField] bool brake = false;
     [SerializeField] GameObject tire;
+
+    private GameObject trigger;
     // Start is called before the first frame update
     void Start()
     {
+        trigger = GameObject.FindGameObjectWithTag("TriggerMove");
         if (car == null) {
             car = GetComponent<Rigidbody2D>();
         }
