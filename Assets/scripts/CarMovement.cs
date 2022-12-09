@@ -20,17 +20,12 @@ public class CarMovement : MonoBehaviour
     [SerializeField] bool brake = false;
     [SerializeField] GameObject tire;
     [SerializeField] GameObject body;
-    [SerializeField] GameObject controller;
     [SerializeField] AudioSource[] audio;
     // Start is called before the first frame update
     void Start()
     {
         if (car == null) {
             car = GetComponent<Rigidbody2D>();
-        }
-
-        if (controller == null) {
-            controller = GameObject.FindGameObjectWithTag("GameController");
         }
 
         if (audio == null) {
