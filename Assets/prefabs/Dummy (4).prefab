@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 8241056230845030696}
   - component: {fileID: 5531378482821941928}
   - component: {fileID: 8136933345184206352}
+  - component: {fileID: 897737882500635867}
   m_Layer: 0
   m_Name: DummyBody
   m_TagString: Untagged
@@ -96,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dummy: {fileID: 3560797791706805437}
+  animator: {fileID: 0}
 --- !u!58 &8136933345184206352
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -112,6 +114,26 @@ CircleCollider2D:
   m_Offset: {x: -0.035224915, y: 0}
   serializedVersion: 2
   m_Radius: 2.5430527
+--- !u!95 &897737882500635867
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2679244562443574866}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 20334f531a7d34d5a979d6d22e4ae3e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6076496999533983916
 PrefabInstance:
   m_ObjectHideFlags: 0

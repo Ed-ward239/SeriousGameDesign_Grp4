@@ -47,7 +47,7 @@ public class DummyMovement : MonoBehaviour
     } 
 
     void BlowUp() {
-        animator.SetInteger("explode", 1);
+        animator.SetInteger("explode", 2);
    
         Invoke("Kill", 1.5f);
     }
