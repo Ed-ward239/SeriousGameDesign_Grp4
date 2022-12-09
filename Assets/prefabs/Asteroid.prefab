@@ -243,6 +243,7 @@ MonoBehaviour:
   hasContacted: 0
   car: {fileID: 0}
   astroidForce: 0
+  controller: {fileID: 0}
 --- !u!95 &9128447232658918871
 Animator:
   serializedVersion: 4
@@ -287,7 +288,7 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 1
+  BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:

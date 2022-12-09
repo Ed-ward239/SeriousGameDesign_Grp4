@@ -6,6 +6,8 @@ public class Sign : MonoBehaviour
 {
     GameObject controller;
     [SerializeField] int speedLimit;
+    [SerializeField] bool inNotified = false;
+    [SerializeField] GameObject notificationObj;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,16 @@ public class Sign : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.gameObject.tag == "Car") {
             controller.GetComponent<GameController>().SetSpeedLimit(speedLimit);
+            if (controller.GetComponent<GameController>().GetLifeStatus() && !inNotified) {
+                Debug.Log("boom");
+                notificationObj.SetActive(true);
+                Invoke("KillNotification", 25.0f);
+            }
         }
+    }
+
+    void KillNotification() {
+        notificationObj.SetActive(false);
+        inNotified = true;
     }
 }

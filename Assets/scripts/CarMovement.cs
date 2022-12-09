@@ -107,9 +107,9 @@ public class CarMovement : MonoBehaviour
         GetComponents<AudioSource>()[1].Play();
     }
 
-    void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Ground") {
-            isGrounded = true;
-        }
-    }
+    // void OnCollisionEnter2D(Collision2D collision) {
+    //     if (collision.gameObject.tag == "Ground") {
+    //         isGrounded = true;
+    //     }
+    // }
 }

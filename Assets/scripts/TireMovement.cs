@@ -51,8 +51,9 @@ public class TireMovement : MonoBehaviour
             }
         }
 
-
-        gearNumber.text = gear + "";
+        if (gearNumber != null && gear != null) {
+            gearNumber.text = gear + "";
+        }
 
 
 

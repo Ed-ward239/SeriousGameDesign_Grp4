@@ -18,12 +18,14 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject dummy;
     [SerializeField] int speedLimit;
     [SerializeField] float life;
+    [SerializeField] bool isAlive;
     Vector2 position;
 
     // Start is called before the first frame update
     void Start()
     {
         life = 100.0f;
+        isAlive = true;
         signs = GameObject.FindGameObjectsWithTag("signs");
         batteries = GameObject.FindGameObjectsWithTag("Battery");
         selectedOption = PersistentData.Instance.GetOption();
@@ -93,6 +95,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (life <= 0.0f) {
+            isAlive = false;
+        }
+
         if (speedLimit == 25) {
             for (int i = 0; i<3; i++) {
                 signs[i].SetActive(false);
@@ -151,7 +157,6 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene("level1");
         }
 
-        Debug.Log(PersistentData.Instance.GetName());
     }
 
     public void SetReducedLife(float reducedLife) {
@@ -164,5 +169,9 @@ public class GameController : MonoBehaviour
 
     public float GetLife() {
         return life;
+    }
+
+    public bool GetLifeStatus() {
+        return isAlive;
     }
 }
