@@ -422,6 +422,7 @@ MonoBehaviour:
   brake: 0
   tire: {fileID: 7495760350514270449}
   body: {fileID: 9182248209940688369}
+  controller: {fileID: 0}
   audio: []
 --- !u!82 &1661078716546705290
 AudioSource:
@@ -1693,6 +1694,7 @@ MonoBehaviour:
   brake: 0
   tire: {fileID: 4687001848328057022}
   body: {fileID: 9182248209940688369}
+  controller: {fileID: 0}
   audio: []
 --- !u!82 &55932991850264193
 AudioSource:
@@ -3423,6 +3425,7 @@ MonoBehaviour:
   brake: 0
   tire: {fileID: 9182248209008167267}
   body: {fileID: 9182248209940688369}
+  controller: {fileID: 0}
   audio: []
 --- !u!82 &9182248209723154634
 AudioSource:

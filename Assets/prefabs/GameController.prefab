@@ -57,10 +57,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   signs: []
+  batteries: []
   selectedOption: 0
   carBody: {fileID: 0}
   camera: {fileID: 0}
   background: {fileID: 0}
   astroid: {fileID: 9128447232658918879, guid: 48a15f01300b64b86890ab8930e69042, type: 3}
-  dummy: {fileID: 0}
+  dummy: {fileID: 655326975705522898, guid: 650238d53b3a14195b48fa285d942d37, type: 3}
   speedLimit: 0
+  life: 0
