@@ -18,6 +18,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField] bool isGrounded = true;
     [SerializeField] public Text speedNumber;
     [SerializeField] bool brake = false;
+    [SerializeField] bool isHunking = false;
     [SerializeField] GameObject tire;
     [SerializeField] GameObject body;
     [SerializeField] AudioSource[] audio;
@@ -99,12 +100,32 @@ public class CarMovement : MonoBehaviour
             Accelerate();
         }
 
+        if (Input.GetKeyDown("h")) {
+            Hunk();
+        }
+
     }
 
     void Accelerate() {
         car.AddForce(new Vector2(7000, 0));
         // AudioSource.PlayClipAtPoint(GetComponents<AudioSource>()[1].clip, transform.position);
         GetComponents<AudioSource>()[1].Play();
+    }
+
+    void Hunk() {
+        // AudioSource.PlayClipAtPoint(GetComponents<AudioSource>()[1].clip, transform.position);
+        GetComponents<AudioSource>()[3].Play();
+        isHunking = true;
+
+        Invoke("StopHunking", 2.0f);
+    }
+
+    void StopHunking() {
+        isHunking = false;
+    }
+
+    public bool GetIfIsHunking() {
+        return isHunking;
     }
 
     // void OnCollisionEnter2D(Collision2D collision) {

@@ -244,6 +244,8 @@ MonoBehaviour:
   car: {fileID: 0}
   astroidForce: 0
   controller: {fileID: 0}
+  inNotified: 0
+  notificationObj: {fileID: 5041530460101485368, guid: f7231cfd6aec54294a594d73529bbce2, type: 3}
 --- !u!95 &9128447232658918871
 Animator:
   serializedVersion: 4

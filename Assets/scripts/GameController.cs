@@ -19,6 +19,10 @@ public class GameController : MonoBehaviour
     [SerializeField] int speedLimit;
     [SerializeField] float life;
     [SerializeField] bool isAlive;
+    [SerializeField] bool isNotified = false;
+    [SerializeField] GameObject notificationObj;
+    [SerializeField] bool isBatteryNotified = false;
+    [SerializeField] GameObject batteryNotificationObj;
     Vector2 position;
 
     // Start is called before the first frame update
@@ -66,6 +70,10 @@ public class GameController : MonoBehaviour
     void AddSpeedingPenalty() {
         if (carBody.GetComponent<Rigidbody2D>().velocity.x * 10 >= speedLimit + 5 && (speedLimit == 25 || speedLimit == 50 || speedLimit == 70)) {
             life-=3;
+            if (isAlive && !isNotified) {
+                notificationObj.SetActive(true);
+                Invoke("KillNotification", 25.0f);
+            }
         }
     }
 
@@ -133,6 +141,10 @@ public class GameController : MonoBehaviour
                 batteries[i].SetActive(false);
             }
             batteries[1].SetActive(true);
+            if (isAlive && !isBatteryNotified) {
+                batteryNotificationObj.SetActive(true);
+                Invoke("KillBatteryNotification", 25.0f);
+            }
         }
         else if (life < 50.0f) {
             for (int i = 0; i<5; i++) {
@@ -173,5 +185,15 @@ public class GameController : MonoBehaviour
 
     public bool GetLifeStatus() {
         return isAlive;
+    }
+
+    void KillNotification() {
+        notificationObj.SetActive(false);
+        isNotified = true;
+    }
+
+    void KillBatteryNotification() {
+        batteryNotificationObj.SetActive(false);
+        isBatteryNotified = true;
     }
 }
