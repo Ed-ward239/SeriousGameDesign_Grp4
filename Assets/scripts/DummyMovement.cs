@@ -42,8 +42,6 @@ public class DummyMovement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider) {
     
         if (collider.gameObject.tag == "Car") {
-            hasContacted = true;
-            audio.Play();
             BlowUp();
         }
 
@@ -57,13 +55,15 @@ public class DummyMovement : MonoBehaviour
      }
 
     void BlowUp() {
+        hasContacted = true;
+        audio.Play();
         animator.SetInteger("explode", 2);
-        // Invoke("Kill", 1.5f);
+        Invoke("Kill", 0.75f);
     }
 
-    // void Kill() {
-    //     Destroy(animator.gameObject);
-    // }
+    void Kill() {
+        Destroy(animator.gameObject);
+    }
 
     void KillNotification() {
         notificationObj.SetActive(false);
