@@ -44,8 +44,10 @@ public class Sign : MonoBehaviour
             controller.GetComponent<GameController>().SetSpeedLimit(speedLimit);
             if (controller.GetComponent<GameController>().GetLifeStatus() && !isNotified) {
                 Debug.Log("boom");
-                notificationObj.SetActive(true);
-                Invoke("KillNotification", 25.0f);
+                if (notificationObj != null) {
+                    notificationObj.SetActive(true);
+                    Invoke("KillNotification", 25.0f);
+                }
             }
         }
     }
