@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character:
   - characterName: Mustang
-    characterSprite: {fileID: 21300000, guid: e9862338f0a5e462e8aa323f95873a62, type: 3}
+    characterSprite: {fileID: 21300000, guid: 27b00d942f82e6f4d86cb90ce7190d66, type: 3}
   - characterName: Mini
     characterSprite: {fileID: 21300000, guid: 638fd17653cf244679b4697cc3346327, type: 3}
+  - characterName: Truck
+    characterSprite: {fileID: 21300000, guid: 507cb23e5ec52864ca84ce7b8504d5e4, type: 3}

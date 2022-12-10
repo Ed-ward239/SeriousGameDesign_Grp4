@@ -49,16 +49,20 @@ public class CharacterManager : MonoBehaviour
     {
         Character character = characterDB.getCharacter(selectedOption);
         carSprite.sprite = character.characterSprite;
-        //carName.text = character.characterName;
+        // carName.text = character.ToString();
     }
 
     private void Load()
     {
-        selectedOption = PlayerPrefs.GetInt("selectedOption");
+        // selectedOption = PlayerPrefs.GetInt("selectedOption");
+        selectedOption = PersistentData.Instance.GetOption();
+        Character character = characterDB.getCharacter(selectedOption);
+        carSprite.sprite = character.characterSprite;
     }
     private void Save()
     {
-        PlayerPrefs.SetInt("selectedOption", selectedOption);
+        // PlayerPrefs.SetInt("selectedOption", selectedOption);
+        PersistentData.Instance.SetOption(selectedOption);
     }
     public void ChangeScene(int sceneID)
     {

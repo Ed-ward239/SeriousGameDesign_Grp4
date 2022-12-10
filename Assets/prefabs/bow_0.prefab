@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -3237439747593983529}
   - component: {fileID: 8322256099457505240}
   - component: {fileID: -6789416635856386299}
+  - component: {fileID: 990667830534901850}
   m_Layer: 0
   m_Name: bow_0
   m_TagString: Untagged
@@ -168,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa85ab52abb5040a3836942d02f310f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dummyBubble: {fileID: 0}
   animator: {fileID: 0}
   audio: {fileID: 0}
   hasContacted: 0
@@ -183,7 +185,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f07e4c96f39046c4a93783a86f82890b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -267,3 +269,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &990667830534901850
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295395346771790865}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06631136, y: 0.67707115}
+  serializedVersion: 2
+  m_Radius: 2.433723

@@ -17,6 +17,10 @@ public class FreeParallax : MonoBehaviour
     [Tooltip("Camera to use for the parallax. Defaults to main camera.")]
     public Camera parallaxCamera;
 
+    // public FreeParallax parallax; 
+
+    // public GameObject mustang;
+
     [Tooltip("The speed at which the parallax moves, which will likely be opposite from the speed at which your character moves. Elements can be set to move as a percentage of this value.")]
     public float Speed = 2.0f;
 
@@ -129,6 +133,10 @@ public class FreeParallax : MonoBehaviour
     void Start()
     {
 
+        // if (mustang != null)
+        // {
+        //     mustang.GetComponent<Rigidbody2D>().velocity = new Vector2(0.1f, 0.0f);
+        // }
 
 #if UNITY_EDITOR
 
@@ -152,6 +160,22 @@ public class FreeParallax : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if (parallax != null)
+        // {
+        //     if (Input.GetKey(KeyCode.LeftArrow))
+        //     {
+        //         parallax.Speed = 15.0f;
+        //     }
+        //     else if (Input.GetKey(KeyCode.RightArrow))
+        //     {
+        //         parallax.Speed = -15.0f;
+        //     }
+        //     else
+        //     {
+        //         parallax.Speed = 0.0f;
+        //     }
+        // }
+
        float t = Time.deltaTime * Speed;
        foreach (FreeParallaxElement e in Elements)
        {

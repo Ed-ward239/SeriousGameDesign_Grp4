@@ -13,28 +13,38 @@ public class CarMovement : MonoBehaviour
     [SerializeField] int initialSpeed = 4;
     [SerializeField] int gear;
     [SerializeField] int rotationFactor = 5;
-    [SerializeField] float jumpForce = 1000.0f;
     [SerializeField] bool isFacingRight = true;
     [SerializeField] bool jumpPressed = false;
     [SerializeField] bool isGrounded = true;
     [SerializeField] public Text speedNumber;
     [SerializeField] bool brake = false;
+    [SerializeField] bool isHunking = false;
     [SerializeField] GameObject tire;
-
-    private GameObject trigger;
+    [SerializeField] GameObject body;
+    [SerializeField] AudioSource[] audio;
     // Start is called before the first frame update
     void Start()
     {
-        trigger = GameObject.FindGameObjectWithTag("TriggerMove");
         if (car == null) {
             car = GetComponent<Rigidbody2D>();
         }
 
+        if (audio == null) {
+            audio = GetComponents<AudioSource>();
+        }
+
         tire = GameObject.FindGameObjectWithTag("Tire");
-        // speed = 15;
-        // jumpForce = 750.0f;
+ 
         rotationFactor = 5;
-       initialSpeed = 4;
+        initialSpeed = 4;
+    }
+
+    public void SetTire(GameObject targetTire) {
+        tire = targetTire;
+    }
+
+    public void SetBody(Rigidbody2D targetBody) {
+        car = targetBody;
     }
 
     // Update is called once per frame
@@ -42,68 +52,35 @@ public class CarMovement : MonoBehaviour
     {
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
-        // if (Input.GetButtonDown("Fire1")) {
-        //     if (gear == 4) {
-        //         gear = 1;
-        //         return;
-        //     }
-        //     gear++;
-        // }
 
-        // gearNumber.text = gear + "";
-			// jumpPressed = true;
-            // Jet();
         if(horizontalMovement != 0) {
             brake = false; 
         }
-
-
-        // if (gameObject.transform.rotation.z < -0.3) {
-        //     gameObject.transform.Rotate(0, 0, rotationFactor);
-        // }
-
-        // if (gameObject.transform.rotation.z > 0.4) {
-        //     gameObject.transform.Rotate(0, 0, -1 * rotationFactor);
-        // }
-
         velocity = car.velocity.x;
-        speedNumber.text = velocity + "";
-        
+        body.GetComponent<Rigidbody2D>().velocity = new Vector2(car.velocity.x, car.velocity.y);
+        speedNumber.text = Mathf.RoundToInt((velocity * 10)) + "";
+        if (velocity < 0) {
+           speedNumber.text = Mathf.RoundToInt((-1 * velocity * 10)) + ""; 
+        }
+         
         gear = tire.GetComponent<TireMovement>().gear;
 
-        if (car.velocity.x > gear * 2.50f && gear < 4) {
-            car.velocity = new Vector2(car.velocity.x - 0.5f, car.velocity.y);
+        if (car.velocity.x > gear * 2.525f && gear < 4) {
+            car.velocity = new Vector2(car.velocity.x - 0.1f, car.velocity.y);
         }
 
-        if (brake && car.velocity.x >= 0.1f) {
-            car.velocity = new Vector2(car.velocity.x - 0.5f, car.velocity.y);
+        if (car.velocity.x > 15.0f && gear == 4) {
+            car.velocity = new Vector2(car.velocity.x - 0.1f, car.velocity.y);
         }
-
-        // if (brake && car.velocity.x < 0.9f) {
-        //     car.velocity = new Vector2(0, car.velocity.y);
-        // }
-    }
-
-    void Flip() {
-        transform.Rotate(0, 180, 0);
-        isFacingRight = !isFacingRight;
-    }
-
-
-    void Jet() {
-        // car.velocity = new Vector2(car.velocity.x * 2, car.velocity.y);
-		// car.AddForce(new Vector2(0, jumpForce));
-		// jumpPressed = false;
-		// isGrounded = false;
-    }
-
-    void Jump() {
-        car.AddForce(new Vector2(0, jumpForce));
     }
 
     void FixedUpdate()
     {
-        if(Input.GetButtonDown("Jump")) {
+        if (car.velocity.x > 22.5f) {
+            car.velocity = new Vector2(22.5f, car.velocity.y);
+        }
+
+        if(Input.GetKey(KeyCode.Space)) {
             brake = true;
         }
 
@@ -112,31 +89,48 @@ public class CarMovement : MonoBehaviour
         if (euler.z > 180) euler.z = euler.z - 360;
         euler.z = Mathf.Clamp(euler.z, -25, 25);
         transform.eulerAngles = euler;
-        // if(horizontalMovement > 0) {
-        //     speed = gear * initialSpeed;
-        // }
-        // if(horizontalMovement < 0) {
-        //     speed = gear * initialSpeed / 2;
-        // }
-        // car.velocity = new Vector2(horizontalMovement * speed, car.velocity.y);
-        // if(horizontalMovement < 0 && isFacingRight || horizontalMovement > 0 && !isFacingRight) {
-        //     Flip();
-        // }
-        // if (jumpPressed) {
-        //     Jet();
-        // }
 
-        // if (Input.GetButtonDown("Fire1")) {
-        //     Jump();
-        // }
-        
-      
-
-    }
-
-    void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Ground") {
-            isGrounded = true;
+        if (brake && (car.velocity.x >= 0.1f || car.velocity.x <= 0.0f)) {
+            car.velocity = new Vector2(car.velocity.x/1.1f, car.velocity.y);
+            // AudioSource.PlayClipAtPoint(GetComponents<AudioSource>()[0].clip, transform.position);
+            GetComponents<AudioSource>()[0].Play();
         }
+
+        if (Input.GetKeyDown("left ctrl")) {
+            Accelerate();
+        }
+
+        if (Input.GetKeyDown("h")) {
+            Hunk();
+        }
+
     }
+
+    void Accelerate() {
+        car.AddForce(new Vector2(7000, 0));
+        // AudioSource.PlayClipAtPoint(GetComponents<AudioSource>()[1].clip, transform.position);
+        GetComponents<AudioSource>()[1].Play();
+    }
+
+    void Hunk() {
+        // AudioSource.PlayClipAtPoint(GetComponents<AudioSource>()[1].clip, transform.position);
+        GetComponents<AudioSource>()[3].Play();
+        isHunking = true;
+
+        Invoke("StopHunking", 2.0f);
+    }
+
+    void StopHunking() {
+        isHunking = false;
+    }
+
+    public bool GetIfIsHunking() {
+        return isHunking;
+    }
+
+    // void OnCollisionEnter2D(Collision2D collision) {
+    //     if (collision.gameObject.tag == "Ground") {
+    //         isGrounded = true;
+    //     }
+    // }
 }

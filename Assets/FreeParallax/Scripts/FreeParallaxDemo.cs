@@ -23,6 +23,10 @@ public class FreeParallaxDemo : MonoBehaviour
         
     }
 
+    public void SetPlayer(GameObject targetPlayer) {
+        player = targetPlayer;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -30,15 +34,17 @@ public class FreeParallaxDemo : MonoBehaviour
 
         if (parallax != null)
         {
+            
             if (Input.GetKey(KeyCode.LeftArrow) || carSpeed < 0)
             { 
-                
-                parallax.Speed = -carSpeed*.25f;
+                parallax.Speed = -carSpeed;
+                // print("CAR BACK, BACKGROUND FORWARD   CAR VELOCITY SHOULD BE NEGATIVE: " + carSpeed);
             }
             else if (Input.GetKey(KeyCode.RightArrow) || carSpeed > 0)
             {
-                parallax.Speed = -carSpeed*.25f;
-
+                parallax.Speed = -carSpeed;
+                // print("CAR FORWARD, BACKGROUND BACKWARD   CAR VELOCITY SHOULD BE POSITIVE: " + carSpeed);
+                //print((carSpeed));
             }
             else
             {

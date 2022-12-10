@@ -6,7 +6,18 @@ TagManager:
   tags:
   - Car
   - Tire
-  - TriggerMove
+  - Astroid
+  - CarObject
+  - 25spped
+  - 50speed
+  - 75speed
+  - UnlimitedSpeed
+  - 70speed
+  - 25speed
+  - Buttons
+  - signs
+  - Battery
+  - Dummy
   layers:
   - Default
   - TransparentFX

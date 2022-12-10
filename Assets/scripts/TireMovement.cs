@@ -13,14 +13,22 @@ public class TireMovement : MonoBehaviour
     [SerializeField] int speed = 25;
     [SerializeField] public int gear = 1;
     [SerializeField] public Text gearNumber;
-    [SerializeField] public GameObject car;
+    // [SerializeField] public GameObject car;
     // Start is called before the first frame update
     void Start()
     {
-        tire = GetComponent<Rigidbody2D>();
-          if (car == null) {
-            car = GameObject.FindGameObjectWithTag("Car");
+        // tire = GetComponent<Rigidbody2D>();
+        //   if (car == null) {
+        //     car = GameObject.FindGameObjectWithTag("Car");
+        // }
+        gear = 1;
+        if (gearNumber == null) {
+            gearNumber = GetComponent<Text>();
         }
+    }
+
+    public void SetTire(Rigidbody2D targetTire) {
+        tire = targetTire;
     }
 
     // Update is called once per frame
@@ -29,17 +37,23 @@ public class TireMovement : MonoBehaviour
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
 
-        if (Input.GetButtonDown("Fire1")) {
-            if (gear == 4) {
-                gear = 1;
+        if (Input.GetKeyDown("up")) {
+            if (gear < 4) {
+                gear++;
                 return;
             }
-            gear++;
         }
 
+        if (Input.GetKeyDown("down")) {
+            if (gear > 1) {
+                gear--;
+                return;
+            }
+        }
 
-
-        gearNumber.text = gear + "";
+        if (gearNumber != null && gear != null) {
+            gearNumber.text = gear + "";
+        }
 
 
 
