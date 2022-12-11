@@ -8,11 +8,17 @@ public class BombMovement : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] bool hasContacted = false;
     [SerializeField] AudioSource audio;
+    [SerializeField] GameObject controller;
+    
     // Start is called before the first frame update
     void Start()
     {
         if (animator == null) {
             animator = GetComponent<Animator>();
+        }
+
+        if (controller == null) {
+            controller = GameObject.FindGameObjectWithTag("GameController");
         }
 
         if (audio == null) {
@@ -40,9 +46,8 @@ public class BombMovement : MonoBehaviour
     }
 
     void OnCollisionStay2D(Collision2D collider) {
-            // if (collider.gameObject.tag == "Car") {
-                BlowUp();
-            // }
+            controller.GetComponent<GameController>().SetReducedLife(1.0f);
+            BlowUp();
         }
 
 

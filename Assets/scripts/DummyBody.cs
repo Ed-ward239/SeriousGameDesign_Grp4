@@ -8,6 +8,7 @@ public class DummyBody : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] GameObject bomb;
     [SerializeField] bool isAngry = false;
+    [SerializeField] bool isAngryOnce = false;
     [SerializeField] float x;
     [SerializeField] float y;
     [SerializeField] AudioSource audio;
@@ -31,13 +32,14 @@ public class DummyBody : MonoBehaviour
     }
 
      void OnTriggerStay2D(Collider2D collider) {
-        if (collider.gameObject.tag == "Car" && collider.gameObject.GetComponent<CarMovement>().GetIfIsHunking() && !isAngry) {
+        if (collider.gameObject.tag == "Car" && collider.gameObject.GetComponent<CarMovement>().GetIfIsHunking() && !isAngry && !isAngryOnce) {
             isAngry = true;
+            isAngryOnce = true;
             dummy.GetComponent<Animator>().SetInteger("explode", 3);
             dummy.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             Invoke("Groan", 1.5f);
             Invoke("StartThrowing", 3.0f);
-            Invoke("StopBeingAngry", 23.0f);
+            Invoke("StopBeingAngry", 20.0f);
         }
      }
 

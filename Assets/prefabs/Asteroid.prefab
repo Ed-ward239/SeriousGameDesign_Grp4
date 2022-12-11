@@ -82,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6691643d9d08ede40bc93504dc8acb2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -244,7 +244,7 @@ MonoBehaviour:
   car: {fileID: 0}
   astroidForce: 0
   controller: {fileID: 0}
-  inNotified: 0
+  isNotified: 0
   notificationObj: {fileID: 5041530460101485368, guid: f7231cfd6aec54294a594d73529bbce2, type: 3}
 --- !u!95 &9128447232658918871
 Animator:
@@ -428,7 +428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9128447233422158429
 Transform:
   m_ObjectHideFlags: 0

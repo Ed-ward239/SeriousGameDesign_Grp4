@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour
     void CreateDummies() {
         for (int i = 0; i < 20; i++) {
             int pos = Random.Range(50, 1570);
-            if (pos < 250 || (pos >280 && pos < 320) ||  (pos >360 && pos < 390) || (pos >600 && pos < 780) || (pos >940 && pos < 1130) || (pos >1320 && pos < 1430) || (pos >1460 && pos < 1570)) {
+            if (pos < 246 || (pos >280 && pos < 320) ||  (pos >360 && pos < 390) || (pos >600 && pos < 780) || (pos >940 && pos < 1130) || (pos >1320 && pos < 1430) || (pos >1460 && pos < 1570)) {
             position = new Vector2(pos, -4.0f);
             Instantiate(dummy, position, Quaternion.identity);
             }
