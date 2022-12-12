@@ -19,7 +19,9 @@ public class ButtonFunction : MonoBehaviour
     {
         
     }
-
+    public void GoToPractice(){
+        SceneManager.LoadScene("practice");
+    }
     public void GoToMain() {
         SceneManager.LoadScene("Menu");
     }

@@ -10,6 +10,7 @@ public class ScoreUi : MonoBehaviour
     public ScoreManager scoreManager;
     public Timer timer;
     private bool addedscore = false;
+    [SerializeField] bool addScore = true;
     public TextMeshProUGUI passRFail;
 
     // Start is called before the first frame update
@@ -41,7 +42,8 @@ public class ScoreUi : MonoBehaviour
         if(timer.amountQuestions==20 && addedscore == false){
             if(timer.amountCorrect>=14){
                 passRFail.text = "Well done! You have passed the mission with a time of : "+ timer.currentTime.ToString("0.00");
-                scoreManager.AddScore(new Score(timer.currentTime, PersistentData.Instance.GetName()));
+                if(addScore)
+                    scoreManager.AddScore(new Score(timer.currentTime, PersistentData.Instance.GetName()));
             }
             else
                 passRFail.text = "You have failed!!! A score of 70% or over is required.";
