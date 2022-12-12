@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject[] backTires;
     [SerializeField] GameObject[] signs;
     [SerializeField] GameObject[] batteries;
+    [SerializeField] GameObject[] notifications;
     [SerializeField] int selectedOption;
     [SerializeField] public GameObject carBody;
     [SerializeField] public GameObject camera;
@@ -19,7 +20,12 @@ public class GameController : MonoBehaviour
     [SerializeField] int speedLimit;
     [SerializeField] float life;
     [SerializeField] bool isAlive;
+    [SerializeField] bool isNotified = false;
+    [SerializeField] GameObject notificationObj;
+    [SerializeField] bool isBatteryNotified = false;
+    [SerializeField] GameObject batteryNotificationObj;
     Vector2 position;
+    [SerializeField] bool isNotificationOn;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +35,8 @@ public class GameController : MonoBehaviour
         signs = GameObject.FindGameObjectsWithTag("signs");
         batteries = GameObject.FindGameObjectsWithTag("Battery");
         selectedOption = PersistentData.Instance.GetOption();
+        isNotificationOn = PersistentData.Instance.GetNotificationsOption();
+        Debug.Log(isNotificationOn);
         // cars = GameObject.FindGameObjectsWithTag("Car");
         // tires = GameObject.FindGameObjectsWithTag("Tire");
         // cars[selectedOption].SetActive(true);
@@ -66,6 +74,13 @@ public class GameController : MonoBehaviour
     void AddSpeedingPenalty() {
         if (carBody.GetComponent<Rigidbody2D>().velocity.x * 10 >= speedLimit + 5 && (speedLimit == 25 || speedLimit == 50 || speedLimit == 70)) {
             life-=3;
+            if (isAlive && !isNotified) {
+                isNotificationOn = PersistentData.Instance.GetNotificationsOption();
+                if (isNotificationOn) {
+                notificationObj.SetActive(true);
+                Invoke("KillNotification", 15.0f);
+                }
+            }
         }
     }
 
@@ -85,7 +100,7 @@ public class GameController : MonoBehaviour
     void CreateDummies() {
         for (int i = 0; i < 20; i++) {
             int pos = Random.Range(50, 1570);
-            if (pos < 250 || (pos >280 && pos < 320) ||  (pos >360 && pos < 390) || (pos >600 && pos < 780) || (pos >940 && pos < 1130) || (pos >1320 && pos < 1430) || (pos >1460 && pos < 1570)) {
+            if (pos < 246 || (pos >280 && pos < 320) ||  (pos >360 && pos < 390) || (pos >600 && pos < 780) || (pos >940 && pos < 1130) || (pos >1320 && pos < 1430) || (pos >1460 && pos < 1570)) {
             position = new Vector2(pos, -4.0f);
             Instantiate(dummy, position, Quaternion.identity);
             }
@@ -133,6 +148,13 @@ public class GameController : MonoBehaviour
                 batteries[i].SetActive(false);
             }
             batteries[1].SetActive(true);
+            if (isAlive && !isBatteryNotified) {
+                isNotificationOn = PersistentData.Instance.GetNotificationsOption();
+                if (isNotificationOn) {
+                batteryNotificationObj.SetActive(true);
+                Invoke("KillBatteryNotification", 15.0f);
+                }
+            }
         }
         else if (life < 50.0f) {
             for (int i = 0; i<5; i++) {
@@ -173,5 +195,23 @@ public class GameController : MonoBehaviour
 
     public bool GetLifeStatus() {
         return isAlive;
+    }
+
+    void KillNotification() {
+        notificationObj.SetActive(false);
+        isNotified = true;
+    }
+
+    void KillBatteryNotification() {
+        batteryNotificationObj.SetActive(false);
+        isBatteryNotified = true;
+    }
+    public void DisableActiveNotifications() {
+        notifications = GameObject.FindGameObjectsWithTag("Notification");
+        PersistentData.Instance.SetNotificationsOption(false);
+        foreach (GameObject notification in notifications)
+        {
+            notification.SetActive(false);
+        }
     }
 }

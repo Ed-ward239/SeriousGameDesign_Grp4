@@ -8,9 +8,10 @@ public class DummyMovement : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] AudioSource audio;
     [SerializeField] bool hasContacted = false;
-    [SerializeField] bool inNotified = false;
+    [SerializeField] bool isNotified = false;
     [SerializeField] GameObject controller;
     [SerializeField] GameObject notificationObj;
+    [SerializeField] bool isNotificationOn;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +22,9 @@ public class DummyMovement : MonoBehaviour
             controller = GameObject.FindGameObjectWithTag("GameController");
         }
 
-        if (notificationObj == null) {
-            notificationObj = GameObject.FindGameObjectWithTag("HitAndRun");
-        }
+        // if (notificationObj == null) {
+        //     notificationObj = GameObject.FindGameObjectWithTag("HitAndRun");
+        // }
 
         if (animator == null) {
             animator = GetComponent<Animator>();
@@ -42,32 +43,34 @@ public class DummyMovement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider) {
     
         if (collider.gameObject.tag == "Car") {
-            hasContacted = true;
-            audio.Play();
             BlowUp();
         }
 
         if (collider.gameObject.tag == "Car" && gameObject.tag == "Dummy") {
             controller.GetComponent<GameController>().SetReducedLife(35.0f);
-            if (controller.GetComponent<GameController>().GetLifeStatus() && !inNotified) {
+            if (controller.GetComponent<GameController>().GetLifeStatus() && !isNotified) {
+                isNotificationOn = PersistentData.Instance.GetNotificationsOption();
+                if (isNotificationOn) {
                 notificationObj.SetActive(true);
-                Invoke("KillNotification", 25.0f);
+                Invoke("KillNotification", 15.0f);
+                }
             }
         }
      }
 
     void BlowUp() {
+        hasContacted = true;
+        audio.Play();
         animator.SetInteger("explode", 2);
-   
-        // Invoke("Kill", 1.5f);
+        Invoke("Kill", 0.75f);
     }
 
-    // void Kill() {
-    //     Destroy(animator.gameObject);
-    // }
+    void Kill() {
+        Destroy(animator.gameObject);
+    }
 
     void KillNotification() {
         notificationObj.SetActive(false);
-        inNotified = true;
+        isNotified = true;
     }
 }

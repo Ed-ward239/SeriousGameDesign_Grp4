@@ -18,6 +18,9 @@ TagManager:
   - signs
   - Battery
   - Dummy
+  - AstridHitWarning
+  - PowerUpWarning
+  - Notification
   layers:
   - Default
   - TransparentFX

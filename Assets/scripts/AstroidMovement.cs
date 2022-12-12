@@ -12,6 +12,8 @@ public class AstroidMovement : MonoBehaviour
     [SerializeField] GameObject car;
     [SerializeField] int astroidForce;
     [SerializeField] GameObject controller;
+    [SerializeField] bool isNotified = false;
+    [SerializeField] GameObject notificationObj;
     // [SerializeField] GameObject ast;
     // Vector2 position;
     // Start is called before the first frame update
@@ -69,6 +71,10 @@ public class AstroidMovement : MonoBehaviour
 
         if (collider.gameObject.tag == "Car") {
             controller.GetComponent<GameController>().SetReducedLife(50.0f);
+            if (controller.GetComponent<GameController>().GetLifeStatus() && !isNotified) {
+                notificationObj.SetActive(true);
+                Invoke("KillNotification", 15.0f);
+            }
         }
 
         if (hasContacted == false && collider.gameObject.tag != "Astroid") {
@@ -93,5 +99,10 @@ public class AstroidMovement : MonoBehaviour
     void Kill() {
         animator.SetInteger("explosion", 0);
         Destroy(animator.gameObject);
+    }
+
+    void KillNotification() {
+        notificationObj.SetActive(false);
+        isNotified = true;
     }
 }
