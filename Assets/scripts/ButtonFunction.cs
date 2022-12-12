@@ -8,6 +8,7 @@ using TMPro;
 public class ButtonFunction : MonoBehaviour
 {
     [SerializeField] TMP_InputField nameInput;
+    [SerializeField] Toggle notificationsToggle;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +34,12 @@ public class ButtonFunction : MonoBehaviour
 
     public void SavePlayerName() {
         PersistentData.Instance.SetName(nameInput.text);
+    }
+
+    public void SaveNotificationsOption() {
+        PersistentData.Instance.SetNotificationsOption(notificationsToggle.isOn);
+    }
+    public void TurnNotificationsOff() {
+        PersistentData.Instance.SetNotificationsOption(false);
     }
 }
