@@ -11,6 +11,7 @@ public class QuizManager : MonoBehaviour
     public GameObject[] options;
     public int currentQuestion;
     public TextMeshProUGUI QuestionTxt;
+    public TextMeshProUGUI ExplainationTxt;
 
 
     private void Start(){
@@ -20,6 +21,7 @@ public class QuizManager : MonoBehaviour
     void generateQuestion(){
         currentQuestion = Random.Range(0,QnA.Count);
         QuestionTxt.text = QnA[currentQuestion].Question;
+        ExplainationTxt.text = QnA[currentQuestion].Explaination;
         setAnswers();
 
     }
@@ -36,8 +38,9 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    public void correct(){
-        QnA.RemoveAt(currentQuestion);
+    public void correct(bool remove){
+        if(remove)
+            QnA.RemoveAt(currentQuestion);
         generateQuestion();
     }
      

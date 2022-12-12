@@ -35,7 +35,7 @@ public class Timer : MonoBehaviour
             } else {
                 questionsScore.text = "0%";
             }
-            if(amountQuestions==5)
+            if(amountQuestions==20)
                 happened = false;
         }
     }

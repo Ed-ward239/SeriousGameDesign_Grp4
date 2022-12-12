@@ -11,6 +11,7 @@ public class ScoreUi : MonoBehaviour
     public Timer timer;
     private bool addedscore = false;
     public TextMeshProUGUI passRFail;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,26 +27,24 @@ public class ScoreUi : MonoBehaviour
         {
             var row = Instantiate(rowUi, transform).GetComponent<RowUi>();
             // row.rank.text = (i+1).ToString();
-            row.rank.text = scores[i].name;
+            row.name.text = scores[i].name;
             // row.name.text = scores[i].name;
             row.score.text = scores[i].score.ToString("0.00");
-
-        
-        
         }
+            passRFail.text = "You have died! You must try to preserve your life.";
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(timer.amountQuestions==5 && addedscore == false){
-            if(timer.amountCorrect>=4){
+        if(timer.amountQuestions==20 && addedscore == false){
+            if(timer.amountCorrect>=14){
+                passRFail.text = "Well done! You have passed the mission with a time of : "+ timer.currentTime.ToString("0.00");
                 scoreManager.AddScore(new Score(timer.currentTime, PersistentData.Instance.GetName()));
-                passRFail.text = "Well done! You have passed.";
-                // the mission with a time of : "+ timer.currentTime.ToString("0.00");
             }
             else
-                passRFail.text = "You have failed!!! A score of 70% is required.";
+                passRFail.text = "You have failed!!! A score of 70% or over is required.";
             addedscore=true;
 
         }

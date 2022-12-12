@@ -66,6 +66,7 @@ public class PersistentData : MonoBehaviour
     public string GetDifficulty () {
         return difficultyLevel == 1 ? "Difficult" : "Easy";
     }
+
     public bool GetMusicOption () {
         return isMusicMuted;
     }
