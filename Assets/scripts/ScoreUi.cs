@@ -31,7 +31,7 @@ public class ScoreUi : MonoBehaviour
             // row.name.text = scores[i].name;
             row.score.text = scores[i].score.ToString("0.00");
         }
-            passRFail.text = "You have died! You must try to preserve your life.";
+            passRFail.text = "Your battery died! Now you wont make it to Brooklyn Bridge.";
 
     }
 

@@ -39,11 +39,6 @@ public class GameController : MonoBehaviour
         selectedOption = PersistentData.Instance.GetOption();
         isNotificationOn = PersistentData.Instance.GetNotificationsOption();
         Debug.Log(isNotificationOn);
-        // cars = GameObject.FindGameObjectsWithTag("Car");
-        // tires = GameObject.FindGameObjectsWithTag("Tire");
-        // cars[selectedOption].SetActive(true);
-        // frontTires[selectedOption].SetActive(true);
-        // backTires[selectedOption].SetActive(true);
         MakeTargetCarAppear();
 
         if (carBody == null) {
@@ -178,12 +173,16 @@ public class GameController : MonoBehaviour
         }
 
         if (life <= 0) {
-            //SceneManager.LoadScene("level1");
-            Time.timeScale = 0.0f;
-            highscoreBoard.SetActive(true);
-            carCanvas.SetActive(false);
+            carBody.GetComponent<Rigidbody2D>().velocity = new Vector2(0, carBody.GetComponent<Rigidbody2D>().velocity.y);
+            Invoke("DisplayEndPanel", 2);
         }
 
+    }
+
+    void DisplayEndPanel() {
+        Time.timeScale = 0.0f;
+        highscoreBoard.SetActive(true);
+        carCanvas.SetActive(false);
     }
 
     public void SetReducedLife(float reducedLife) {
