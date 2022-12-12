@@ -1182,6 +1182,46 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6440927639771096737, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
+      propertyPath: m_fontSize
+      value: 20.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440927639771096737, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
+      propertyPath: m_margin.x
+      value: 62.66496
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440927639771096737, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
+      propertyPath: m_margin.z
+      value: 15.414803
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440927639771096737, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440927639830178351, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
+      propertyPath: m_fontSize
+      value: 20.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440927639830178351, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
+      propertyPath: m_margin.w
+      value: 5.195032
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440927639830178351, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
+      propertyPath: m_margin.x
+      value: 61.40959
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440927639830178351, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
+      propertyPath: m_margin.y
+      value: 5.195053
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440927639830178351, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
+      propertyPath: m_margin.z
+      value: 17.663132
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440927639830178351, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6477703399767121470, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
       propertyPath: m_SizeDelta.x
       value: -700
