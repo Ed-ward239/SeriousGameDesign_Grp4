@@ -7,14 +7,17 @@ using static UnityEngine.Color;
  
 public class AnswerScript : MonoBehaviour
 {
-   public bool isCorrect;
-   public QuizManager quizManager;
-   public GameObject Panel;
-   public GameObject ExplainationPanel;
-   public GameObject Car;
-   public GameObject GearsCanvas;
-   public Timer Score;
-   public GameObject ScoreBoard;
+    public bool isCorrect;
+    public QuizManager quizManager;
+    public GameObject Panel;
+    public GameObject ExplainationPanel;
+    public GameObject Car;
+    public GameObject GearsCanvas;
+    public Timer Score;
+    public GameObject ScoreBoard;
+    [SerializeField] int numQuestionsInARow =4;
+    [SerializeField] float waitTimeInSeconds=5;
+    [SerializeField] bool removeQuestions = true;
 
     [SerializeField] Button button1;
     [SerializeField] Button button2;
@@ -35,7 +38,7 @@ public class AnswerScript : MonoBehaviour
 
             changeButtonsColor();
             turnButtonsOff();
-            StartCoroutine(waiter(5.0F));
+            StartCoroutine(waiter(waitTimeInSeconds));
             // quizManager.correct();
             // changeButtonsColorBack();
             // turnButtonsOn();
@@ -133,12 +136,12 @@ public class AnswerScript : MonoBehaviour
         Debug.Log("Starting waiter");
         ExplainationPanel.SetActive(true);
         yield return new WaitForSeconds(waitTime);
-        quizManager.correct();
+        quizManager.correct(removeQuestions);
         ExplainationPanel.SetActive(false);
         changeButtonsColorBack();
         turnButtonsOn();
 
-        if(Score.amountQuestions%4==0){
+        if(Score.amountQuestions%numQuestionsInARow==0){
             removePanel();
             returnCar();
             if(Score.amountQuestions==20){

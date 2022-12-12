@@ -38,8 +38,9 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    public void correct(){
-        QnA.RemoveAt(currentQuestion);
+    public void correct(bool remove){
+        if(remove)
+            QnA.RemoveAt(currentQuestion);
         generateQuestion();
     }
      
