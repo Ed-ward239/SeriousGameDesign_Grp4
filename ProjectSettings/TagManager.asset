@@ -18,6 +18,13 @@ TagManager:
   - signs
   - Battery
   - Dummy
+  - AstridHitWarning
+  - PowerUpWarning
+  - Notification
+  - SpeedingWarning
+  - LowBatteryWarning
+  - HitAndRun
+  - SpeedLimitNotification
   layers:
   - Default
   - TransparentFX
@@ -69,4 +76,10 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Notifications
+    uniqueID: 1675970163
+    locked: 0
+  - name: MainCanvas
+    uniqueID: 61575523
     locked: 0

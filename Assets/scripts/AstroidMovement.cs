@@ -73,7 +73,7 @@ public class AstroidMovement : MonoBehaviour
             controller.GetComponent<GameController>().SetReducedLife(50.0f);
             if (controller.GetComponent<GameController>().GetLifeStatus() && !isNotified) {
                 notificationObj.SetActive(true);
-                Invoke("KillNotification", 25.0f);
+                Invoke("KillNotification", 15.0f);
             }
         }
 

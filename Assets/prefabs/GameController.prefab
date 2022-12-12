@@ -58,6 +58,7 @@ MonoBehaviour:
   - {fileID: 0}
   signs: []
   batteries: []
+  notifications: []
   selectedOption: 0
   carBody: {fileID: 0}
   camera: {fileID: 0}
@@ -66,3 +67,11 @@ MonoBehaviour:
   dummy: {fileID: 655326975705522898, guid: 650238d53b3a14195b48fa285d942d37, type: 3}
   speedLimit: 0
   life: 0
+  isAlive: 0
+  isNotified: 0
+  notificationObj: {fileID: 0}
+  isBatteryNotified: 0
+  batteryNotificationObj: {fileID: 0}
+  isNotificationOn: 0
+  highscoreBoard: {fileID: 0}
+  carCanvas: {fileID: 0}

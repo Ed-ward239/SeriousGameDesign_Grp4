@@ -31,11 +31,11 @@ public class Timer : MonoBehaviour
             currentTime = countUp ? currentTime += Time.deltaTime : currentTime -= Time.deltaTime;
             timerText.text = currentTime.ToString("0.00");
             if (amountQuestions > 0) {
-                questionsScore.text = (amountCorrect * 100 / amountQuestions) + "%";
+                questionsScore.text = amountCorrect + "/" + amountQuestions + "(" + (amountCorrect * 100 / amountQuestions) + "%)";
             } else {
                 questionsScore.text = "0%";
             }
-            if(amountQuestions==5)
+            if(amountQuestions==20)
                 happened = false;
         }
     }
