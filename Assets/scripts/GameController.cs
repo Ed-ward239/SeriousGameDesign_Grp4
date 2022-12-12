@@ -18,12 +18,14 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject dummy;
     [SerializeField] int speedLimit;
     [SerializeField] float life;
-    [SerializeField] bool isAlive;
+    public bool isAlive;
     [SerializeField] bool isNotified = false;
     [SerializeField] GameObject notificationObj;
     [SerializeField] bool isBatteryNotified = false;
     [SerializeField] GameObject batteryNotificationObj;
     Vector2 position;
+    [SerializeField] GameObject highscoreBoard;
+    [SerializeField] GameObject carCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -166,7 +168,10 @@ public class GameController : MonoBehaviour
         }
 
         if (life <= 0) {
-            SceneManager.LoadScene("level1");
+            //SceneManager.LoadScene("level1");
+            Time.timeScale = 0.0f;
+            highscoreBoard.SetActive(true);
+            carCanvas.SetActive(false);
         }
 
     }

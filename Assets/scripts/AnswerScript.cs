@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.Color;
  
  
 public class AnswerScript : MonoBehaviour
@@ -9,14 +10,16 @@ public class AnswerScript : MonoBehaviour
    public bool isCorrect;
    public QuizManager quizManager;
    public GameObject Panel;
+   public GameObject ExplainationPanel;
    public GameObject Car;
    public GameObject GearsCanvas;
    public Timer Score;
    public GameObject ScoreBoard;
 
-    public Button button1;
-    public Button button2;
-    public Button button3;
+    [SerializeField] Button button1;
+    [SerializeField] Button button2;
+    [SerializeField] Button button3;
+    [SerializeField] Button button4;
  
    public void Answer(){
 
@@ -28,18 +31,25 @@ public class AnswerScript : MonoBehaviour
             Debug.Log("Wrong Answer");
         }
 
-            quizManager.correct();
             Score.amountQuestions++;
-            if(Score.amountQuestions%4==0){
-                removePanel();
-                returnCar();
-                if(Score.amountQuestions==20){
-                    ScoreBoard.SetActive(true);
-                    removeCar();
-                }
-                else
-                    returnGear();
-            }
+
+            changeButtonsColor();
+            turnButtonsOff();
+            StartCoroutine(waiter(5.0F));
+            // quizManager.correct();
+            // changeButtonsColorBack();
+            // turnButtonsOn();
+
+            // if(Score.amountQuestions%4==0){
+            //     removePanel();
+            //     returnCar();
+            //     if(Score.amountQuestions==20){
+            //         ScoreBoard.SetActive(true);
+            //         removeCar();
+            //     }
+            //     else
+            //         returnGear();
+            // }
    }
 
    public void returnCar(){
@@ -66,51 +76,79 @@ public class AnswerScript : MonoBehaviour
            GearsCanvas.SetActive(true);
        }
  
-   }
-  public void turnButtonsOff(){
-   button1.enabled = false;
-   button2.enabled = false;
-   button3.enabled = false;
-   this.enabled = false;
- 
- 
-  }
-  public void turnButtonsOn(){
-   button1.enabled = true;
-   button2.enabled = true;
-   button3.enabled = true;
-   this.enabled = true;
-  }
-//   public void changeButtonsColor(){
-//    var red = Color.red;
-//    var green = Color.green;
-//    if(button1.GetComponent<AnswerScript>().isCorrect){
-//        button1.GetComponent<Button>().colors = green;
-//        button2.GetComponent<Button>().colors = red;
-//        button3.GetComponent<Button>().colors = red;
-//        this.GetComponent<Button>().colors = red;
-//    }else if(button2.isCorrect){
-//        button1.GetComponent<Button>().colors = red;
-//        button2.GetComponent<Button>().colors = green;
-//        button3.GetComponent<Button>().colors = red;
-//        this.GetComponent<Button>().colors = red;
-//    }else if(button3.isCorrect){
-//        button1.GetComponent<Button>().colors = red;
-//        button2.GetComponent<Button>().colors = red;
-//        button3.GetComponent<Button>().colors = green;
-//        this.GetComponent<Button>().colors = red;
-//    }else{
-//        button1.GetComponent<Button>().colors = red;
-//        button2.GetComponent<Button>().colors = red;
-//        button3.GetComponent<Button>().colors = red;
-//        this.GetComponent<Button>().colors = green;
-//    }
- 
-//   }
- 
-//   IEnumerator waiter(float waitTime) {
-//        yield return new WaitForSeconds(waitTime);
- 
-//   }
+    }
+    public void turnButtonsOff(){
+        button1.enabled = false;
+        button2.enabled = false;
+        button3.enabled = false;
+        button4.enabled = false;
+    }
+
+    public void turnButtonsOn(){
+        button1.enabled = true;
+        button2.enabled = true;
+        button3.enabled = true;
+        button4.enabled = true;
+    }
+    public void changeButtonsColor(){
+
+
+        Color red = Color.red;
+        Color green = Color.green;
+
+        if(button1.GetComponent<AnswerScript>().isCorrect){
+            button1.GetComponent<Image>().color = Color.green;
+            button2.GetComponent<Image>().color = Color.red;
+            button3.GetComponent<Image>().color = Color.red;
+            button4.GetComponent<Image>().color = Color.red;
+        }else if(button2.GetComponent<AnswerScript>().isCorrect){
+            button1.GetComponent<Image>().color = Color.red;
+            button2.GetComponent<Image>().color = Color.green;
+            button3.GetComponent<Image>().color = Color.red;
+            button4.GetComponent<Image>().color = Color.red;
+        }else if(button3.GetComponent<AnswerScript>().isCorrect){
+            button1.GetComponent<Image>().color = Color.red;
+            button2.GetComponent<Image>().color = Color.red;
+            button3.GetComponent<Image>().color = Color.green;
+            button4.GetComponent<Image>().color = Color.red;
+        }else{
+            button1.GetComponent<Image>().color = Color.red;
+            button2.GetComponent<Image>().color = Color.red;
+            button3.GetComponent<Image>().color = Color.red;
+            button4.GetComponent<Image>().color = Color.green;
+        }
+    
+    }
+    public void changeButtonsColorBack(){
+        Color normal = new Color(255,255,255,255);
+
+        button1.GetComponent<Image>().color = normal;
+        button2.GetComponent<Image>().color = normal;
+        button3.GetComponent<Image>().color = normal;
+        button4.GetComponent<Image>().color = normal;
+
+    }
+    
+    IEnumerator waiter(float waitTime) {
+        Debug.Log("Starting waiter");
+        ExplainationPanel.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
+        quizManager.correct();
+        ExplainationPanel.SetActive(false);
+        changeButtonsColorBack();
+        turnButtonsOn();
+
+        if(Score.amountQuestions%4==0){
+            removePanel();
+            returnCar();
+            if(Score.amountQuestions==20){
+                ScoreBoard.SetActive(true);
+                removeCar();
+            }
+            else
+                returnGear();
+        }
+    
+    }
 }
 
