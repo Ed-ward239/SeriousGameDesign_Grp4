@@ -144,11 +144,11 @@ public class AnswerScript : MonoBehaviour
         if(Score.amountQuestions%numQuestionsInARow==0){
             removePanel();
             returnCar();
-            if(Score.amountQuestions==20){
-                ScoreBoard.SetActive(true);
-                removeCar();
-            }
-            else
+            // if(Score.amountQuestions==20){
+            //     ScoreBoard.SetActive(true);
+            //     removeCar();
+            // }
+            // else
                 returnGear();
         }
     

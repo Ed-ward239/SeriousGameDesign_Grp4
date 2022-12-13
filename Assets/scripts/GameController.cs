@@ -116,19 +116,19 @@ public class GameController : MonoBehaviour
             for (int i = 0; i<3; i++) {
                 signs[i].SetActive(false);
             }
-            signs[0].SetActive(true);
+            signs[2].SetActive(true);
         }
         else if (speedLimit == 50) {
             for (int i = 0; i<3; i++) {
                 signs[i].SetActive(false);
             }
-            signs[1].SetActive(true);
+            signs[0].SetActive(true);
         }
         else if (speedLimit == 70) {
             for (int i = 0; i<3; i++) {
                 signs[i].SetActive(false);
             }
-            signs[2].SetActive(true);
+            signs[1].SetActive(true);
         } else {
         for (int i = 0; i<3; i++) {
                 signs[i].SetActive(false);
@@ -164,13 +164,13 @@ public class GameController : MonoBehaviour
             for (int i = 0; i<5; i++) {
                 batteries[i].SetActive(false);
             }
-            batteries[3].SetActive(true);
+            batteries[4].SetActive(true);
         }
          else {
             for (int i = 0; i<5; i++) {
                 batteries[i].SetActive(false);
             }
-            batteries[4].SetActive(true);
+            batteries[3].SetActive(true);
         }
     }
 

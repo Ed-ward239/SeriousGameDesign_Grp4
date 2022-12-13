@@ -303,6 +303,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   audio: {fileID: 0}
   ScoreBoard: {fileID: 0}
+  Car: {fileID: 0}
 --- !u!1 &805197748
 GameObject:
   m_ObjectHideFlags: 0

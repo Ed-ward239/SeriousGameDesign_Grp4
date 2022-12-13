@@ -24,6 +24,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(Score score)
     {
         sd.scores.Add(score);
+        // SaveScore();
     }
     public void OnDestroy()
     {
