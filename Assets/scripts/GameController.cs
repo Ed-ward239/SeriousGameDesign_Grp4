@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject[] signs;
     [SerializeField] GameObject[] batteries;
     [SerializeField] GameObject[] notifications;
+    [SerializeField] AudioSource[] audios;
     [SerializeField] int selectedOption;
     [SerializeField] public GameObject carBody;
     [SerializeField] public GameObject camera;
@@ -43,6 +44,10 @@ public class GameController : MonoBehaviour
 
         if (carBody == null) {
             carBody = cars[selectedOption];
+        }
+
+        if (audios == null) {
+            audios = GetComponents<AudioSource>();
         }
        
         // transform.position = new Vector2(carBody.transform.position.x, carBody.transform.position.y);
@@ -107,10 +112,6 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (life <= 0.0f) {
-            isAlive = false;
-        }
-
         if (speedLimit == 25) {
             for (int i = 0; i<3; i++) {
                 signs[i].SetActive(false);
@@ -171,12 +172,17 @@ public class GameController : MonoBehaviour
             }
             batteries[4].SetActive(true);
         }
+    }
 
-        if (life <= 0) {
-            carBody.GetComponent<Rigidbody2D>().velocity = new Vector2(0, carBody.GetComponent<Rigidbody2D>().velocity.y);
+    void FixedUpdate() {
+            if (isAlive && life <= 0.0f) {
+            // carBody.GetComponent<Rigidbody2D>().velocity = new Vector2(0, carBody.GetComponent<Rigidbody2D>().velocity.y);
+            AudioSource.PlayClipAtPoint(audios[0].clip, carBody.transform.position);
+            isAlive = false;
+            // audios[0].Play();
+            // carBody.GetComponents<AudioSource>()[4].Play();
             Invoke("DisplayEndPanel", 2);
         }
-
     }
 
     void DisplayEndPanel() {
@@ -190,6 +196,9 @@ public class GameController : MonoBehaviour
     }
 
     public void RefillLife() {
+        if (life < 100)
+            AudioSource.PlayClipAtPoint(audios[1].clip, carBody.transform.position);
+        // carBody.GetComponents<AudioSource>()[5].Play();
         life = 100.0f;
     }
 

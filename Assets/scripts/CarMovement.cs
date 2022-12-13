@@ -18,10 +18,13 @@ public class CarMovement : MonoBehaviour
     [SerializeField] bool isGrounded = true;
     [SerializeField] public Text speedNumber;
     [SerializeField] bool brake = false;
+    [SerializeField] bool isDead = false;
     [SerializeField] bool isHunking = false;
     [SerializeField] GameObject tire;
     [SerializeField] GameObject body;
     [SerializeField] AudioSource[] audio;
+    [SerializeField] GameObject controller;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,10 @@ public class CarMovement : MonoBehaviour
 
         if (audio == null) {
             audio = GetComponents<AudioSource>();
+        }
+
+        if (controller == null) {
+            controller = GameObject.FindGameObjectWithTag("GameController");
         }
 
         tire = GameObject.FindGameObjectWithTag("Tire");
@@ -72,6 +79,7 @@ public class CarMovement : MonoBehaviour
         if (car.velocity.x > 15.0f && gear == 4) {
             car.velocity = new Vector2(car.velocity.x - 0.1f, car.velocity.y);
         }
+
     }
 
     void FixedUpdate()
@@ -103,7 +111,10 @@ public class CarMovement : MonoBehaviour
         if (Input.GetKeyDown("h")) {
             Hunk();
         }
-
+        
+        if (controller.GetComponent<GameController>().GetLifeStatus() == false) {
+            car.velocity = new Vector2(0, car.velocity.y);
+        }
     }
 
     void Accelerate() {
