@@ -52,6 +52,7 @@ MonoBehaviour:
   isNotified: 0
   controller: {fileID: 0}
   notificationObj: {fileID: 0}
+  isNotificationOn: 0
 --- !u!1 &2679244562443574866
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +104,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   bomb: {fileID: 7768365763481549658, guid: 02337d850c9e0244f82f10c46917fcb5, type: 3}
   isAngry: 0
+  isAngryOnce: 0
   x: 0
   y: 0
   audio: {fileID: 0}
@@ -245,6 +247,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8819767987566706169}
     m_Modifications:
+    - target: {fileID: -6789416635856386299, guid: 364f154f629014a0ca04c2e4558ea76c, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -3237439747593983529, guid: 364f154f629014a0ca04c2e4558ea76c, type: 3}
       propertyPath: m_IsTrigger
       value: 1

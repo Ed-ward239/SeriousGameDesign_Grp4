@@ -51,7 +51,8 @@ public class DummyBody : MonoBehaviour
     }
 
     void Groan() {
-        audio.Play();
+        if (dummy != null)
+            audio.Play();
     }
 
     void StopBeingAngry() {

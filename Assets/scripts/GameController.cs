@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class GameController : MonoBehaviour
     [SerializeField] bool isNotificationOn;
     [SerializeField] GameObject highscoreBoard;
     [SerializeField] GameObject carCanvas;
+    [SerializeField] TextMeshProUGUI batteryLife;
 
     // Start is called before the first frame update
     void Start()
@@ -134,7 +136,7 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if (life < 0.0f) {
+        if (life <= 0.0f) {
             for (int i = 0; i<5; i++) {
                 batteries[i].SetActive(false);
             }
@@ -171,10 +173,13 @@ public class GameController : MonoBehaviour
             }
             batteries[3].SetActive(true);
         }
+
+        batteryLife.text = life + "%";
     }
 
     void FixedUpdate() {
             if (isAlive && life <= 0.0f) {
+                life = 0;
             // carBody.GetComponent<Rigidbody2D>().velocity = new Vector2(0, carBody.GetComponent<Rigidbody2D>().velocity.y);
             AudioSource.PlayClipAtPoint(audios[0].clip, carBody.transform.position);
             isAlive = false;

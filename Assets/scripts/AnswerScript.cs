@@ -27,11 +27,9 @@ public class AnswerScript : MonoBehaviour
    public void Answer(){
 
         if(isCorrect){
-            Debug.Log("Correct Answer");
             Score.amountCorrect++;
         }
         else{
-            Debug.Log("Wrong Answer");
         }
 
             Score.amountQuestions++;
