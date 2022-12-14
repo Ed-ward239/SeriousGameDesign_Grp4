@@ -366,7 +366,7 @@ WheelJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
     m_DampingRatio: 0.9
-    m_Frequency: 200
+    m_Frequency: 2000
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -390,7 +390,7 @@ WheelJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
     m_DampingRatio: 0.9
-    m_Frequency: 200
+    m_Frequency: 2000
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -436,7 +436,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 62caa675722094a85a742eee9efedf39, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2533670c76c882d41bce900068f5ae5e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.6
   m_Pitch: 1
@@ -1710,7 +1710,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 62caa675722094a85a742eee9efedf39, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2533670c76c882d41bce900068f5ae5e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.6
   m_Pitch: 1
@@ -3076,7 +3076,7 @@ WheelJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
     m_DampingRatio: 0.9
-    m_Frequency: 200
+    m_Frequency: 2000
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -3100,7 +3100,7 @@ WheelJoint2D:
   m_ConnectedAnchor: {x: 0.00000003138257, y: -0.00000016720514}
   m_Suspension:
     m_DampingRatio: 0.9
-    m_Frequency: 200
+    m_Frequency: 2000
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -3146,7 +3146,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 62caa675722094a85a742eee9efedf39, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2533670c76c882d41bce900068f5ae5e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.6
   m_Pitch: 1

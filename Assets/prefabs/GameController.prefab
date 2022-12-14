@@ -81,6 +81,7 @@ MonoBehaviour:
   isNotificationOn: 0
   highscoreBoard: {fileID: 0}
   carCanvas: {fileID: 0}
+  batteryLife: {fileID: 0}
 --- !u!82 &4106738051273393900
 AudioSource:
   m_ObjectHideFlags: 0
