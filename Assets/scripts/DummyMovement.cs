@@ -58,12 +58,12 @@ public class DummyMovement : MonoBehaviour
 
     void BlowUp() {
         animator.SetInteger("explode", 2);
-        // Invoke("Kill", 1.5f);
+        Invoke("Kill", 1.0f);
     }
 
-    // void Kill() {
-    //     Destroy(animator.gameObject);
-    // }
+    void Kill() {
+        Destroy(animator.gameObject);
+    }
 
     void KillNotification() {
         notificationObj.SetActive(false);
