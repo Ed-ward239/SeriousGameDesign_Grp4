@@ -13,15 +13,15 @@ public class CharacterManager : MonoBehaviour
     private int selectedOption = 0;
     void Start()
     {
-        if (!PlayerPrefs.HasKey("selectedOption"))
-        {
-            selectedOption = 0;
-        }
-        else
-        {
-            Load();
-        }
-        updateCharacter(selectedOption);
+        // if (!PlayerPrefs.HasKey("selectedOption"))
+        // {
+        //     selectedOption = 0;
+        // }
+        // else
+        // {
+        Load();
+        // }
+        updateCharacter(PersistentData.Instance.GetOption());
     }
     public void NextOption()
     {

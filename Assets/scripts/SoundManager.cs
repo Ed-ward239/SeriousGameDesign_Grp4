@@ -7,37 +7,26 @@ public class SoundManager : MonoBehaviour
 {
     [SerializeField] Image SoundOnIcon;
     [SerializeField] Image SoundOffIcon;
+    [SerializeField] Slider slider;
 
     private bool muted = false;
 
     void Start()
     {
-        muted = false;
-        // if (!PlayerPrefs.HasKey("muted"))
-        // {
-        //     PlayerPrefs.SetInt("muted", 0);
-        //     Load();
-        // }
-        // else
-        // {
-        //     Load();
-        // }
+        muted = PersistentData.Instance.GetMusicOption();
+
+        if (slider == null) {
+        slider = GetComponent<Slider>();
+        }
+
+        slider.value = PersistentData.Instance.GetVolume();
+        AudioListener.volume = slider.value;
+
         UpdateBtnIcon();
-        // AudioListener.pause = muted;
     }
 
     public void OnButtonPress()
     {
-        // if (muted == false)
-        // {
-        //     muted = true;
-        //     AudioListener.pause = true;
-        // }
-        // else
-        // {
-        //     muted = false;
-        //     AudioListener.pause = false;
-        // }
         muted = !muted;
         Save();
         UpdateBtnIcon();
@@ -55,6 +44,11 @@ public class SoundManager : MonoBehaviour
             SoundOnIcon.enabled = false;
             SoundOffIcon.enabled = true;
         }
+    }
+
+    public void ChangeVolume() {
+        AudioListener.volume = slider.value;
+        PersistentData.Instance.SetVolume(slider.value);
     }
 
     private void Load()

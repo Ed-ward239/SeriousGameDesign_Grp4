@@ -22,9 +22,9 @@ public class DummyMovement : MonoBehaviour
             controller = GameObject.FindGameObjectWithTag("GameController");
         }
 
-        // if (notificationObj == null) {
-        //     notificationObj = GameObject.FindGameObjectWithTag("HitAndRun");
-        // }
+        if (notificationObj == null) {
+            notificationObj = GameObject.FindGameObjectWithTag("HitAndRun");
+        }
 
         if (animator == null) {
             animator = GetComponent<Animator>();
@@ -43,6 +43,8 @@ public class DummyMovement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider) {
     
         if (collider.gameObject.tag == "Car") {
+            hasContacted = true;
+            audio.Play();
             BlowUp();
         }
 
@@ -51,18 +53,16 @@ public class DummyMovement : MonoBehaviour
             if (controller.GetComponent<GameController>().GetLifeStatus() && !isNotified) {
                 isNotificationOn = PersistentData.Instance.GetNotificationsOption();
                 if (isNotificationOn) {
-                notificationObj.SetActive(true);
-                Invoke("KillNotification", 15.0f);
+                    notificationObj.SetActive(true);
+                    Invoke("KillNotification", 15.0f);
                 }
             }
         }
      }
 
     void BlowUp() {
-        hasContacted = true;
-        audio.Play();
         animator.SetInteger("explode", 2);
-        Invoke("Kill", 0.75f);
+        Invoke("Kill", 1.0f);
     }
 
     void Kill() {

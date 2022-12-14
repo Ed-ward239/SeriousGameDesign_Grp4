@@ -25,14 +25,14 @@ public class DummyBody : MonoBehaviour
 
   void OnTriggerEnter2D(Collider2D collider) {
 
-         if (collider.gameObject.tag == "Car" && !isAngry) {
+         if (collider.gameObject.tag == "Car" && !isAngry && dummy != null) {
             dummy.GetComponent<Animator>().SetInteger("explode", 1);
             dummy.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -0.75f);
         }
     }
 
      void OnTriggerStay2D(Collider2D collider) {
-        if (collider.gameObject.tag == "Car" && collider.gameObject.GetComponent<CarMovement>().GetIfIsHunking() && !isAngry && !isAngryOnce) {
+        if (collider.gameObject.tag == "Car" && collider.gameObject.GetComponent<CarMovement>().GetIfIsHunking() && !isAngry && !isAngryOnce && dummy != null) {
             isAngry = true;
             isAngryOnce = true;
             dummy.GetComponent<Animator>().SetInteger("explode", 3);
@@ -51,12 +51,15 @@ public class DummyBody : MonoBehaviour
     }
 
     void Groan() {
-        audio.Play();
+        if (dummy != null)
+            audio.Play();
     }
 
     void StopBeingAngry() {
         isAngry = false;
-        dummy.GetComponent<Animator>().SetInteger("explode", 5);
+        if (dummy != null) {
+            dummy.GetComponent<Animator>().SetInteger("explode", 5);
+        }
     }
 
     void StartThrowing() {

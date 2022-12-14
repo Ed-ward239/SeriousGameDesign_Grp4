@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject[] signs;
     [SerializeField] GameObject[] batteries;
     [SerializeField] GameObject[] notifications;
+    [SerializeField] AudioSource[] audios;
     [SerializeField] int selectedOption;
     [SerializeField] public GameObject carBody;
     [SerializeField] public GameObject camera;
@@ -28,6 +30,7 @@ public class GameController : MonoBehaviour
     [SerializeField] bool isNotificationOn;
     [SerializeField] GameObject highscoreBoard;
     [SerializeField] GameObject carCanvas;
+    [SerializeField] TextMeshProUGUI batteryLife;
 
     // Start is called before the first frame update
     void Start()
@@ -37,12 +40,15 @@ public class GameController : MonoBehaviour
         signs = GameObject.FindGameObjectsWithTag("signs");
         batteries = GameObject.FindGameObjectsWithTag("Battery");
         selectedOption = PersistentData.Instance.GetOption();
-        isNotificationOn = PersistentData.Instance.GetNotificationsOption();
-        Debug.Log(isNotificationOn);
+        // isNotificationOn = PersistentData.Instance.GetNotificationsOption();
         MakeTargetCarAppear();
 
         if (carBody == null) {
             carBody = cars[selectedOption];
+        }
+
+        if (audios == null) {
+            audios = GetComponents<AudioSource>();
         }
        
         // transform.position = new Vector2(carBody.transform.position.x, carBody.transform.position.y);
@@ -107,34 +113,30 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (life <= 0.0f) {
-            isAlive = false;
-        }
-
         if (speedLimit == 25) {
             for (int i = 0; i<3; i++) {
                 signs[i].SetActive(false);
             }
-            signs[0].SetActive(true);
+            signs[2].SetActive(true);
         }
         else if (speedLimit == 50) {
             for (int i = 0; i<3; i++) {
                 signs[i].SetActive(false);
             }
-            signs[1].SetActive(true);
+            signs[0].SetActive(true);
         }
         else if (speedLimit == 70) {
             for (int i = 0; i<3; i++) {
                 signs[i].SetActive(false);
             }
-            signs[2].SetActive(true);
+            signs[1].SetActive(true);
         } else {
         for (int i = 0; i<3; i++) {
                 signs[i].SetActive(false);
             }
         }
 
-        if (life < 0.0f) {
+        if (life <= 0.0f) {
             for (int i = 0; i<5; i++) {
                 batteries[i].SetActive(false);
             }
@@ -163,20 +165,28 @@ public class GameController : MonoBehaviour
             for (int i = 0; i<5; i++) {
                 batteries[i].SetActive(false);
             }
-            batteries[3].SetActive(true);
+            batteries[4].SetActive(true);
         }
          else {
             for (int i = 0; i<5; i++) {
                 batteries[i].SetActive(false);
             }
-            batteries[4].SetActive(true);
+            batteries[3].SetActive(true);
         }
 
-        if (life <= 0) {
-            carBody.GetComponent<Rigidbody2D>().velocity = new Vector2(0, carBody.GetComponent<Rigidbody2D>().velocity.y);
+        batteryLife.text = life + "%";
+    }
+
+    void FixedUpdate() {
+            if (isAlive && life <= 0.0f) {
+                life = 0;
+            // carBody.GetComponent<Rigidbody2D>().velocity = new Vector2(0, carBody.GetComponent<Rigidbody2D>().velocity.y);
+            AudioSource.PlayClipAtPoint(audios[0].clip, carBody.transform.position);
+            isAlive = false;
+            // audios[0].Play();
+            // carBody.GetComponents<AudioSource>()[4].Play();
             Invoke("DisplayEndPanel", 2);
         }
-
     }
 
     void DisplayEndPanel() {
@@ -190,6 +200,9 @@ public class GameController : MonoBehaviour
     }
 
     public void RefillLife() {
+        if (life < 100)
+            AudioSource.PlayClipAtPoint(audios[1].clip, carBody.transform.position);
+        // carBody.GetComponents<AudioSource>()[5].Play();
         life = 100.0f;
     }
 

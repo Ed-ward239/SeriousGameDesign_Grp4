@@ -11,6 +11,7 @@ public class PersistentData : MonoBehaviour
     [SerializeField] int option;
     [SerializeField] bool isMusicMuted;
     [SerializeField] bool isNotificationsOn;
+    [SerializeField] float volume;
 
     public static PersistentData Instance;
     void Awake() {
@@ -31,6 +32,8 @@ public class PersistentData : MonoBehaviour
         difficultyLevel = 0;
         option = 0;
         isNotificationsOn = true;
+        volume = 1.0f;
+        isMusicMuted = false;
     }
     // Update is called once per frame
     void Update()
@@ -63,6 +66,9 @@ public class PersistentData : MonoBehaviour
     public int GetScore () {
         return playerScore;
     }
+    public float GetVolume () {
+        return volume;
+    }
     public string GetDifficulty () {
         return difficultyLevel == 1 ? "Difficult" : "Easy";
     }
@@ -72,5 +78,8 @@ public class PersistentData : MonoBehaviour
     }
     public void SetMusicOption (bool option) {
         isMusicMuted = option;
+    }
+    public void SetVolume (float volumeValue) {
+        volume = volumeValue;
     }
 }

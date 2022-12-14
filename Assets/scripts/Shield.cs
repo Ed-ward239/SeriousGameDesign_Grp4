@@ -8,7 +8,7 @@ public class Shield : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         if (controller == null) {
+        if (controller == null) {
             controller = GameObject.FindGameObjectWithTag("GameController");
         }
     }

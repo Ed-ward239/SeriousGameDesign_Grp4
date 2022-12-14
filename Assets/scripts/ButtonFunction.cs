@@ -12,6 +12,11 @@ public class ButtonFunction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (nameInput == null) {
+            nameInput = GetComponent<TMP_InputField>();
+        }
+        if (nameInput != null)
+            nameInput.text = PersistentData.Instance.GetName();
     }
 
     // Update is called once per frame
@@ -26,6 +31,10 @@ public class ButtonFunction : MonoBehaviour
 
     public void GoToInstructions() {
         SceneManager.LoadScene("Instructions");
+    }
+
+    public void GoToPractice() {
+        SceneManager.LoadScene("Practice");
     }
 
     public void GoToLevel() {

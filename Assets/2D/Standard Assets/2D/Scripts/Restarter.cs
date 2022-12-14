@@ -6,11 +6,13 @@ namespace UnityStandardAssets._2D
 {
     public class Restarter : MonoBehaviour
     {
+        [SerializeField] GameObject highscoreBoard;
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "Car")
             {
-                SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+                Time.timeScale = 0.0f;
+                highscoreBoard.SetActive(true);
             }
         }
     }

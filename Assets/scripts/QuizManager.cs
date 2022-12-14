@@ -32,7 +32,6 @@ public class QuizManager : MonoBehaviour
             options[i].GetComponent<AnswerScript>().isCorrect = false;
             options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QnA[currentQuestion].Answers[i];
             if(QnA[currentQuestion].CorrectAnswer == i+1){
-                Debug.Log(QnA[currentQuestion].CorrectAnswer);
                 options[i].GetComponent<AnswerScript>().isCorrect = true; 
             }
         }

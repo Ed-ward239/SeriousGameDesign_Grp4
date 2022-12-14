@@ -27,11 +27,9 @@ public class AnswerScript : MonoBehaviour
    public void Answer(){
 
         if(isCorrect){
-            Debug.Log("Correct Answer");
             Score.amountCorrect++;
         }
         else{
-            Debug.Log("Wrong Answer");
         }
 
             Score.amountQuestions++;
@@ -133,7 +131,6 @@ public class AnswerScript : MonoBehaviour
     }
     
     IEnumerator waiter(float waitTime) {
-        Debug.Log("Starting waiter");
         ExplainationPanel.SetActive(true);
         yield return new WaitForSeconds(waitTime);
         quizManager.correct(removeQuestions);
@@ -144,11 +141,11 @@ public class AnswerScript : MonoBehaviour
         if(Score.amountQuestions%numQuestionsInARow==0){
             removePanel();
             returnCar();
-            if(Score.amountQuestions==20){
-                ScoreBoard.SetActive(true);
-                removeCar();
-            }
-            else
+            // if(Score.amountQuestions==20){
+            //     ScoreBoard.SetActive(true);
+            //     removeCar();
+            // }
+            // else
                 returnGear();
         }
     
