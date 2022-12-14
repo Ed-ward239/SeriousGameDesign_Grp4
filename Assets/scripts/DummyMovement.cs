@@ -11,6 +11,7 @@ public class DummyMovement : MonoBehaviour
     [SerializeField] bool isNotified = false;
     [SerializeField] GameObject controller;
     [SerializeField] GameObject notificationObj;
+    [SerializeField] bool isNotificationOn;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,8 +51,11 @@ public class DummyMovement : MonoBehaviour
         if (collider.gameObject.tag == "Car" && gameObject.tag == "Dummy") {
             controller.GetComponent<GameController>().SetReducedLife(35.0f);
             if (controller.GetComponent<GameController>().GetLifeStatus() && !isNotified) {
-                notificationObj.SetActive(true);
-                Invoke("KillNotification", 15.0f);
+                isNotificationOn = PersistentData.Instance.GetNotificationsOption();
+                if (isNotificationOn) {
+                    notificationObj.SetActive(true);
+                    Invoke("KillNotification", 15.0f);
+                }
             }
         }
      }

@@ -556,6 +556,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1740474177}
     m_Modifications:
+    - target: {fileID: 2726833422496459962, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3029375315615354279, guid: 8448c02b57db34770955ff21877646a4, type: 3}
       propertyPath: m_Spline.m_ControlPoints.Array.data[0].position.x
       value: -2
@@ -579,6 +583,10 @@ PrefabInstance:
     - target: {fileID: 3766937897508109602, guid: 8448c02b57db34770955ff21877646a4, type: 3}
       propertyPath: m_LocalAABB.m_Extent.y
       value: 0.36750004
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729744409826061738, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5729744409826061740, guid: 8448c02b57db34770955ff21877646a4, type: 3}
       propertyPath: m_Spline.m_ControlPoints.Array.data[0].position.x
