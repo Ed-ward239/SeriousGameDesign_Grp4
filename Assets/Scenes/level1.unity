@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1740474177}
     m_Modifications:
+    - target: {fileID: 109932347, guid: 5d0bc4741d054fd44a0975047827d6ae, type: 3}
+      propertyPath: highscoreBoard
+      value: 
+      objectReference: {fileID: 1185380364}
     - target: {fileID: 116514831, guid: 5d0bc4741d054fd44a0975047827d6ae, type: 3}
       propertyPath: Car
       value: 
@@ -150,10 +154,30 @@ PrefabInstance:
       propertyPath: GearsCanvas
       value: 
       objectReference: {fileID: 1185380365}
+    - target: {fileID: 1457335934, guid: 5d0bc4741d054fd44a0975047827d6ae, type: 3}
+      propertyPath: highscoreBoard
+      value: 
+      objectReference: {fileID: 1185380364}
     - target: {fileID: 1553789309, guid: 5d0bc4741d054fd44a0975047827d6ae, type: 3}
       propertyPath: notificationObj
       value: 
       objectReference: {fileID: 1584902699}
+    - target: {fileID: 1972455713, guid: 5d0bc4741d054fd44a0975047827d6ae, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455714, guid: 5d0bc4741d054fd44a0975047827d6ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 796.1086
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455714, guid: 5d0bc4741d054fd44a0975047827d6ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.1663947
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455714, guid: 5d0bc4741d054fd44a0975047827d6ae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1601.2864
+      objectReference: {fileID: 0}
     - target: {fileID: 1980516530245408212, guid: 5d0bc4741d054fd44a0975047827d6ae, type: 3}
       propertyPath: m_Name
       value: Others
@@ -532,6 +556,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1740474177}
     m_Modifications:
+    - target: {fileID: 3029375315615354279, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_Spline.m_ControlPoints.Array.data[0].position.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029375315615354279, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_Spline.m_ControlPoints.Array.data[1].position.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766937897508109602, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_LocalAABB.m_Center.x
+      value: 12.250002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766937897508109602, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_LocalAABB.m_Center.y
+      value: 0.29250005
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766937897508109602, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_LocalAABB.m_Extent.x
+      value: 14.250002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766937897508109602, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_LocalAABB.m_Extent.y
+      value: 0.36750004
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729744409826061740, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_Spline.m_ControlPoints.Array.data[0].position.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729744409826061740, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_Spline.m_ControlPoints.Array.data[1].position.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729744409826061741, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729744409826061741, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_Points.Array.data[1].x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729744409826061741, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_Points.Array.data[4].x
+      value: -0.61511123
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729744409826061741, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_Points.Array.data[5].x
+      value: -1.636889
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729744409826061741, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_Points.Array.data[6].x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729744409826061743, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_LocalAABB.m_Center.x
+      value: 12.250002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729744409826061743, guid: 8448c02b57db34770955ff21877646a4, type: 3}
+      propertyPath: m_LocalAABB.m_Extent.x
+      value: 14.250002
+      objectReference: {fileID: 0}
     - target: {fileID: 8502899418657835474, guid: 8448c02b57db34770955ff21877646a4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1145,6 +1229,14 @@ PrefabInstance:
       propertyPath: speedNumber
       value: 
       objectReference: {fileID: 1185380362}
+    - target: {fileID: 5692882946221721458, guid: 71bd3bfe0485320428b4b582644c41fd, type: 3}
+      propertyPath: m_Suspension.m_Frequency
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7999823265173072820, guid: 71bd3bfe0485320428b4b582644c41fd, type: 3}
+      propertyPath: m_Suspension.m_Frequency
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 8820826512843341272, guid: 71bd3bfe0485320428b4b582644c41fd, type: 3}
       propertyPath: gearNumber
       value: 
@@ -1177,6 +1269,14 @@ PrefabInstance:
       propertyPath: speedNumber
       value: 
       objectReference: {fileID: 1185380362}
+    - target: {fileID: 9182248209723154638, guid: 71bd3bfe0485320428b4b582644c41fd, type: 3}
+      propertyPath: m_Suspension.m_Frequency
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182248209723154639, guid: 71bd3bfe0485320428b4b582644c41fd, type: 3}
+      propertyPath: m_Suspension.m_Frequency
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71bd3bfe0485320428b4b582644c41fd, type: 3}
 --- !u!1 &9182248208850722340 stripped

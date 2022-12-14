@@ -133,7 +133,6 @@ public class AnswerScript : MonoBehaviour
     }
     
     IEnumerator waiter(float waitTime) {
-        Debug.Log("Starting waiter");
         ExplainationPanel.SetActive(true);
         yield return new WaitForSeconds(waitTime);
         quizManager.correct(removeQuestions);

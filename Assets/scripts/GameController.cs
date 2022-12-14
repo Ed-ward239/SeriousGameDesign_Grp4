@@ -39,7 +39,6 @@ public class GameController : MonoBehaviour
         batteries = GameObject.FindGameObjectsWithTag("Battery");
         selectedOption = PersistentData.Instance.GetOption();
         isNotificationOn = PersistentData.Instance.GetNotificationsOption();
-        Debug.Log(isNotificationOn);
         MakeTargetCarAppear();
 
         if (carBody == null) {

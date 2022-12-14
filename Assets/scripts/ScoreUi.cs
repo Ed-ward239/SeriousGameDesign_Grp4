@@ -29,7 +29,7 @@ public class ScoreUi : MonoBehaviour
             row.name.text = scores[i].name;
             row.score.text = scores[i].score.ToString("0.00");
         }
-            passRFail.text = "Your battery died! Now you wont make it to Brooklyn Bridge.";
+            passRFail.text = "Your car died! Now you wont make it to Brooklyn Bridge.";
 
     }
 
@@ -40,7 +40,7 @@ public class ScoreUi : MonoBehaviour
 
         if(timer.amountQuestions==20 && addedscore == false){
             if(timer.amountCorrect>=14){
-                passRFail.text = "Well done! You have passed the mission with a time of : "+ timer.currentTime.ToString("0.00");
+                passRFail.text = "Well done! You have passed the mission with a time of "+ timer.currentTime.ToString("0.00") + " seconds.";
                 scoreManager.AddScore(new Score(timer.currentTime, PersistentData.Instance.GetName()));
 
                 // var scores = scoreManager.GetHighScores().ToArray();
