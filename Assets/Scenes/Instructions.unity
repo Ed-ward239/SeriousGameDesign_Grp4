@@ -853,11 +853,11 @@ MonoBehaviour:
   m_text: 'The objective of this game is to prepare you for the DMV written exam.
 
     Pay
-    attention to the traffic sigs. If you do not follow the rules of the road, you
+    attention to the traffic signs. If you do not follow the rules of the road, you
     will lose points, and you will not pass the test.
 
     If you run into a red
-    light, you should answer the pop up question correctly. If you get less than
+    light, you should answer the pop-up question correctly. If you get less than
     70% of the questions correct, you will fail the test.
 
     Watch out for the
@@ -1236,7 +1236,7 @@ MonoBehaviour:
     P:
     Pause
 
-    H: Hunk Horn'
+    H: Honk Horn'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
