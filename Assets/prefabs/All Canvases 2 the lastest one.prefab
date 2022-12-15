@@ -441,7 +441,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Running over a pedestrian on the sidewalk drained 35% of your battery.
     Yield to pedestrians, but there is no penalty for running over the j-walkers.
-    That'll teach them a lesson. Do not hunk your horn (the "h" key) at them, no
+    That'll teach them a lesson. Do not honk your horn (the "h" key) at them, no
     matter what. They are crazy!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3578,7 +3578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 823581607240612244, guid: 89a4052de7913a244931c01558adfd26, type: 3}
       propertyPath: m_margin.w
-      value: 1.8311028
+      value: 4.425227
       objectReference: {fileID: 0}
     - target: {fileID: 823581607240612244, guid: 89a4052de7913a244931c01558adfd26, type: 3}
       propertyPath: m_margin.x

@@ -389,6 +389,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4106738051273393898}
+    - target: {fileID: 2603822641641986783, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
+      propertyPath: m_margin.w
+      value: 4.425227
+      objectReference: {fileID: 0}
     - target: {fileID: 3252629801204152883, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
       propertyPath: Car
       value: 
@@ -456,6 +460,13 @@ PrefabInstance:
     - target: {fileID: 3409033596230672585, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
       propertyPath: m_Name
       value: All Canvases
+      objectReference: {fileID: 0}
+    - target: {fileID: 5534236397454772468, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
+      propertyPath: m_text
+      value: Running over a pedestrian on the sidewalk drained 35% of your battery.
+        Yield to pedestrians, but there is no penalty for running over the j-walkers.
+        That'll teach them a lesson. Do not honk your horn (the "h" key) at them,
+        no matter what. They are crazy!
       objectReference: {fileID: 0}
     - target: {fileID: 5707751521875609460, guid: 31685c3bfff6d46fb9718302adc776d1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1100,10 +1111,18 @@ PrefabInstance:
       propertyPath: gearNumber
       value: 
       objectReference: {fileID: 1185380363}
+    - target: {fileID: 55932991850264193, guid: 71bd3bfe0485320428b4b582644c41fd, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c00ee3674a8c45aca617611e2b4924b, type: 3}
     - target: {fileID: 745249156999290381, guid: 71bd3bfe0485320428b4b582644c41fd, type: 3}
       propertyPath: gearNumber
       value: 
       objectReference: {fileID: 1185380363}
+    - target: {fileID: 1661078716546705290, guid: 71bd3bfe0485320428b4b582644c41fd, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c00ee3674a8c45aca617611e2b4924b, type: 3}
     - target: {fileID: 2415574987677321147, guid: 71bd3bfe0485320428b4b582644c41fd, type: 3}
       propertyPath: m_Name
       value: Car
@@ -1192,6 +1211,10 @@ PrefabInstance:
       propertyPath: speedNumber
       value: 
       objectReference: {fileID: 1185380362}
+    - target: {fileID: 9182248209723154634, guid: 71bd3bfe0485320428b4b582644c41fd, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c00ee3674a8c45aca617611e2b4924b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71bd3bfe0485320428b4b582644c41fd, type: 3}
 --- !u!1 &9182248208850722340 stripped
